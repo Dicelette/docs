@@ -19,8 +19,8 @@ function HomepageHeader() {
 				<div className={styles.buttons}>
 					<Link
 						className="button button--secondary button--lg"
-						to="/docs/introduction/">
-            Start here
+						to="https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands">
+							Inviter le bot
 					</Link>
 				</div>
 			</div>
