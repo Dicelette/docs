@@ -61,13 +61,13 @@ const config: Config = {
 					type: "docSidebar",
 					position: "left",
 					sidebarId: "introduction",
-					label: "Commencer",
+					label: "Introduction",
 				},
 				{
 					type: "docSidebar",
 					position: "left",
 					sidebarId: "model",
-					label: "Modèle",
+					label: "Fiches",
 				},
 				{
 					href: "https://github.com/dicelette/docs",
@@ -88,22 +88,16 @@ const config: Config = {
 			style: "dark",
 			links: [
 				{
-					title: "Docs",
-					items: [
-						{
-							label: "Commencer",
-							to: "/docs/intro",
-						},
-					],
-				},
-				
-				{
-					title: "Plus",
+					title: "Liens",
 					items: [
 						{
 							label: "GitHub",
-							href: "https://github.com/dicelette/dicelette",
+							href: "https://github.com/Dicelette/discord-dicelette",
 						},
+						{
+							label: "Invitation",
+							href: "https://discord.com/oauth2/authorize?client_id=839830334315141120&permissions=8&scope=bot",
+						}
 					],
 				},
 			],
