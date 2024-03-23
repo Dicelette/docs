@@ -75,6 +75,11 @@ const config: Config = {
 					position: "right",
 				},
 				{
+					href: "https://dice-roller.github.io/documentation/guide/notation/",
+					label: "Dés et notation",
+					position: "right",
+				},
+				{
 					type: "localeDropdown",
 					position: "right",
 				},

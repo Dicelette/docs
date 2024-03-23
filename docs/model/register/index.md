@@ -1,5 +1,6 @@
 ---
-title: Générer et enregistrer un modèle
+title: Enregistrement
+sidebar_position: 1
 ---
 
 Tout d'abord, vous devez **générer** un nouveau modèle. Pour cela, vous devez utiliser la commande `!register_template` suivie du nom du modèle. Par exemple, pour créer un modèle de fiche de personnage, vous pouvez utiliser la commande suivante : `/générer`.
