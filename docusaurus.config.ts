@@ -4,7 +4,7 @@ import {themes as prismThemes} from "prism-react-renderer";
 
 const config: Config = {
 	title: "Dicelette",
-	tagline: "A discord bot for rolling dice",
+	tagline: "Un bot discord qui lance des dés dans des fils... Et bien plus !",
 	favicon: "img/dicelette.png",
 
 	// Set the production url of your site here
@@ -59,9 +59,15 @@ const config: Config = {
 			items: [
 				{
 					type: "docSidebar",
-					sidebarId: "tutorialSidebar",
 					position: "left",
-					label: "Tutorial",
+					sidebarId: "introduction",
+					label: "Commencer",
+				},
+				{
+					type: "docSidebar",
+					position: "left",
+					sidebarId: "model",
+					label: "Modèle",
 				},
 				{
 					href: "https://github.com/dicelette/docs",
@@ -77,14 +83,14 @@ const config: Config = {
 					title: "Docs",
 					items: [
 						{
-							label: "Tutorial",
+							label: "Commencer",
 							to: "/docs/intro",
 						},
 					],
 				},
 				
 				{
-					title: "More",
+					title: "Plus",
 					items: [
 						{
 							label: "GitHub",
