@@ -67,7 +67,10 @@ Les statistiques sont basés sur un nom, mais vous remarquerez qu'après avoir g
     "failure": 1,
     "success": 20
   },
-  "total": 0
+  "total": 0,
+  "damage": {
+    "NOM": ""
+  }
 }
 ```
 </details> 
