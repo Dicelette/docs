@@ -71,3 +71,17 @@ Les statistiques sont basés sur un nom, mais vous remarquerez qu'après avoir g
 }
 ```
 </details> 
+
+## Et après ?
+
+Une fois que le modèle a été créé et que vous en êtes satisfait·e, vous pouvez utiliser la commande `/register <channel> <fichier>`, dans laquel vous devez choisir :
+- Le channel qui servira à la fois pour la création de nouveau personnage et où leur fiche sera repostée (dans un thread nommé `📝 • [STATS]`).
+- Le fichier que vous venez de créer et éditer.
+
+:::tip
+Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez choisir un channel auquel ils ont accès. Cependant, si vous voulez que seul le MJ puisse modifier les fiches, vous pouvez choisir un channel privé.
+:::
+
+Pour des raisons pratiques, l'embed sera épinglé.
+
+![embed](../../assets/register/embed_template.png)
