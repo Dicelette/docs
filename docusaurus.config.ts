@@ -106,7 +106,7 @@ const config: Config = {
 					],
 				},
 			],
-			copyright: `Copyright © ${new Date().getFullYear()} Dicelette, Inc. Built with Docusaurus.`,
+			copyright: `Licence GPLv3 © ${new Date().getFullYear()} Dicelette`,
 		},
 		prism: {
 			theme: prismThemes.github,

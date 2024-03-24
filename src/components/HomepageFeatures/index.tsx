@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+import Translate, { translate } from "@docusaurus/Translate";
 import Heading from "@theme/Heading";
 import clsx from "clsx";
 
@@ -12,30 +13,26 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
 	{
-		title: "Facile d'utilisation",
+		title: translate({message: "Facile d'utilisation"}),
 		Image: require("@site/static/img/easy.png").default,
 		description: (
-			<>
-			Un simple bot discord qui ne nécessite pas de configuration pour fonctionner ! Il suffit de l'ajouter à votre serveur pour commencer à l'utiliser.
-			</>
+			<Translate>
+				Un simple bot discord qui ne nécessite pas de configuration pour fonctionner ! Il suffit de l'ajouter à votre serveur pour commencer à l'utiliser.
+			</Translate>
 		),
 	},
 	{
-		title: "Fiche de personnage",
+		title: translate({message:"Fiche de personnage"}),
 		Image: require("@site/static/img/character.png").default,
 		description: (
-			<>
-        Le bot permet aussi de configurer un modèle, des fiches de personnages et de retenir des dés. Et en plus, vos données restent sur votre serveur !
-			</>
+			<Translate>Le bot permet aussi de configurer un modèle, des fiches de personnages et de retenir des dés. Et en plus, vos données restent sur votre serveur !</Translate>
 		),
 	},
 	{
-		title: "Universel",
+		title: translate({message:"Universel"}),
 		Image: require("@site/static/img/theme-park.png").default,
 		description: (
-			<>
-        Le modèle est adaptable à l'infini, ce qui vous permet de configurer vos fiches pour tout type de roleplay !
-			</>
+			<Translate>Le modèle est adaptable à l'infini, ce qui vous permet de configurer vos fiches pour tout type de roleplay !</Translate>
 		),
 	},
 ];

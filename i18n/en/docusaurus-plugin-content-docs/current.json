@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.introduction.category.Comportement": {
+    "message": "Comportement",
+    "description": "The label for category Comportement in sidebar introduction"
+  },
+  "sidebar.model.category.Enregistrement": {
+    "message": "Enregistrement",
+    "description": "The label for category Enregistrement in sidebar model"
+  }
+}
