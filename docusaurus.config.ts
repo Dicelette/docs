@@ -109,8 +109,9 @@ const config: Config = {
 			copyright: `Licence GPLv3 © ${new Date().getFullYear()} Dicelette`,
 		},
 		prism: {
-			theme: prismThemes.github,
-			darkTheme: prismThemes.dracula,
+			theme: prismThemes.oneLight,
+			darkTheme: prismThemes.oneDark,
+			additionalLanguages: ["json"]
 		},
 	} satisfies Preset.ThemeConfig,
 };
