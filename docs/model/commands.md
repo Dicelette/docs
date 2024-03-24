@@ -1,5 +1,6 @@
 ---
 title: Commandes
+sidebar_position: 4
 ---
 
 ## DBRoll (`/dbroll`)

@@ -30,5 +30,5 @@ Le bot enverra **également** le résultat dans le canal où la commande a été
 # Utilisation
 
 Le bot peut être :
-- Utilisé avec des slash-commands (voir [Slashcommands](#slashcommands))
+- Utilisé avec des slash-commands (voir [Slashcommands](Usage/slashcommands))
 - Mais aussi directement sur le message.
