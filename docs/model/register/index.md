@@ -82,7 +82,7 @@ Une fois que le modèle a été créé et que vous en êtes satisfait·e, vous p
 - Le fichier que vous venez de créer et éditer.
 
 :::tip
-Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez choisir un channel auquel ils ont accès. Cependant, si vous voulez que seul le MJ puisse modifier les fiches, vous pouvez choisir un channel privé.
+Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez choisir un channel auquel ils ont accès. Sinon, il suffit de choisir un channel privé.
 :::
 
 Pour des raisons pratiques, l'embed sera épinglé.
