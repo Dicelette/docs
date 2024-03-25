@@ -15,8 +15,8 @@ La commande DBRoll aura les mêmes effets que la commande `/roll`, mais elle vou
 - Le remplacement de la valeur de réussite (par exemple, pour un jet difficile) : N'oubliez pas de spécifier comment la valeur est comparée ! (exemple : `>= 10`)
 - Tout commentaire sur votre action
 
-![dbroll_1](../assets/rolls/db/dbroll_autocomplete.png)
-![example](../assets/rolls/db/example.png)
+![dbroll_1](/assets/rolls/db/dbroll_autocomplete.png)
+![example](/assets/rolls/db/example.png)
 
 ## DBD (`/dbd`)
 
@@ -26,7 +26,7 @@ La commande DBD aura les mêmes effets que la commande `/roll`, mais elle vous d
 - Le modificateur à ajouter au jet (tel que l'avantage, le désavantage, etc.)
 - Tout commentaire sur votre action.
 
-![dbd](../assets/rolls/db/dbd_example.png)
+![dbd](/assets/rolls/db/dbd_example.png)
 
 # Logs
 
@@ -42,4 +42,4 @@ La commande "afficher" permet de consulter les statistiques et les dés d'un per
 
 Utiliser les deux ensemble permet de choisir le personnage d'un joueur spécifique (utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
 
-![afficher](../assets/rolls/db/display_ex.png)
+![afficher](/assets/rolls/db/display_ex.png)

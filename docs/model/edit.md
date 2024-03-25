@@ -3,7 +3,7 @@ title: Modifier une fiche
 sidebar_position: 3
 ---
 Une fois que l'utilisateur est validé, sa fiche sera automatiquement publiée dans un thread. Toutes les fiches seront affichées dans ce thread et suivront ce format :
-![user embed](../assets/edit/user_embed.png)
+![user embed](/assets/edit/user_embed.png)
 
 Seuls le modèle et l'utilisateur seront toujours présents (à moins qu'aucun dé-type et aucun succès/échec critique n'aient été enregistrés dans le modèle).
 
@@ -14,7 +14,7 @@ Si toutes les informations sont enregistrées, vous aurez accès à trois bouton
 
 # Modification des statistiques
 
-![edit stats](../assets/edit/edit_stats.png)
+![edit stats](/assets/edit/edit_stats.png)
 
 Le modal sera pré-rempli par une liste comme suit :
 ```md
@@ -53,7 +53,7 @@ Tout comme lors de l'enregistrement, les dés seront évalués pour vérifier le
 
 Comme pour les statistiques, il est essentiel de respecter la liste et sa syntaxe. Vous pouvez supprimer des champs en remplaçant la valeur par "X" ou "0".
 
-![edit dice](../assets/edit/edit_dice.png)
+![edit dice](/assets/edit/edit_dice.png)
 
 # Ajout d'un nouveau dé
 

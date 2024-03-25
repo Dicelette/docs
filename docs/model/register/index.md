@@ -94,4 +94,4 @@ Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez 
 
 Pour des raisons pratiques, l'embed sera épinglé.
 
-![embed](../../assets/register/embed_template.png)
+![embed](/assets/register/embed_template.png)

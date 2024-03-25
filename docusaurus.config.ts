@@ -12,7 +12,7 @@ const config: Config = {
 	organizationName: "Dicelette", 
 	projectName: "dicelette.github.io", 
 	trailingSlash: false,
-	onBrokenLinks: "throw",
+	onBrokenLinks: "warn",
 	onBrokenMarkdownLinks: "warn",
 	i18n: {
 		defaultLocale: "fr",

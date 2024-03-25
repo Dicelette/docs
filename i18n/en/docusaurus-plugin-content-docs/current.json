@@ -4,11 +4,11 @@
     "description": "The label for version current"
   },
   "sidebar.introduction.category.Comportement": {
-    "message": "Comportement",
+    "message": "Behavior",
     "description": "The label for category Comportement in sidebar introduction"
   },
   "sidebar.model.category.Enregistrement": {
-    "message": "Enregistrement",
+    "message": "Registration",
     "description": "The label for category Enregistrement in sidebar model"
   }
 }
