@@ -98,7 +98,7 @@ const config: Config = {
 		prism: {
 			theme: prismThemes.oneLight,
 			darkTheme: prismThemes.oneDark,
-			additionalLanguages: ["json", "md"]
+			additionalLanguages: ["json", "markdown"]
 		},
 	} satisfies Preset.ThemeConfig,
 };
