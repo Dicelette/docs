@@ -16,6 +16,12 @@ Cette commande vous permettra de créer un nouveau fichier `JSON`, et prendra le
 
 Pour des example de template, vous pouvez voir les fichiers `template` [ici](https://github.com/Dicelette/discord-dicelette/tree/main/template) ou [encore ici](register/template).
 
+:::info
+Statistiques et dés sont facultatifs :
+- L'absence de statistiques empêchera l'utilisation de la commande `/dbroll` et vous ne pourrez pas enregistrer de statistiques sur les fiches. Si vous enregistrez les statistiques après avoir créé des utilisateurs, vous devrez recréer les fiches.
+- L'absence de dés (que ce soit dans les modèles ou fiches) empêchera l'utilisation `/dbd`. 
+:::
+
 # Dés
 
 Il existe deux types de dés :
@@ -41,7 +47,8 @@ Il est aussi possible de comparer contre une formule :
 - Pour un dé enregistré : `1d6 > {{ceil(Force / 2)}}`
 :::
 
-## Statistiques
+# Statistiques
+
 Les statistiques sont basés sur un nom, mais vous remarquerez qu'après avoir générer le fichier, chaque statistique aura trois champs :
 - min: La valeur minimale que la statistique peut avoir.
 - max: La valeur maximale que la statistique peut avoir.
