@@ -2,46 +2,44 @@
 title: Commandes
 sidebar_position: 4
 ---
-# Lanc de dés
+# Lancer de dés
 
-Les deux commandes auront une auto-complétion sur les statistiques (ou le nom du dé pour la commande `dbd`) et le nom du personnage.
+Les deux commandes bénéficieront d'une fonction d'auto-complétion pour les statistiques (ou le nom du dé pour la commande `dbd`) ainsi que pour le nom du personnage.
 
 ## DBRoll (`/dbroll`)
 
-Le dbRoll aura les mêmes effets que la commande `/roll`, mais il vous demandera :
-- La statistique (obligatoire, utilisera l'autocomplétion)
-- le nom du personnage (avec une autocomplétion)
-- Le modificateur à ajouter au jet (comme l'avantage, le désavantage, etc.)
-- Le remplacement de la valeur de réussite (par exemple, pour un jet difficile) : Ne pas oublier de mettre comment la valeur est comparée ! (exemple : `>= 10`)
-- N'importe quel personnage (qui doit être enregistré dans la base de données) — Note : Si vous n'avez qu'un seul personnage enregistré et que l'utilisateur ne met aucune valeur, le premier personnage enregistré sera utilisé.
+La commande DBRoll aura les mêmes effets que la commande `/roll`, mais elle vous demandera :
+- La statistique (obligatoire, avec auto-complétion)
+- Le nom du personnage (avec auto-complétion)
+- Le modificateur à ajouter au jet (tel que l'avantage, le désavantage, etc.)
+- Le remplacement de la valeur de réussite (par exemple, pour un jet difficile) : N'oubliez pas de spécifier comment la valeur est comparée ! (exemple : `>= 10`)
 - Tout commentaire sur votre action
 
 ![dbroll_1](../assets/rolls/db/dbroll_autocomplete.png)
 ![example](../assets/rolls/db/example.png)
 
-
 ## DBD (`/dbd`)
 
-Le dbD aura les mêmes effets que la commande `/roll`, mais il vous demandera :
-- La compétence (obligatoire, utilisera l'autocomplétion)
-- le nom du personnage (avec une autocomplétion)
-- Le modificateur à ajouter au jet (comme l'avantage, le désavantage, etc.)
+La commande DBD aura les mêmes effets que la commande `/roll`, mais elle vous demandera :
+- La compétence (obligatoire, avec auto-complétion)
+- Le nom du personnage (avec auto-complétion)
+- Le modificateur à ajouter au jet (tel que l'avantage, le désavantage, etc.)
 - Tout commentaire sur votre action.
 
 ![dbd](../assets/rolls/db/dbd_example.png)
 
 # Logs
 
-La commande logs permet de choisir un channel dans lequel :
-- Toute erreur sera transmise
-- Toute modification qui a été faite sur un personnage sera transmis.
+La commande "logs" permet de choisir un canal dans lequel :
+- Toute erreur sera rapportée
+- Toute modification apportée à un personnage sera enregistrée.
 
 # Afficher
 
-La commande affichée permet de voir les statistiques et les dés d'un personnage enregistré dans la base de données. Il vous demandera :
-- Le joueur (qui accepte un utilisateur par mention)
-- Et/ou un nom de personnage (qui accepte une autocomplétion).
+La commande "afficher" permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données. Elle vous demandera :
+- Le joueur (accepte un utilisateur par mention)
+- Et/ou le nom du personnage (avec auto-complétion).
 
-Les deux ensemble permet de choisir le personnage d'un joueur précis (utile s'il y a des personnages avec le même nom, même si je doute que cela arrive).
+Utiliser les deux ensemble permet de choisir le personnage d'un joueur spécifique (utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
 
 ![afficher](../assets/rolls/db/display_ex.png)

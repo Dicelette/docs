@@ -3,21 +3,21 @@ sidebar_position: 2
 title: Enregistrer un utilisateur
 ---
 
-Maintenant que le modèle est créé, vous pouvez enregistrer des utilisateurs. Comme précédemment vu, l'embed du modèle contient un bouton "Enregistrer un personnage".
+Maintenant que le modèle est créé, vous pouvez enregistrer des utilisateurs. Comme nous l'avons vu précédemment, l'embed du modèle contient un bouton "Enregistrer un personnage".
 
-Une fois le bouton actionné, vous aurez une suite de modaux à remplir.
+Une fois que le bouton est activé, vous aurez une série de modaux à remplir.
 
-Le premier sera toujours identique quel que soit le modèle :
-- Il vous demandera le nom du personnage (obligatoire ou nom, selon les paramètres du modèle)
-- Le nom de l'utilisateur, qui doit être soit son ID, soit son username. Cette donnée est obligatoire et sera pré-remplie par le bot par l'username de la personne qui a cliquée. 
+Le premier modal sera toujours identique quel que soit le modèle :
+- Il vous demandera le nom du personnage (obligatoire ou facultatif, selon les paramètres du modèle)
+- Le nom de l'utilisateur, qui doit être soit son ID, soit son nom d'utilisateur. Cette donnée est obligatoire et sera pré-remplie par le bot avec le nom d'utilisateur de la personne qui a cliqué.
 
 :::info
-L'username est le nom d'utilisateur, pas le nom d'affichage. Celui qui vous a été forcé de changer quand discord a supprimé les numéros après les pseudos...
+Le nom d'utilisateur est le nom d'utilisateur, pas le nom d'affichage. Celui que vous avez peut-être été contraint de changer lorsque Discord a supprimé les numéros après les pseudonymes...
 :::
 
 ![Page_1](../assets/register/register_user_P1.png)
 
-Le deuxième modal dépendra du modèle : s'il y a plus de 5 caractéristiques enregistrées, vous aurez plusieurs pages à remplir. À chaque fois, vous devrez simplement mettre la valeur de la statistique. Ces valeurs seront ensuite vérifiées (min/max et si ce sont bien des nombres). Malheureusement, pour le moment, discord ne permet pas de vérifier cela directement dans le modal et il faudra donc attendre la fin pour savoir si tout est correct.
+Le deuxième modal dépendra du modèle : s'il y a plus de 5 caractéristiques enregistrées, vous aurez plusieurs pages à remplir. À chaque fois, vous devrez simplement entrer la valeur de la statistique. Ces valeurs seront ensuite vérifiées (min/max et si ce sont bien des nombres). Malheureusement, pour le moment, Discord ne permet pas de vérifier cela directement dans le modal, il faudra donc attendre la fin pour savoir si tout est correct.
 
 ![Page_2](../assets/register/register_user_P2_Embed.png)
 ![Page_2_modal](../assets/register/register_user_P2_Modal.png)
@@ -30,4 +30,4 @@ Une fois l'enregistrement terminé (c'est-à-dire que toutes les statistiques on
 
 Chaque dé doit être enregistré manuellement.
 
-Une fois tout cela fait, il suffit de cliquer sur "Valider" et la fiche sera reposté dans le thread `📝 • [STATS]` du channel choisi lors de l'enregistrement.
+Une fois tout cela fait, il suffit de cliquer sur "Valider" et la fiche sera repostée dans le thread `📝 • [STATS]` du canal choisi lors de l'enregistrement.
