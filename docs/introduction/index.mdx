@@ -5,29 +5,23 @@ sidebar_position: 1
 
 <FontAwesomeIcon icon="fa-solid fa-arrow-right" /> [Invitez le bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
 
-Permet de lancer des dés et d'envoyer le résultat dans un fil de discussion, mais aussi d'enregistrer un modèle de statistique pour les lancer directement (afin de ne pas être obligé d'écrire la même chose encore et encore).
+Ce bot permet de lancer des dés et d'envoyer le résultat dans un fil de discussion. De plus, il offre la possibilité d'enregistrer un modèle de statistique pour effectuer des lancers directement, évitant ainsi de répéter les mêmes actions à chaque fois.
 
-<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> Utilise l'API [@diceRoller](https://dice-roller.github.io/documentation/) pour lancer les dés.
+<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> Il utilise l'API [@diceRoller](https://dice-roller.github.io/documentation/) pour effectuer les lancers de dés. Il prend également en charge la notation rollem `4#(dés)` pour les lancers "en masse" (bulk roll).
 
-Il prend également en charge la notation rollem `4#(dés)` pour les lancers "en masse" (bulk roll).
+Pour les statistiques, au lieu de sauvegarder l'intégralité de la feuille, le bot enregistre le message et son identifiant. Ainsi, vous conservez un contrôle total sur vos données, puisque le bot n'a pas connaissance du contenu du message.
 
+Le bot utilise une base de données pour stocker l'identifiant du message, l'identifiant du canal, le nom de la statistique et les noms des personnages des utilisateurs. Cette base de données est un simple fichier JSON et sera nettoyée dans les cas suivants :
+- Suppression du message statistique de référence.
+- Suppression du canal enregistré pour le modèle (les identifiants de référence des utilisateurs ne sont pas affectés).
+- Suppression du message enregistré pour le modèle.
+- Suppression du thread contenant les données utilisateurs.
+- Expulsion du bot du serveur.
 
-Pour les statistiques, au lieu de sauvegarder la feuille entière, il utilisera le message et l'identifiant du message. Ainsi, vous avez le contrôle total sur vos données (puisque le bot ne connaît pas le contenu du message).
-
-Le bot utilise une base de données pour stocker l'identifiant du message et l'identifiant du canal, mais aussi le nom de la statistique et les noms des personnages des utilisateurs. 
-
-La base de données est un simple fichier JSON, et sera nettoyée si :
-- Le message statistique de référence est supprimé
-- Le canal enregistré pour le modèle est supprimé - Cela ne supprimera **pas** les identifiants de référence de l'utilisateur.
-- Le message enregistré pour le modèle est supprimé
-- Le thread contenant les données utilisateurs est supprimé
-- Le bot est expulsé du serveur
-
-La base de données n'est utilisée **que** si vous configurez un modèle de serveur avec `/register` ou les logs d'erreur avec `/logs`.
+La base de données est utilisée uniquement si vous configurez un modèle de serveur avec `/register` ou les logs d'erreur avec `/logs`.
 
 :::note
-Au besoin, vous pouvez me contacter si vous voulez que vos données soient supprimées. Il me suffira de votre identifiant Discord (le long numéro) pour supprimer vos données ou celle de votre serveur (il me faudra alors l'ID du serveur).
-Pour me contacter en privée :
-- Discord: `@mara__li`
-- Mail: `lisandra_dev@yahoo.com`
+Si nécessaire, vous pouvez me contacter pour demander la suppression de vos données. Il suffit de me fournir votre identifiant Discord (le long numéro) ou l'ID de votre serveur. Pour me contacter en privé :
+- Discord : `@mara__li`
+- E-mail : `lisandra_dev@yahoo.com`
 :::
