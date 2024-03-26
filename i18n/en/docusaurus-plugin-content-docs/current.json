@@ -3,12 +3,16 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.introduction.category.Comportement": {
-    "message": "Behavior",
-    "description": "The label for category Comportement in sidebar introduction"
-  },
   "sidebar.model.category.Enregistrement": {
     "message": "Registration",
     "description": "The label for category Enregistrement in sidebar model"
+  },
+  "sidebar.introduction.category.Comportement": {
+    "message": "Comportement",
+    "description": "The label for category Comportement in sidebar introduction"
+  },
+  "sidebar.model.category.Registering": {
+    "message": "Registering",
+    "description": "The label for category Registering in sidebar model"
   }
 }

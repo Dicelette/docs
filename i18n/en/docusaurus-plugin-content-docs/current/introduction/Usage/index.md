@@ -1,5 +1,5 @@
 ---
-title: Behavior
+title: Comportement
 ---
 
 The bot operates based on the usage of threads. Upon its initial launch, it will search for a thread prefixed with `🎲`:
