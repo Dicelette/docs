@@ -84,8 +84,9 @@ Statistics are based on a name, but you will notice that after generating the fi
 ## What's Next?
 
 Once the template has been created and you are satisfied with it, you can use the command `/register <channel> <file>`. You must choose:
-- The channel that will be used both for creating new characters and where their sheet will be reposted (in a thread named `📝 • [STATS]`).
-- The file you just created and edited.
+- The channel where the embed will be pinned (and where the button will be available).
+- The file to be used as a template.
+- (Optional) The channel where the character sheet will be posted. If this parameter is omitted, the character sheet will be posted in a thread created from the channel where the button was posted, named `📝 - [STATS]`. 
 
 :::tip
 If you want to allow your players to edit their own sheet, you can choose a channel they have access to. Otherwise, simply choose a private channel.

@@ -85,8 +85,9 @@ Les statistiques sont basées sur un nom, mais vous remarquerez qu'après avoir 
 ## Et ensuite ?
 
 Une fois que le modèle a été créé et que vous en êtes satisfait·e, vous pouvez utiliser la commande `/register <channel> <fichier>`. Vous devez choisir :
-- Le canal qui servira à la fois pour la création de nouveaux personnages et où leur fiche sera repostée (dans un thread nommé `📝 • [STATS]`).
+- Le canal où sera posté le bouton pour créer des fiches
 - Le fichier que vous venez de créer et d'éditer.
+- (Optionnel) Le canal où seront postées les fiches. Si ce paramètre est omis, les fiches seront postées dans un thread créé à partir du channel où le bouton a été posté, nommé `📝 • [STATS]`.
 
 :::tip
 Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez choisir un canal auquel ils ont accès. Sinon, il suffit de choisir un canal privé.

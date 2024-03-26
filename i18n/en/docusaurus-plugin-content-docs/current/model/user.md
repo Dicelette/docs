@@ -29,4 +29,4 @@ Once the registration is complete (meaning all statistics have been filled out),
 
 Each die must be registered manually.
 
-Once all of this is done, simply click "Validate" and the sheet will be reposted in the `📝 • [STATS]` thread of the chosen channel during registration.
+Once all of this is done, simply click "Validate" and the sheet will be reposted in the channel chosen during registration (or in a thread named `📝 • [STATS]` if no channel was chosen during template registration).

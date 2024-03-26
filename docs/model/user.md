@@ -30,4 +30,4 @@ Une fois l'enregistrement terminé (c'est-à-dire que toutes les statistiques on
 
 Chaque dé doit être enregistré manuellement.
 
-Une fois tout cela fait, il suffit de cliquer sur "Valider" et la fiche sera repostée dans le thread `📝 • [STATS]` du canal choisi lors de l'enregistrement.
+Une fois tout cela fait, il suffit de cliquer sur "Valider" et la fiche sera repostée dans le channel choisi lors de l'enregistrement (ou dans un thread nommé `📝 • [STATS]` si aucun channel n'a été choisi lors de l'enregistrement du modèle).
