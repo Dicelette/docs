@@ -1,8 +1,7 @@
 ---
 sidebar_position: 4
+title: Traduction
 ---
-# Traduction
-
 Le bot est entièrement disponible en français et en anglais. Les commandes slash seront automatiquement traduites dans la langue du client utilisé.
 
 :::tip
@@ -10,8 +9,6 @@ Par exemple, un utilisateur dont le client est en français recevra les réponse
 :::
 
 Cependant, pour les messages "directs" (c'est-à-dire les messages qui ne sont pas des commandes slash), le bot ne peut pas déterminer quelle langue utiliser. Il utilisera donc la langue du serveur, qui ne peut être sélectionnée que pour les Serveurs Communautaires.
-
-### Ajout d'une langue
 
 Pour ajouter une nouvelle langue, vous devez copier et traduire le fichier [`en.json`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/locales/en.json).
 

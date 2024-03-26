@@ -28,7 +28,7 @@ Le bot enverra **aussi** le résultat dans le canal où la commande a été init
 - Sera supprimé après 3 minutes.
 - Contiendra un lien vers le message dans le log.
 
-# Utilisation
+## Utilisation
 
 Le bot peut être :
 - Utilisé avec des commandes slash (voir [Slashcommands](Usage/slashcommands)).
