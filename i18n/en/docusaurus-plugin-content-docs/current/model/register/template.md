@@ -9,22 +9,22 @@ title: Reference's server model
 {
   "charName": false,
   "statistics": {
-    "Force": {
+    "Strength": {
       "min": 1
     },
-    "Dextérité": {
+    "Dexterity": {
       "min": 1
     },
     "Constitution": {
       "min": 1
     },
-    "Intelligence": {
+    "Knowledge": {
       "min": 1
     },
-    "Sagesse": {
+    "Wisdom": {
       "min": 1
     },
-    "Charisme": {
+    "Charisma": {
       "min": 1
     }
   },
@@ -43,28 +43,28 @@ title: Reference's server model
 {
   "charName": true,
   "statistics": {
-    "Force": {
+    "Strength": {
       "min": 3
     },
-    "Endurance": {
+    "Stamina": {
       "min": 3
     },
-    "Agilité": {
+    "Agility": {
       "min": 3
     },
     "Constitution": {
       "min": 3
     },
-    "Éducation": {
+    "Education": {
       "min": 3
     },
-    "Intelligence": {
+    "Knowledge": {
       "min": 3
     },
-    "Charisme": {
+    "Charisma": {
       "min": 3
     },
-    "Pouvoir": {
+    "Power": {
       "min": 3
     },
     "PV": {
