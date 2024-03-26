@@ -10,7 +10,7 @@ Utilisez `/roll 1d20` pour lancer un dé. Vous pouvez également utiliser la not
 
 # Créer une nouvelle scène
 
-Utilisez `/scene <nom>` pour créer une nouvelle scène. Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra le journal. Ce fil prendra le nom de la `scène`, et tous les autres fils préfixés par `🎲` seront archivés.
+Utilisez `/scene <nom>` pour créer une nouvelle scène. Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra les logs des dés. Ce fil prendra le nom de la `scène`, et tous les autres fils préfixés par `🎲` seront archivés.
 
 ![Scene](/assets/rolls/scene.gif)
 

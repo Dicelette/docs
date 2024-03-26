@@ -2,7 +2,7 @@
 title: Registering
 sidebar_position: 1
 ---
-First, you need to **generate** a new template. To do this, use the command `!register_template`, followed by the name of the template. For example, to create a character sheet template, you can use the following command: `/generate`.
+First, you need to **generate** a new template. To do this, use the command `/register`, followed by the name of the template. For example, to create a character sheet template, you can use the following command: `/generate`.
 
 This command will allow you to create a new `JSON` file, with the following (optional) parameters:
 - `name`: The name of the statistics to be separated by a space or a comma. If any of the statistics contain a space, you must surround it with quotation marks. For example: `"Intelligence Logic", Strength, Dexterity`.
