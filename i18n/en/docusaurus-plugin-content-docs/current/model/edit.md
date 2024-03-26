@@ -2,6 +2,7 @@
 title: Editing an user refsheet
 sidebar_position: 3
 ---
+
 Once the user is validated, their sheet will be automatically posted in a thread. All sheets will be displayed in this thread and follow this format:
 ![user embed](/assets/edit/user_embed.png)
 
@@ -12,7 +13,7 @@ If all information is saved, you will have access to three buttons:
 - Edit saved dice (which allows saving multiple new dice, but shh...)
 - Add a new die.
 
-# Editing Statistics
+## Editing Statistics
 
 ![edit stats](/assets/edit/edit_stats.png)
 
@@ -42,7 +43,7 @@ Finally, values will not be checked against the total initially saved in the tem
 If statistics are edited and logs are enabled, a modification message will be sent to the channel configured in the logs.
 :::
 
-# Editing Dice
+## Editing Dice
 
 Just like for statistics, the modal will be pre-filled with a list as follows:
 ```md
@@ -55,6 +56,6 @@ As with statistics, it is essential to respect the list and its syntax. You can 
 
 ![edit dice](/assets/edit/edit_dice.png)
 
-# Adding a New Die
+## Adding a New Die
 
 Adding a die works exactly like when saving a character.

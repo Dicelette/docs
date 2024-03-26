@@ -22,7 +22,7 @@ Les statistiques et les dés sont facultatifs :
 - L'absence de dés (que ce soit dans les modèles ou les fiches) empêchera l'utilisation de `/dbd`. 
 :::
 
-# Dés
+## Dés
 
 Il existe deux types de dés :
 - Le dé qui sera lancé par la commande `dbroll`, que nous appellerons **dé type**.
@@ -47,7 +47,7 @@ Il est également possible de comparer avec une formule :
 - Pour un dé enregistré : `1d6 > {{ceil(Force / 2)}}`
 :::
 
-# Statistiques
+## Statistiques
 
 Les statistiques sont basées sur un nom, mais vous remarquerez qu'après avoir généré le fichier, chaque statistique aura trois champs :
 - `min` : La valeur minimale que la statistique peut avoir.

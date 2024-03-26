@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Reference's server model
 ---
 
-# DND-like
+## DND-like
 
 ```json
 {
@@ -37,7 +37,7 @@ title: Reference's server model
 }
 ```
 
-# Simple système
+## System simple
 
 ```json
 {

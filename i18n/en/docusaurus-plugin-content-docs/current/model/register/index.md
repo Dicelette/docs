@@ -21,7 +21,7 @@ Statistics and dice are optional:
 - The absence of dice (either in templates or sheets) will prevent the use of `/dbd`.
 :::
 
-# Dice
+## Dice
 
 There are two types of dice:
 - The die that will be rolled by the `dbroll` command, which we will call **die type**.
@@ -46,7 +46,7 @@ It is also possible to compare with a formula:
 - For a saved die: `1d6 > {{ceil(Strength / 2)}}`
 :::
 
-# Statistics
+## Statistics
 
 Statistics are based on a name, but you will notice that after generating the file, each statistic will have three fields:
 - `min`: The minimum value the statistic can have.

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
+title: Translation
 ---
-# Translation
 
 The bot is fully available in French and English. Slash commands will be automatically translated into the language of the client being used.
 
@@ -11,7 +11,6 @@ For example, a user whose client is in French will receive responses in French, 
 
 However, for "direct" messages (i.e., messages that are not slash commands), the bot cannot determine which language to use. Therefore, it will use the server's language, which can only be selected for Community Servers.
 
-### Adding a Language
 
 To add a new language, you need to copy and translate the [`en.json`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/locales/en.json) file.
 

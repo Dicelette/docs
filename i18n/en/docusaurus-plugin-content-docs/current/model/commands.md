@@ -2,11 +2,11 @@
 title: Commands
 sidebar_position: 4
 ---
-# Dice Rolling
+## Dice Rolling
 
 Both commands will benefit from an autocomplete feature for statistics (or the dice name for the `dbd` command) as well as for the character name.
 
-## DBRoll (`/dbroll`)
+### DBRoll (`/dbroll`)
 
 The DBRoll command will have the same effects as the `/roll` command, but it will prompt you for:
 - The statistic (mandatory, with autocomplete)
@@ -18,7 +18,7 @@ The DBRoll command will have the same effects as the `/roll` command, but it wil
 ![dbroll_1](/assets/rolls/db/dbroll_autocomplete.png)
 ![example](/assets/rolls/db/example.png)
 
-## DBD (`/dbd`)
+### DBD (`/dbd`)
 
 The DBD command will have the same effects as the `/roll` command, but it will prompt you for:
 - The skill (mandatory, with autocomplete)
@@ -28,13 +28,13 @@ The DBD command will have the same effects as the `/roll` command, but it will p
 
 ![dbd](/assets/rolls/db/dbd_example.png)
 
-# Logs
+## Logs
 
 The "logs" command allows choosing a channel in which:
 - Any error will be reported
 - Any modification made to a character will be logged.
 
-# Display
+## Display
 
 The "display" command allows viewing the statistics and dice of a character stored in the database. It will prompt you for:
 - The player (accepts one user per mention)
