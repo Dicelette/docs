@@ -3,7 +3,7 @@ title: Enregistrement
 sidebar_position: 1
 ---
 
-Tout d'abord, vous devez **générer** un nouveau modèle. Pour ce faire, utilisez la commande `/register`, suivie du nom du modèle. Par exemple, pour créer un modèle de fiche de personnage, vous pouvez utiliser la commande suivante : `/générer`.
+Tout d'abord, vous devez **générer** un nouveau modèle. Pour ce faire, utilisez la commande `/register`, suivie du nom du modèle. De plus, vous pouvez générer un nouveau modèle (vide) avec la commande `/générer`.
 
 Cette commande vous permettra de créer un nouveau fichier `JSON`, avec les paramètres (facultatifs) suivants :
 - `nom` : Le nom des statistiques à séparer par un espace ou une virgule. Si l'une des statistiques contient un espace, vous devez l'entourer de guillemets. Par exemple : `"Logique d'intelligence", Force, Dextérité`.
