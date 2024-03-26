@@ -95,3 +95,7 @@ If you want to allow your players to edit their own sheet, you can choose a chan
 For practical reasons, the embed will be pinned.
 
 ![embed](/assets/register/embed_template.png)
+
+:::warning
+It is not possible to change the channel of publication for cards in the future while retaining the old cards. The old cards will not be found during searches because the channel is saved globally, rather than specific to each card.
+:::

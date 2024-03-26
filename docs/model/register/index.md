@@ -96,3 +96,7 @@ Si vous voulez autoriser vos joueurs à modifier leur propre fiche, vous pouvez 
 Pour des raisons pratiques, l'embed sera épinglé.
 
 ![embed](/assets/register/embed_template.png)
+
+:::warning
+Il n'est pas possible de modifier le canal de publication des fiches à l'avenir tout en conservant les anciennes fiches. Les anciennes fiches ne seront pas retrouvées lors de la recherche car le canal est enregistré de manière globale, et non spécifique à chaque fiche.
+:::
