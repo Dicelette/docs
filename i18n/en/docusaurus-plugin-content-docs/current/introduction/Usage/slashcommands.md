@@ -2,24 +2,24 @@
 title: Slashcommands
 ---
 
-# Lancer les dés
+# Rolling Dice
 
-Utilisez `/roll 1d20` pour lancer un dé. Vous pouvez également utiliser la notation "semi-direct" en ajoutant un commentaire : `/roll 1d20 Mon commentaire`. Veuillez noter que la notation "indirecte" n'est pas disponible dans ce mode.
+Use `/roll 1d20` to roll a die. You can also use "semi-direct" notation by adding a comment: `/roll 1d20 My comment`. Please note that "indirect" notation is not available in this mode.
 
 ![Roll](/assets/rolls/slash-commands.gif)
 
-# Créer une nouvelle scène
+# Creating a New Scene
 
-Utilisez `/scene <nom>` pour créer une nouvelle scène. Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra le journal. Ce fil prendra le nom de la `scène`, et tous les autres fils préfixés par `🎲` seront archivés.
+Use `/scene <name>` to create a new scene. The bot will then create a new thread, prefixed with `🎲`, where it will send the log. This thread will be named after the `scene`, and all other threads prefixed with `🎲` will be archived.
 
 ![Scene](/assets/rolls/scene.gif)
 
-# Aide
+# Help
 
-Utilisez `/help` pour afficher le message d'aide.
+Use `/help` to display the help message.
 
 ## Logs
 
-Cette commande permet de configurer un canal pour recevoir tous les logs d'erreur du bot.
+This command allows configuring a channel to receive all bot error logs.
 
-Utilisez `/logs <channel>` pour configurer le canal de logs.
+Use `/logs <channel>` to configure the log channel.

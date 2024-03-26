@@ -1,32 +1,32 @@
 ---
 sidebar_position: 4
 ---
-# Traduction
+# Translation
 
-Le bot est entièrement disponible en français et en anglais. Les commandes slash seront automatiquement traduites dans la langue du client utilisé.
+The bot is fully available in French and English. Slash commands will be automatically translated into the language of the client being used.
 
 :::tip
-Par exemple, un utilisateur dont le client est en français recevra les réponses en français, tandis qu'un utilisateur dont le client est en anglais recevra les réponses en anglais.
+For example, a user whose client is in French will receive responses in French, while a user whose client is in English will receive responses in English.
 :::
 
-Cependant, pour les messages "directs" (c'est-à-dire les messages qui ne sont pas des commandes slash), le bot ne peut pas déterminer quelle langue utiliser. Il utilisera donc la langue du serveur, qui ne peut être sélectionnée que pour les Serveurs Communautaires.
+However, for "direct" messages (i.e., messages that are not slash commands), the bot cannot determine which language to use. Therefore, it will use the server's language, which can only be selected for Community Servers.
 
-### Ajout d'une langue
+### Adding a Language
 
-Pour ajouter une nouvelle langue, vous devez copier et traduire le fichier [`en.json`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/locales/en.json).
+To add a new language, you need to copy and translate the [`en.json`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/locales/en.json) file.
 
 :::important
-Le nom doit suivre le format des [locales discord.js](https://github.com/discordjs/discord-api-types/blob/main/rest/common.ts#L300). Par exemple, `ChineseCN` pour le chinois (Chine) et `ChineseTW` pour le chinois (Taïwan).
+The name must follow the format of [discord.js locales](https://github.com/discordjs/discord-api-types/blob/main/rest/common.ts#L300). For example, `ChineseCN` for Chinese (China) and `ChineseTW` for Chinese (Taiwan).
 :::
 
-Ensuite, vous devez ajouter la langue dans le fichier [`i18next.ts`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/i18next.ts), comme suit :
+Next, you need to add the language to the [`i18next.ts`](https://github.com/Dicelette/discord-dicelette/blob/main/src/localizations/i18next.ts) file as follows:
 ```ts
-import NouvelleTraduction from "./locales/nouvelleTraduction.json";
+import NewTranslation from "./locales/newTranslation.json";
 
 export const resources = {
 	// ...
-	discordLocale: { // par ex. fr, en-US, etc.
-		translation: NouvelleTraduction,
+	discordLocale: { // e.g. fr, en-US, etc.
+		translation: NewTranslation,
 	},
 };
 ```

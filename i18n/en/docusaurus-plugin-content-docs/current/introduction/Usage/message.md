@@ -1,15 +1,15 @@
 ---
-title: Envoi de message
+title: Sending message
 ---
-Le bot détectera la notation des dés et enverra le résultat.
+The bot will detect dice notation and send the result.
 
-La notation des dés peut être effectuée de deux manières :
+Dice notation can be done in two ways:
 
-- De manière directe, telle que `1d20` : Dans ce cas, le message "commande" sera supprimé et le résultat sera envoyé dans le même canal (et dans le log).
+- Directly, such as `1d20`: In this case, the "command" message will be deleted, and the result will be sent in the same channel (and logged).
 ![Direct](/assets/rolls/direct.gif)
 
-- De manière indirecte, entre crochets, comme dans : `mon contenu de message [1d20]`. Dans ce cas, le message sera conservé, et le contenu des crochets sera lancé. Vous recevrez une réponse avec le résultat et le log sera envoyé dans le fil. Les logs contiendront un lien vers le message d'origine.
-![Indirecte](/assets/rolls/indirect.gif)
+- Indirectly, within brackets, like this: `my message content [1d20]`. In this case, the message will be kept, and the content within the brackets will be rolled. You'll receive a response with the result, and the log will be sent to the thread. Logs will contain a link to the original message.
+![Indirect](/assets/rolls/indirect.gif)
 
-- De manière semi-directe, comme `1d20 Mon message` : Aura le même comportement que la méthode directe. Le dé trouvé initialement sera lancé, et le reste du message sera envoyé dans le log et considéré comme un commentaire.
-![Semi-directe](/assets/rolls/semi-direct.gif)
+- Semi-directly, like `1d20 My message`: Will behave the same as the direct method. The initially found die will be rolled, and the rest of the message will be sent to the log and considered a comment.
+![Semi-Direct](/assets/rolls/semi-direct.gif)

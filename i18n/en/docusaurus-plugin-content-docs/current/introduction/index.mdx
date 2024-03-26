@@ -3,25 +3,25 @@ title: Introduction
 sidebar_position: 1
 ---
 
-<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> [Invitez le bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
+<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> [Invite the bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
 
-Ce bot permet de lancer des dés et d'envoyer le résultat dans un fil de discussion. De plus, il offre la possibilité d'enregistrer un modèle de statistique pour effectuer des lancers directement, évitant ainsi de répéter les mêmes actions à chaque fois.
+This bot allows rolling dice and sending the result in a thread. Additionally, it offers the ability to save a statistic template to perform rolls directly, thus avoiding repeating the same actions every time.
 
-<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> Il utilise l'API [@diceRoller](https://dice-roller.github.io/documentation/) pour effectuer les lancers de dés. Il prend également en charge la notation rollem `4#(dés)` pour les lancers "en masse" (bulk roll).
+<FontAwesomeIcon icon="fa-solid fa-arrow-right" /> It uses the [@diceRoller API](https://dice-roller.github.io/documentation/) to perform dice rolls. It also supports the rollem notation `4#(dice)` for "bulk rolls".
 
-Pour les statistiques, au lieu de sauvegarder l'intégralité de la feuille, le bot enregistre le message et son identifiant. Ainsi, vous conservez un contrôle total sur vos données, puisque le bot n'a pas connaissance du contenu du message.
+For statistics, instead of saving the entire sheet, the bot saves the message and its identifier. Thus, you retain full control over your data, as the bot does not have knowledge of the message content.
 
-Le bot utilise une base de données pour stocker l'identifiant du message, l'identifiant du canal, le nom de la statistique et les noms des personnages des utilisateurs. Cette base de données est un simple fichier JSON et sera nettoyée dans les cas suivants :
-- Suppression du message statistique de référence.
-- Suppression du canal enregistré pour le modèle (les identifiants de référence des utilisateurs ne sont pas affectés).
-- Suppression du message enregistré pour le modèle.
-- Suppression du thread contenant les données utilisateurs.
-- Expulsion du bot du serveur.
+The bot uses a database to store the message ID, channel ID, statistic name, and user character names. This database is a simple JSON file and will be cleaned in the following cases:
+- Deletion of the reference statistic message.
+- Deletion of the registered channel for the template (user reference IDs are not affected).
+- Deletion of the message saved for the template.
+- Deletion of the thread containing user data.
+- Bot expulsion from the server.
 
-La base de données est utilisée uniquement si vous configurez un modèle de serveur avec `/register` ou les logs d'erreur avec `/logs`.
+The database is only used if you configure a server template with `/register` or error logs with `/logs`.
 
 :::note
-Si nécessaire, vous pouvez me contacter pour demander la suppression de vos données. Il suffit de me fournir votre identifiant Discord (le long numéro) ou l'ID de votre serveur. Pour me contacter en privé :
-- Discord : `@mara__li`
-- E-mail : `lisandra_dev@yahoo.com`
+If necessary, you can contact me to request the deletion of your data. Just provide me with your Discord ID (the long number) or your server ID. To contact me privately:
+- Discord: `@mara__li`
+- Email: `lisandra_dev@yahoo.com`
 :::
