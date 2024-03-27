@@ -119,11 +119,11 @@ const StatisticalTemplateForm: React.FC = () => {
 															<Field name={`statistics[${statIndex}].name`} />
 														</td>
 														<td>
-															<Field name={`statistics[${statIndex}].min`} 
+															<Field name={`statistics[${statIndex}].min`}
 																disabled={values.statistics[statIndex].combinaison}/>
 														</td>
 														<td>
-															<Field name={`statistics[${statIndex}].max`} 
+															<Field name={`statistics[${statIndex}].max`}
 																disabled={values.statistics[statIndex].combinaison}
 															/>
 														</td>
@@ -224,7 +224,7 @@ const StatisticalTemplateForm: React.FC = () => {
 						</div>
 
 						<button type="submit" disabled={isSubmitting}>
-              Submit
+							Submit
 						</button>
 					</Form>
 				)}
