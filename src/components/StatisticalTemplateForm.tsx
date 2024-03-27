@@ -1,18 +1,7 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage, FieldArray } from "formik";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Yup from "yup";
-
-interface Statistic {
-  name?: string;
-  min?: number;
-  max?: number;
-  combinaison?: string;
-}
-
-interface Damage {
-  name?: string;
-  value?: string;
-}
 
 const StatisticalTemplateForm: React.FC = () => {
   const downloadJSON = (data: any) => {
@@ -31,7 +20,6 @@ const StatisticalTemplateForm: React.FC = () => {
 
   return (
     <div>
-      <h1>Statistical Template Form</h1>
       <Formik
         initialValues={{
           charName: false,
@@ -72,15 +60,15 @@ const StatisticalTemplateForm: React.FC = () => {
       >
         {({ isSubmitting, values }) => (
           <Form>
-            <h2>Statistics</h2>
+            <h2>Statistiques</h2>
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Min</th>
-                  <th>Max</th>
-                  <th>Combinaison</th>
-                  <th>Actions</th>
+                  <th>Nom</th>
+                  <th>Valeur minimale</th>
+                  <th>Valeur maximale</th>
+                  <th>Ou Combinaison</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -108,7 +96,12 @@ const StatisticalTemplateForm: React.FC = () => {
                               type="button"
                               onClick={() => removeStat(statIndex)}
                             >
-                              Remove
+                              <FontAwesomeIcon
+                                icon="trash"
+                                fill="true"
+                                height="100"
+                                width="100"
+                              />
                             </button>
                           </td>
                         </tr>
@@ -116,7 +109,12 @@ const StatisticalTemplateForm: React.FC = () => {
                       <tr>
                         <td colSpan={5}>
                           <button type="button" onClick={() => pushStat({})}>
-                            Add Statistics
+                            <FontAwesomeIcon
+                              icon="plus"
+                              fill="true"
+                              height="100"
+                              width="100"
+                            />
                           </button>
                         </td>
                       </tr>
@@ -126,13 +124,13 @@ const StatisticalTemplateForm: React.FC = () => {
               </tbody>
             </table>
 
-            <h2>Damage</h2>
+            <h2>Dés types (facultatif)</h2>
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Value</th>
-                  <th>Actions</th>
+                  <th>Nom</th>
+                  <th>Dés</th>
+                  <th> </th>
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +150,12 @@ const StatisticalTemplateForm: React.FC = () => {
                               type="button"
                               onClick={() => removeDamage(damageIndex)}
                             >
-                              Remove
+                              <FontAwesomeIcon
+                                icon="trash"
+                                fill="true"
+                                height="100"
+                                width="100"
+                              />
                             </button>
                           </td>
                         </tr>
@@ -160,7 +163,12 @@ const StatisticalTemplateForm: React.FC = () => {
                       <tr>
                         <td colSpan={3}>
                           <button type="button" onClick={() => pushDamage({})}>
-                            Add Damage
+                            <FontAwesomeIcon
+                              icon="plus"
+                              fill="true"
+                              height="100"
+                              width="100"
+                            />
                           </button>
                         </td>
                       </tr>
@@ -171,24 +179,25 @@ const StatisticalTemplateForm: React.FC = () => {
             </table>
 
             <div>
-              <label htmlFor="total">Total</label>
+              <label htmlFor="total">Total (facultatif) : </label>
               <Field name="total" type="number" />
               <ErrorMessage name="total" />
             </div>
 
             <div>
-              <label htmlFor="diceType">Dice Type</label>
+              <label htmlFor="diceType">Dé majeur (facultatif) : </label>
               <Field name="diceType" type="text" />
               <ErrorMessage name="diceType" />
             </div>
-
+            <br />
+            <h3> Valeur critique </h3>
             <div>
-              <label htmlFor="critical.success">Critical Success</label>
+              <label htmlFor="critical.success">Succès : </label>
               <Field name="critical.success" type="number" />
               <ErrorMessage name="critical.success" />
             </div>
             <div>
-              <label htmlFor="critical.failure">Critical Failure</label>
+              <label htmlFor="critical.failure">Échec : </label>
               <Field name="critical.failure" type="number" />
               <ErrorMessage name="critical.failure" />
             </div>
