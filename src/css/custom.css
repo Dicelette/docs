@@ -26,3 +26,39 @@
   --ifm-color-primary-lighter: #cd94ee;
   --ifm-color-primary-lightest: #e1c0f5;
 }
+
+.dice-skill table td,
+.dice-skill table th,
+.statistic table td,
+.statistic table th {
+  border: none;
+}
+
+.dice-skill button,
+.statistic button {
+  background-color: transparent;
+  border: none;
+}
+
+.dice-skill button:hover,
+.statistic button:hover {
+  background-color: rgba(255, 255, 255, 0.152);
+  border-radius: 5px;
+}
+
+button.submit {
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+button.submit:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
