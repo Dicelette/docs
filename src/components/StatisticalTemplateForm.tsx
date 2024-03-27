@@ -65,6 +65,11 @@ const StatisticalTemplateForm: React.FC = () => {
 							<div className="diceTotal">
 								<h2> Général </h2>
 								<div>
+									<label htmlFor="charName">Rendre le nom du personnage obligatoire </label>
+									<Field name="charName" type="checkbox" />
+									<ErrorMessage name="charName" />
+								</div>
+								<div>
 									<label htmlFor="total">Total (facultatif) : </label>
 									<Field name="total" type="number" />
 									<ErrorMessage name="total" />
