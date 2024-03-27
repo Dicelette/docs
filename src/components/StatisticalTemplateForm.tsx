@@ -31,11 +31,11 @@ const StatisticalTemplateForm: React.FC = () => {
 					damage: [],
 				}}
 				validationSchema={Yup.object({
-					total: Yup.number().min(0).required("Required"),
-					diceType: Yup.string().required("Required"),
+					total: Yup.number().min(0),
+					diceType: Yup.string(),
 					critical: Yup.object().shape({
-						success: Yup.number().required("Required"),
-						failure: Yup.number().required("Required"),
+						success: Yup.number(),
+						failure: Yup.number(),
 					}),
 					statistics: Yup.array().of(
 						Yup.object().shape({
