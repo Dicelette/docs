@@ -3,10 +3,78 @@ import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 
+interface Template {
+	charName: boolean;
+	statistics?: {
+		[name: string]: {
+			min: number;
+			max: number;
+			combinaison: string;
+		};
+	};
+	total: number;
+	diceType: string;
+	critical: {
+		success: number;
+		failure: number;
+	};
+	damage?: {
+		[name: string]: string;
+	};
+}
+
+interface TemplateForm {
+	charName: boolean;
+	statistics: {
+		name: string;
+		min: number;
+		max: number;
+		combinaison: string;
+	}[];
+	total: number;
+	diceType: string;
+	critical: {
+		success: number;
+		failure: number;
+	};
+	damage: {
+		name: string;
+		value: string;
+	}[];
+}
+
 const StatisticalTemplateForm: React.FC = () => {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const downloadJSON = (data: any) => {
-		const blob = new Blob([JSON.stringify(data, null, 2)], {
+	const downloadJSON = (data: TemplateForm) => {
+		const parseStats = (stats: { name: string; min: number; max: number; combinaison: string }[]) => {
+			const parsedStats: { [name: string]: { min: number; max: number; combinaison: string } } = {};
+			stats.forEach(stat => {
+				parsedStats[stat.name] = {
+					min: stat.min,
+					max: stat.max,
+					combinaison: stat.combinaison,
+				};
+			});
+			return parsedStats;
+		};
+		const parseDamage = (damage: { name: string; value: string }[]) => {
+			const parsedDamage: { [name: string]: string } = {};
+			damage.forEach(dmg => {
+				parsedDamage[dmg.name] = dmg.value;
+			});
+			return parsedDamage;
+		};
+		const template: Template =
+			{
+				charName: data.charName,
+				statistics: parseStats(data.statistics),
+				total: data.total,
+				diceType: data.diceType,
+				critical: data.critical,
+				damage: parseDamage(data.damage),
+			};
+
+		const blob = new Blob([JSON.stringify(template, null, 2)], {
 			type: "application/json",
 		});
 		const url = URL.createObjectURL(blob);
@@ -19,6 +87,13 @@ const StatisticalTemplateForm: React.FC = () => {
 		URL.revokeObjectURL(url);
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const uniqueNames = (stats: any[]) => {
+		const names = stats.map(stat => stat.name);
+		const unique = new Set(names);
+
+		return names.length === unique.size;
+	};
 	return (
 		<div>
 			<Formik
@@ -44,7 +119,7 @@ const StatisticalTemplateForm: React.FC = () => {
 							max: Yup.number(),
 							combinaison: Yup.string(),
 						})
-					),
+					).test("unique-names", "Les noms des statistiques doivent être uniques", uniqueNames),
 					damage: Yup.array().of(
 						Yup.object().shape({
 							name: Yup.string().required("Required"),
@@ -116,7 +191,8 @@ const StatisticalTemplateForm: React.FC = () => {
 												{values.statistics.map((_, statIndex) => (
 													<tr key={statIndex}>
 														<td>
-															<Field name={`statistics[${statIndex}].name`} />
+															<Field name={`statistics[${statIndex}].name`}/>
+															<ErrorMessage name={`statistics[${statIndex}].name`}/>
 														</td>
 														<td>
 															<Field name={`statistics[${statIndex}].min`}
@@ -131,6 +207,9 @@ const StatisticalTemplateForm: React.FC = () => {
 															<Field
 																name={`statistics[${statIndex}].combinaison`}
 																disabled={values.statistics[statIndex].min || values.statistics[statIndex].max}
+																aria-invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
+																aria-label={`Combinaison de ${values.statistics[statIndex].name}`}
+																invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
 															/>
 														</td>
 														<td>
@@ -223,8 +302,8 @@ const StatisticalTemplateForm: React.FC = () => {
 							</table>
 						</div>
 
-						<button type="submit" disabled={isSubmitting}>
-							Submit
+						<button type="submit" disabled={isSubmitting} className="submit">
+							Télécharger le JSON
 						</button>
 					</Form>
 				)}
