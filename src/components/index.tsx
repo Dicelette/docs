@@ -48,17 +48,13 @@ function Feature({ title, Image, description }: Readonly<FeatureItem>) {
 
 export default function HomepageFeatures(): JSX.Element {
 	return (
-		<section>
-			<div className="container">
-				<div className="row">
-					{FeatureList.map((props) => (
-						<Feature
-							key={props.title}
-							{...props}
-						/>
-					))}
-				</div>
-			</div>
-		</section>
+		<>
+			{FeatureList.map((props) => (
+				<Feature
+					key={props.title}
+					{...props}
+				/>
+			))}
+		</>
 	);
 }

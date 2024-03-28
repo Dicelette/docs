@@ -22,10 +22,10 @@ type Statistics = {
 type Template = {
     charName: boolean;
     characters?: Character[];
-    total: number;
-    diceType: string;
     critical: Critical;
     damages?: Damage[];
+    diceType: string;
+    total: number;
   }
 
 export { Character, Critical, Damage, Statistics, Template };

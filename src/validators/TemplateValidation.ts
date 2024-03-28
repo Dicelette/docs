@@ -1,6 +1,6 @@
-import * as Yup from "yup";
+import { array, boolean, number, object, string } from "yup";
 
-import { Character } from "../types/Template";
+import { Character, Critical, Damage, Statistics } from "../types/Template";
 
 const uniqueNames = (characters: Character[]) => {
 	const names = characters.map((stat) => stat.name);
@@ -9,29 +9,26 @@ const uniqueNames = (characters: Character[]) => {
 	return names.length === unique.size;
 };
 
-const templateValidator = Yup.object({
-	total: Yup.number().min(0),
-	diceType: Yup.string(),
-	critical: Yup.object().shape({
-		success: Yup.number(),
-		failure: Yup.number(),
+export const templateValidator = object({
+	charName: boolean().required(),
+	characters: array<Character>().of(object<Character>({
+		name: string().defined().required("Required"),
+		statistics: object<Statistics>({
+			min: number().required(),
+			max: number().required(),
+			combinaison: string().required(),
+		})
+	})).test("unique-names", "Les noms des statistiques doivent être uniques", uniqueNames),
+	critical: object<Critical>().shape({
+		success: number().required(),
+		failure: number().required(),
 	}),
-	statistics: Yup.array()
-		.of(
-			Yup.object().shape({
-				name: Yup.string().required("Required"),
-				min: Yup.number(),
-				max: Yup.number(),
-				combinaison: Yup.string(),
-			})
-		)
-		.test("unique-names", "Les noms des statistiques doivent être uniques", uniqueNames),
-	damage: Yup.array().of(
-		Yup.object().shape({
-			name: Yup.string().required("Required"),
-			value: Yup.string().required("Required"),
+	damages: array<Damage>().of(
+		object<Damage>({
+			name: string().required("Required"),
+			value: string().required("Required"),
 		})
 	),
+	diceType: string().required(),
+	total: number().min(0).required(),
 });
-
-export default templateValidator;

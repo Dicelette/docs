@@ -4,11 +4,11 @@ import { FC } from "react";
 
 import emptyForm from "../types/EmptyForm";
 import { Template } from "../types/Template";
-import templateValidator from "../validators/TemplateValidation";
-import CriticalValue from "./HomepageFeatures/CriticalValue";
-import Dices from "./HomepageFeatures/Dices";
-import General from "./HomepageFeatures/General";
-import Statistics from "./HomepageFeatures/Statistics";
+import {templateValidator} from "../validators/TemplateValidation";
+import CriticalValue from "./Blocks/CriticalValue";
+import Dices from "./Blocks/Dices";
+import General from "./Blocks/General";
+import Statistics from "./Blocks/Statistics";
 
 const TemplateForm: FC = () => {
 	const downloadJSON = (data: Template) => {
