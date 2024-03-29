@@ -8,7 +8,7 @@ type DicesProps = {
 }
 
 const Dices : FC<DicesProps> = () =>
-	<Section label="Dés types (facultatif)" hasAddButton>
+	<Section label="Dés types (facultatif)">
 		<Grid headers={["Nom", "Dés"]} />
 	</Section>;
 

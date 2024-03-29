@@ -4,15 +4,14 @@ import { AddButton } from ".";
 
 type SectionProps = {
     children: React.ReactNode;
-    hasAddButton?: boolean;
     label: string;
     onAdd?: () => void;
 }
 
-const Section: FC<SectionProps> = ({ children, hasAddButton, label, onAdd }) => 
+const Section: FC<SectionProps> = ({ children, label, onAdd }) => 
 	<section className="flex flex-col">
 		<span className="text-lg font-bold mb-2">{label}
-			{hasAddButton && <AddButton onClick={onAdd} />}
+			{onAdd && <AddButton onClick={onAdd} />}
 		</span>
 		{children}
 	</section>;

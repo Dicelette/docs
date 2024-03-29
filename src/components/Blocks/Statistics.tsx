@@ -32,7 +32,7 @@ const Statistics : FC<StatisticsProps> = ({statistics}) => {
 
 	return (
 		<>
-			<Section label="Statistiques" hasAddButton onAdd={handleAdd}>
+			<Section label="Statistiques" onAdd={handleAdd}>
 				<Grid 
 					headers={["Nom", "Valeur minimale", "Valeur maximale", "Ou Combinaison", ""]} 
 					data={internalValue} 
