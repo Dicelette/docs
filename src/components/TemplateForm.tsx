@@ -4,7 +4,6 @@ import { FC } from "react";
 
 import emptyForm from "../types/EmptyForm";
 import { Template } from "../types/Template";
-import {templateValidator} from "../validators/TemplateValidation";
 import CriticalValue from "./Blocks/CriticalValue";
 import Dices from "./Blocks/Dices";
 import General from "./Blocks/General";
@@ -35,13 +34,12 @@ const TemplateForm: FC = () => {
 	return (
 		<Formik
 			initialValues={emptyForm}
-			validationSchema={templateValidator}
 			onSubmit={handleSubmit}>
 			{({ isSubmitting, values }) => (
 				<Form>
 					<General />
 					<CriticalValue />
-					<Statistics characters={values.characters ?? []} />
+					<Statistics statistics={values.characters ?? []} />
 					<Dices dices={values.damages ?? []}	/>
 					<Button
 						type="submit"

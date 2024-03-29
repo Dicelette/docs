@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import Translate, { translate } from '@docusaurus/Translate'
-import Heading from '@theme/Heading'
-import clsx from 'clsx'
+import Translate, { translate } from "@docusaurus/Translate";
+import Heading from "@theme/Heading";
 
 type FeatureItem = {
 	title: string
@@ -12,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
 	{
 		title: translate({ message: "Facile d'utilisation" }),
-		Image: require('@site/static/img/easy.png').default,
+		Image: require("@site/static/img/easy.png").default,
 		description: (
 			<Translate>
 				Un simple bot discord qui ne nécessite pas de configuration pour
@@ -22,8 +21,8 @@ const FeatureList: FeatureItem[] = [
 		),
 	},
 	{
-		title: translate({ message: 'Fiche de personnage' }),
-		Image: require('@site/static/img/character.png').default,
+		title: translate({ message: "Fiche de personnage" }),
+		Image: require("@site/static/img/character.png").default,
 		description: (
 			<Translate>
 				Le bot permet aussi de configurer un modèle, des fiches de personnages
@@ -33,8 +32,8 @@ const FeatureList: FeatureItem[] = [
 		),
 	},
 	{
-		title: translate({ message: 'Universel' }),
-		Image: require('@site/static/img/theme-park.png').default,
+		title: translate({ message: "Universel" }),
+		Image: require("@site/static/img/theme-park.png").default,
 		description: (
 			<Translate>
 				Le modèle est adaptable à l'infini, ce qui vous permet de configurer vos
@@ -42,7 +41,7 @@ const FeatureList: FeatureItem[] = [
 			</Translate>
 		),
 	},
-]
+];
 
 function Feature({ title, Image, description }: Readonly<FeatureItem>) {
 	return (
@@ -50,7 +49,7 @@ function Feature({ title, Image, description }: Readonly<FeatureItem>) {
 			<img
 				src={Image}
 				alt={title}
-				width={'100'}
+				width={"100"}
 				height={100}
 			/>
 			<div className="space-y-2">
@@ -60,10 +59,10 @@ function Feature({ title, Image, description }: Readonly<FeatureItem>) {
 				>
 					{title}
 				</Heading>
-				<p className="max-w-96">{description}</p>
+				<p className="max-w-96 text-center">{description}</p>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default function HomepageFeatures(): JSX.Element {
@@ -76,5 +75,5 @@ export default function HomepageFeatures(): JSX.Element {
 				/>
 			))}
 		</div>
-	)
+	);
 }

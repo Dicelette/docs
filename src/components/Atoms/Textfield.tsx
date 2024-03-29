@@ -1,43 +1,37 @@
-import { TextField } from '@mui/material'
-import { Field, FieldProps } from 'formik'
-import { FC, HTMLInputTypeAttribute } from 'react'
+import { TextField, TextFieldProps } from "@mui/material";
+import { Field, FieldProps } from "formik";
+import { FC, HTMLInputTypeAttribute } from "react";
 
-type TextfieldProps = {
+type TextfieldProps = TextFieldProps & {
 	autofocus?: boolean
 	className?: string
-	label: string
 	name: string
 	type?: HTMLInputTypeAttribute
 }
 
-const Textfield: FC<TextfieldProps> = ({
-	autofocus,
-	className,
-	label,
-	name,
-	type = 'text',
-}) => {
+const Textfield: FC<TextfieldProps> = (props) => {
 	return (
-		<Field name={name}>
+		<Field name={props.name}>
 			{({ field, form: { errors } }: FieldProps<number>) => {
 				return (
 					<TextField
+						{...props}
 						value={field.value}
-						onChange={field.onChange}
+						onChange={props.onChange ?? field.onChange}
 						onBlur={field.onBlur}
-						autoFocus={autofocus}
-						className={`!mb-4 w-[400px] ${className}`}
+						autoFocus={props.autofocus}
+						className={`!mb-4 w-[400px] ${props.className}`}
 						error={errors[field.name] !== undefined}
-						label={label}
+						label={props.label}
 						size="small"
 						name={field.name}
-						type={type}
-						typeof={type}
+						type={props.type}
+						typeof={props.type}
 					/>
-				)
+				);
 			}}
 		</Field>
-	)
-}
+	);
+};
 
-export default Textfield
+export default Textfield;

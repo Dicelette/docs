@@ -1,9 +1,9 @@
-type Character = {
+type Statistic = {
     name: string;
-    statistics: Statistics;
+    values: StatisticValues;
 }
 
-type Statistics = {
+type StatisticValues = {
     min: number;
     max: number;
     combinaison: string;
@@ -20,12 +20,12 @@ type Statistics = {
   }
 
 type Template = {
-    charName: boolean;
-    characters?: Character[];
+    isCharNameRequired: boolean;
+    statistics?: Statistic[];
     critical: Critical;
     damages?: Damage[];
     diceType: string;
     total: number;
   }
 
-export { Character, Critical, Damage, Statistics, Template };
+export { Critical, Damage, Statistic, StatisticValues, Template };

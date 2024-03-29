@@ -1,6 +1,6 @@
-import { Checkbox, FormControlLabel } from '@mui/material'
-import { Field, FieldProps } from 'formik'
-import { FC } from 'react'
+import { Checkbox, FormControlLabel } from "@mui/material";
+import { Field, FieldProps } from "formik";
+import { FC } from "react";
 
 type CheckboxProps = {
 	className?: string
@@ -27,10 +27,10 @@ const CheckBox: FC<CheckboxProps> = ({ className, label, name }) => {
 						labelPlacement="start"
 						label={label}
 					/>
-				)
+				);
 			}}
 		</Field>
-	)
-}
+	);
+};
 
-export default CheckBox
+export default CheckBox;

@@ -1,33 +1,50 @@
-import { Character } from "@site/src/types/Template";
+import { Statistic } from "@site/src/types/Template";
 import { FC, useState } from "react";
 
-import { Grid, Modal, Section, Textfield } from "../Atoms";
+import { Grid, Section } from "../Atoms";
+import StatisticModal from "../Modals/StatisticModal";
 
 type StatisticsProps = {
-    characters: Character[];
+    statistics: Statistic[];
 }
 
-const Statistics : FC<StatisticsProps> = () => {
+const defaultValue: Statistic = {name: "", values: { min: 0, max: 0, combinaison: ""}};
+
+const Statistics : FC<StatisticsProps> = ({statistics}) => {
 	const [showDialog, setShowDialog] = useState(false);
+	const [editedValue, setEditedValue] = useState<Statistic>(defaultValue);
+	const [internalValue, setInternalValue] = useState<Statistic[]>(statistics ?? []);
+
+	const handleAdd= () => {
+		setEditedValue({...defaultValue});
+		setShowDialog(true);
+	};
+	
+	const handleEdit= (data) => {
+		setEditedValue({...data});
+		setShowDialog(true);
+	};
+
+	const handleSave = (value: Statistic) => {
+		setInternalValue([ ...statistics, value ]);
+		setShowDialog(false);
+	};
 
 	return (
 		<>
-			<Section label="Statistiques" hasAddButton onAdd={() => setShowDialog(true)}>
-				<Grid headers={["Nom", "Valeur minimale", "Valeur maximale", "Ou Combinaison"]} />
+			<Section label="Statistiques" hasAddButton onAdd={handleAdd}>
+				<Grid 
+					headers={["Nom", "Valeur minimale", "Valeur maximale", "Ou Combinaison", ""]} 
+					data={internalValue} 
+					onEdit={handleEdit}
+				/>
 			</Section>
 			{showDialog && 
-			<Modal 
-				title="Ajouter une statistique" 
-				onCancel={() => setShowDialog(false)}
-			>
-				<div className="flex flex-col pt-2">
-					<Textfield autofocus label="Nom" name="name" />
-					<Textfield label="Valeur minimale" name="min" type="number" />
-					<Textfield label="Valeur maximale" name="max" type="number" />
-					<Textfield label="Combinaison" name="combinaison" />
-				</div>
-			</Modal>
-			}
+			<StatisticModal 
+				value={editedValue} 
+				onCancel={() => setShowDialog(false)} 
+				onSave={handleSave}
+			/>}
 		</>
 	);
 };

@@ -7,10 +7,10 @@ const General: FC = () =>
 		<CheckBox 
 			className="self-start !ml-0 -mt-2" 
 			label="Rendre le nom du personnage obligatoire" 
-			name="name" 
+			name="isCharNameRequired" 
 		/>
-		<Textfield label="Total (facultatif)" name="diceType" />
-		<Textfield label="Dé majeur (facultatif)" name="total" />
+		<Textfield label="Total (facultatif)" name="total" />
+		<Textfield label="Dé majeur (facultatif)" name="diceType" />
 	</Section>;
 
 export default General;

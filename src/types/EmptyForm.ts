@@ -1,8 +1,11 @@
 import { Template } from "./Template";
 
 const emptyForm = ():Template => ({
-	charName: false,
-	characters: [],
+	isCharNameRequired: false,
+	statistics: [{
+		name: "Test",
+		values: { min: 0, max: 0, combinaison: "" },
+	}],
 	total: 0,
 	diceType: "",
 	critical: { success: 0, failure: 0 },
