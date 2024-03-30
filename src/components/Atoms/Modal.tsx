@@ -9,7 +9,7 @@ type ModalProps = {
 }
 
 const Modal: FC<ModalProps> = ({ children, onCancel, onOk, title }) => 
-	<Dialog open>
+	<Dialog open onClose={onCancel}>
 		<DialogTitle>{title}</DialogTitle>
 		<DialogContent>{children}</DialogContent>
 		<DialogActions>
