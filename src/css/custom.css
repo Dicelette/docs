@@ -85,14 +85,18 @@ button.submit:hover {
   background-color: var(--ifm-background-color) !important;
 }
 
-.css-1rwt2y5-MuiButtonBase-root-MuiButton-root,
+[data-theme="light"] .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  background-color: var(--lt-color-background-light) !important;
+}
+
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   background-color: var(--ifm-color-primary-darkest) !important;
 }
 
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover,
 .css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
-  background-color: var(--ifm-color-primary-darker) !important;
+  background-color: var(--ifm-color-primary-darkest) !important;
+  color: var(--ifm-color-secondary-dark) !important;
 }
 
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
@@ -105,6 +109,7 @@ button.submit:hover {
 }
 
 .css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
-  color: var(--ifm-color-primary-lightest) !important;
-  border-color: var(--ifm-color-primary-darkest) !important;
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  background-color: var(--lt-color-background) !important;
 }
