@@ -21,8 +21,6 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 		}
 	};
 
-
-
 	const validate = (): boolean => {
 		if(!internalValue.name || internalValue.name.trim() === "") {
 			setNameError(true);
@@ -32,7 +30,7 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 
 	return (
 		<Modal
-			title="Ajouter une statistique"
+			title="Ajouter un dé"
 			onCancel={onCancel}
 			onOk={handleSave}>
 			<Box className="flex flex-col pt-2" component='form' noValidate>
