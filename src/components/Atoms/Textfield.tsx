@@ -19,7 +19,7 @@ const Textfield: FC<TextfieldProps> = (props) => {
 						value={field.value}
 						onChange={props.onChange ?? field.onChange}
 						onBlur={field.onBlur}
-						autoFocus={props.autofocus}
+						autoFocus={props.autoFocus}
 						className={`!mb-4 w-[400px] ${props.className}`}
 						error={errors[field.name] !== undefined}
 						label={props.label}
