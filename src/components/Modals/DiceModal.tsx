@@ -51,9 +51,6 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 				/>
 				
 				<Textfield
-					
-					error={nameError}
-					helperText={nameError && "Champ requis"}
 					label="Valeur"
 					name="value"
 					value={internalValue.value}
