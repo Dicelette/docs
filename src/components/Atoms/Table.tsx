@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { FC } from "react";
@@ -7,9 +8,10 @@ type GridProps = {
     headers: string[];
 	data: any[];
 	onEdit: (data: any) => void;
+	onDelete: (data: any) => void;
 }
 
-const Grid : FC<GridProps> = ({ headers, data, onEdit }) => {
+const Grid : FC<GridProps> = ({ headers, data, onEdit, onDelete }) => {
 
 	const mapObject = (obj: any) => typeof obj === "object"
 		? Object.values(obj).map((v) => mapObject(v))
@@ -31,6 +33,9 @@ const Grid : FC<GridProps> = ({ headers, data, onEdit }) => {
 								<TableCell>
 									<Button size="small" onClick={onEdit}>
 										<EditIcon/>
+									</Button>
+									<Button size="small" onClick={onDelete}>
+										<DeleteIcon/>
 									</Button>
 								</TableCell>
 							</TableRow>

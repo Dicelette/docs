@@ -53,7 +53,7 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 					name="value"
 					value={internalValue.value}
 					onChange={(evt) => {
-						setInternalValue({ ...internalValue, name: evt.target.value }); 
+						setInternalValue({ ...internalValue, value: evt.target.value }); 
 						setNameError(false);
 					}}
 				/>

@@ -43,7 +43,13 @@ const Dices : FC<DicesProps> = ({dices}) => {
 				<Grid 
 					headers={["Nom", "Valeur"]} 
 					data={internalValue.map((v) => [v.name, v.value])}
+					onDelete={(index) => {
+						const newValues = [...internalValue];
+						newValues.splice(index, 1);
+						setInternalValue(newValues);
+					}}
 					onEdit={handleEdit}
+					
 				/>
 				
 			</Section>
