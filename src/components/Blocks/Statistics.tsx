@@ -38,6 +38,7 @@ const Statistics : FC<StatisticsProps> = ({statistics}) => {
 			newValues[index] = value;
 		}
 		setInternalValue(newValues);
+		
 	};
 
 	return (

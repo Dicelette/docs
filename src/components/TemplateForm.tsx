@@ -4,7 +4,6 @@ import { FC } from "react";
 
 import { Statistic, StatisticalTemplate } from "../@core/core/interface";
 import { verifyTemplateValue } from "../@core/core/verify_template";
-import emptyForm from "../types/EmptyForm";
 import { Template } from "../types/Template";
 import CriticalValue from "./Blocks/CriticalValue";
 import Dices from "./Blocks/Dices";
@@ -65,14 +64,21 @@ const TemplateForm: FC = () => {
 
 	return (
 		<Formik
-			initialValues={emptyForm}
+			initialValues={{
+				isCharNameRequired: false,
+				statistics: [],
+				total: 0,
+				diceType: "",
+				critical: { success: 1, failure: 1 },
+				damages: [],
+			}}
 			
 			onSubmit={handleSubmit}>
 			{({ isSubmitting, values }) => (
 				<Form>
 					<General />
 					<CriticalValue />
-					<Statistics statistics={values.characters ?? []} />
+					<Statistics statistics={values.statistics ?? []} />
 					<Dices dices={values.damages ?? []}	/>
 					<Button
 						type="submit"
