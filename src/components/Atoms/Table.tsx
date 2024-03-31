@@ -21,12 +21,12 @@ const Grid : FC<GridProps> = ({ headers, data, onEdit, onDelete }) => {
 		if (typeof row === "number") {
 			if (row > 0) {
 				return row;
-			} return null;
+			} return "/";
 		} else if (typeof row === "string") {
 			if (row.length > 0) return row;
-			return null;
+			return "/";
 		}
-		return null;
+		return "/";
 	};
 
 	return (
