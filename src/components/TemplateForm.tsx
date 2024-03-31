@@ -66,6 +66,7 @@ const TemplateForm: FC = () => {
 	return (
 		<Formik
 			initialValues={emptyForm}
+			
 			onSubmit={handleSubmit}>
 			{({ isSubmitting, values }) => (
 				<Form>
@@ -78,7 +79,7 @@ const TemplateForm: FC = () => {
 						disabled={isSubmitting}
 						variant="outlined"
 						size="medium"						
-					>Télécharger le JSON</Button>
+					>Télécharger le modèle</Button>
 				</Form>
 			)}
 		</Formik>

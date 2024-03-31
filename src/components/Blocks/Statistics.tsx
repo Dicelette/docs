@@ -45,8 +45,10 @@ const Statistics : FC<StatisticsProps> = ({statistics}) => {
 			<Section label="Statistiques" onAdd={handleAdd}>
 				<Grid 
 					headers={["Nom", "Combinaison", "Min", "Max"]} 
-					data={internalValue.map((v) => [v.name, v.values.combinaison ?? "//", v.values.min > 0 ? v.values.min : "/", v.values.max > 0 ? v.values.max : "/"])}
+					data={internalValue.map((v) => [v.name, v.values.combinaison, v.values.min, v.values.max])}
+					onDelete={(index) => setInternalValue(internalValue.filter((_, i) => i !== index))}
 					onEdit={handleEdit}
+					
 				/>
 				
 			</Section>

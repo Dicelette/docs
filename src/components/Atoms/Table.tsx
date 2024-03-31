@@ -15,7 +15,19 @@ const Grid : FC<GridProps> = ({ headers, data, onEdit, onDelete }) => {
 
 	const mapObject = (obj: any) => typeof obj === "object"
 		? Object.values(obj).map((v) => mapObject(v))
-		: [<TableCell key={String(obj)}>{String(obj)}</TableCell>];
+		: [<TableCell key={String(obj)}>{rowDisplay(obj)}</TableCell>];
+
+	const rowDisplay = (row: any) => {
+		if (typeof row === "number") {
+			if (row > 0) {
+				return row;
+			} return null;
+		} else if (typeof row === "string") {
+			if (row.length > 0) return row;
+			return null;
+		}
+		return null;
+	};
 
 	return (
 		<div className="mt-2">
