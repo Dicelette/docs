@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@mui/material";
 import { Form, Formik } from "formik";
 import { FC } from "react";
 
 import { Statistic, StatisticalTemplate } from "../@core/core/interface";
 import { verifyTemplateValue } from "../@core/core/verify_template";
-import { Template } from "../types/Template";
 import CriticalValue from "./Blocks/CriticalValue";
 import Dices from "./Blocks/Dices";
 import General from "./Blocks/General";
@@ -12,33 +12,35 @@ import Statistics from "./Blocks/Statistics";
 import { errorCode } from "./errorsTranslation";
 
 const TemplateForm: FC = () => {
-	const downloadJSON = (data: Template) => {
+	const downloadJSON = (data: any) => {
 		//convert statistic to Statistic interface
-		const stat: Statistic = {};
-		console.log(data);
+		let stat: Statistic|undefined = {};
+		let diceSkill: { [key: string]: string }|undefined = {};
 		for (const statistic of data.statistics) {
 			stat[statistic.name] = {
-				combinaison: statistic.values.combinaison,
-				max: statistic.values.max,
-				min: statistic.values.min,
+				combinaison: statistic.combinaison,
+				max: statistic.max,
+				min: statistic.min,
 			};
 		}
-		const diceSkill: {[name: string]: string} = {};
-		for (const dice of data.damages) {
-			diceSkill[dice.name] = dice.value;
+		for (const damage of data.damages) {
+			diceSkill[damage.name] = damage.value;
 		}
+		if (Object.keys(stat).length === 0) stat = undefined;
+		if (Object.keys(diceSkill).length === 0) diceSkill = undefined;
 		const templateDataValues: StatisticalTemplate = {
 			charName: data.isCharNameRequired,
 			critical: data.critical,
 			diceType: data.diceType,
 			total: data.total,
 			statistics: stat,
-			damage: diceSkill
+			damage: diceSkill,
 		};
-		console.log(templateDataValues);
+		
+		
 		try {
-			verifyTemplateValue(templateDataValues);
-			const blob = new Blob([JSON.stringify(templateDataValues, null, 2)], {
+			const template = verifyTemplateValue(templateDataValues);
+			const blob = new Blob([JSON.stringify(template, null, 2)], {
 				type: "application/json",
 			});
 			const url = URL.createObjectURL(blob);
@@ -62,6 +64,8 @@ const TemplateForm: FC = () => {
 		}, 400);
 	};
 
+	
+
 	return (
 		<Formik
 			initialValues={{
@@ -78,8 +82,8 @@ const TemplateForm: FC = () => {
 				<Form>
 					<General />
 					<CriticalValue />
-					<Statistics statistics={values.statistics ?? []} />
-					<Dices dices={values.damages ?? []}	/>
+					<Statistics values={values} />
+					<Dices values={values}	/>
 					<Button
 						type="submit"
 						disabled={isSubmitting}

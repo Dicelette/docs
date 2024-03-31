@@ -38,18 +38,6 @@
   border: none;
 }
 
-.dice-skill button,
-.statistic button {
-  background-color: transparent;
-  border: none;
-}
-
-.dice-skill button:hover,
-.statistic button:hover {
-  background-color: rgba(255, 255, 255, 0.152);
-  border-radius: 5px;
-}
-
 button.submit {
   background-color: var(--ifm-color-primary-darkest);
   color: white;
@@ -93,8 +81,8 @@ button.submit:hover {
   background-color: var(--ifm-color-primary-darkest) !important;
 }
 
-.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:hover,
-.css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:not(.simple-button):hover,
+.css-sghohy-MuiButtonBase-root-MuiButton-root:not(.simple-button):hover {
   background-color: var(--ifm-color-primary-darkest) !important;
   color: var(--ifm-color-secondary-dark) !important;
 }
@@ -108,7 +96,11 @@ button.submit:hover {
   color: var(--ifm-color-primary-darker) !important;
 }
 
-.css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+.simple-button {
+  border: none !important;
+}
+
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:not(.simple-button) {
   color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
   background-color: var(--lt-color-background) !important;

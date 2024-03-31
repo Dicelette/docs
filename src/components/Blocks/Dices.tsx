@@ -1,67 +1,49 @@
-import { Damage } from "@site/src/types/Template";
-import { FC, useState } from "react";
 
-import { Grid, Section } from "../Atoms";
-import DiceModal from "../Modals/DiceModal";
+import { ErrorMessage, Field, FieldArray } from "formik";
 
-type DicesProps = {
-    dices: Damage[];
-}
+import { Section } from "../Atoms";
+import CopyButton from "../Atoms/copyButton";
+import RemoveButton from "../Atoms/removeButton";
 
 
-const Dices : FC<DicesProps> = ({dices}) => {
-	const [showDialog, setShowDialog] = useState(false);
-	const [editedValue, setEditedValue] = useState<Damage>({name: "", value: ""});
-	const [internalValue, setInternalValue] = useState<Damage[]>(dices ?? []);
 
-	const handleAdd= () => {
-		setEditedValue({name: "", value: ""});
-		setShowDialog(true);
-	};
-
-	const handleEdit= (data) => {
-		setEditedValue({...data});
-		setShowDialog(true);
-	};
-
-	const handleSave = (value: Damage) => {
-		setShowDialog(false);
-		const newValues = [...internalValue];
-		const index = newValues.findIndex((v) => v.name === value.name);
-		if(index === -1){
-			newValues.push(value);
-		}
-		else{
-			newValues[index] = value;
-		}
-		setInternalValue(newValues);
-	};
-
+const Dices = ({values}) => {
 	return (
-		<>
-			<Section label="Dégâts" onAdd={handleAdd}>
-				<Grid 
-					headers={["Nom", "Valeur"]} 
-					data={internalValue.map((v) => [v.name, v.value])}
-					onDelete={(index) => {
-						const newValues = [...internalValue];
-						newValues.splice(index, 1);
-						setInternalValue(newValues);
-					}}
-					onEdit={handleEdit}
-					
-				/>
-				
-			</Section>
-			{showDialog && 
-			<DiceModal 
-				value={editedValue} 
-				onCancel={() => setShowDialog(false)} 
-				onSave={handleSave}
-			/>}
-		</>
+		<div className="statistic">
+			<FieldArray name="damages">
+				{({ push, remove }) => (
+					<div>
+						<Section label="Dés" onAdd={() => push({ name: "", value: "" })} children={""} />
+						<table>
+							<tr>
+								<th>Nom</th>
+								<th>Valeur</th>
+								<th colSpan={2}></th>
+							</tr>
+							{values.damages.map((_, index) => (
+								<tr key={index}>
+									<td>
+										<Field name={`damages[${index}].name`}/>
+										<ErrorMessage name={`damages[${index}].name`}/>
+									</td>
+									<td>
+										<Field name={`damages[${index}].value`}/>
+									</td>
+									
+									
+									<td colSpan={2}>
+										<RemoveButton onClick={() => remove(index)}/>
+										<CopyButton onClick={() => {push(values.damages[index]);}}/>
+									</td>
+								</tr>
+							))}
+						</table>
+					</div>
+				)}
+			</FieldArray>
+						
+		</div>
 	);
-
 };
-	
+
 export default Dices;

@@ -1,65 +1,63 @@
-import { Statistic } from "@site/src/types/Template";
-import { FC, useState } from "react";
 
-import { Grid, Section } from "../Atoms";
-import StatisticModal from "../Modals/StatisticModal";
+import { ErrorMessage, Field, FieldArray } from "formik";
 
-type StatisticsProps = {
-    statistics: Statistic[];
-}
+import { Section } from "../Atoms";
+import CopyButton from "../Atoms/copyButton";
+import RemoveButton from "../Atoms/removeButton";
 
-const defaultValue: Statistic = {name: "", values: { min: 0, max: 0, combinaison: ""}};
 
-const Statistics : FC<StatisticsProps> = ({statistics}) => {
-	const [showDialog, setShowDialog] = useState(false);
-	const [editedValue, setEditedValue] = useState<Statistic>(defaultValue);
-	const [internalValue, setInternalValue] = useState<Statistic[]>(statistics ?? []);
-	
 
-	const handleAdd= () => {
-		setEditedValue({...defaultValue});
-		setShowDialog(true);
-	};
-	
-	const handleEdit= (data) => {
-		setEditedValue({...data});
-		setShowDialog(true);
-	};
-
-	const handleSave = (value: Statistic) => {
-		setShowDialog(false);
-		//push the new value in the old value
-		const newValues = [...internalValue];
-		const index = newValues.findIndex((v) => v.name === value.name);
-		if(index === -1){
-			newValues.push(value);
-		}
-		else{
-			newValues[index] = value;
-		}
-		setInternalValue(newValues);
-		
-	};
-
+const Statistics = ({values}) => {
 	return (
-		<>
-			<Section label="Statistiques" onAdd={handleAdd}>
-				<Grid 
-					headers={["Nom", "Combinaison", "Min", "Max"]} 
-					data={internalValue.map((v) => [v.name, v.values.combinaison, v.values.min, v.values.max])}
-					onDelete={(index) => setInternalValue(internalValue.filter((_, i) => i !== index))}
-					onEdit={handleEdit}
-					
-				/>
-				
-			</Section>
-			{showDialog && 
-			<StatisticModal 
-				value={editedValue} 
-				onCancel={() => setShowDialog(false)} 
-				onSave={handleSave}
-			/>}
-		</>
+		<div className="statistic">
+			<FieldArray name="statistics">
+				{({ push, remove }) => (
+					<div>
+						<Section label="Statistiques" onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
+						<table>
+							<tr>
+								<th>Nom</th>
+								<th>Min</th>
+								<th>Max</th>
+								<th>Combinaison</th>
+								<th colSpan={2}>Actions</th>
+							</tr>
+							{values.statistics.map((_, statIndex) => (
+								<tr key={statIndex}>
+									<td>
+										<Field name={`statistics[${statIndex}].name`}/>
+										<ErrorMessage name={`statistics[${statIndex}].name`}/>
+									</td>
+									<td>
+										<Field type="number" name={`statistics[${statIndex}].min`}
+											disabled={values.statistics[statIndex].combinaison}/>
+									</td>
+									<td>
+										<Field type="number" name={`statistics[${statIndex}].max`}
+											disabled={values.statistics[statIndex].combinaison}
+										/>
+									</td>
+									<td>
+										<Field
+											name={`statistics[${statIndex}].combinaison`}
+											disabled={values.statistics[statIndex].min || values.statistics[statIndex].max}
+											aria-invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
+											aria-label={`Combinaison de ${values.statistics[statIndex].name}`}
+											invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
+										/>
+									</td>
+									<td colSpan={2}>
+										<RemoveButton onClick={() => remove(statIndex)}/>
+										<CopyButton onClick={() => {push(values.statistics[statIndex]);}}/>
+									</td>
+								</tr>
+							))}
+						</table>
+					</div>
+				)}
+			</FieldArray>
+						
+		</div>
 	);
 };
 
