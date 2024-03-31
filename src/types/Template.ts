@@ -1,6 +1,7 @@
 type Statistic = {
     name: string;
     values: StatisticValues;
+    id?: number;
 }
 
 type StatisticValues = {
