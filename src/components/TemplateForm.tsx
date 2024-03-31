@@ -10,11 +10,13 @@ import CriticalValue from "./Blocks/CriticalValue";
 import Dices from "./Blocks/Dices";
 import General from "./Blocks/General";
 import Statistics from "./Blocks/Statistics";
+import { errorCode } from "./errorsTranslation";
 
 const TemplateForm: FC = () => {
 	const downloadJSON = (data: Template) => {
 		//convert statistic to Statistic interface
 		const stat: Statistic = {};
+		console.log(data);
 		for (const statistic of data.statistics) {
 			stat[statistic.name] = {
 				combinaison: statistic.values.combinaison,
@@ -34,6 +36,7 @@ const TemplateForm: FC = () => {
 			statistics: stat,
 			damage: diceSkill
 		};
+		console.log(templateDataValues);
 		try {
 			verifyTemplateValue(templateDataValues);
 			const blob = new Blob([JSON.stringify(templateDataValues, null, 2)], {
@@ -48,7 +51,8 @@ const TemplateForm: FC = () => {
 			document.body.removeChild(a);
 			URL.revokeObjectURL(url);
 		} catch (error) {
-			alert(error.message);
+			const msg = errorCode(error);
+			alert(msg);
 		}
 	};
 

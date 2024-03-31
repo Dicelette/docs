@@ -37,6 +37,7 @@ const config: Config = {
 	],
 
 	plugins: [
+		"docusaurus-node-polyfills",
 		async function myPlugin() {
 			return {
 				name: "docusaurus-tailwindcss",
@@ -47,7 +48,7 @@ const config: Config = {
 					return postcssOptions;
 				},
 			};
-		},
+		},		
 	],
 
 	themeConfig: {

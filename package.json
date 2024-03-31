@@ -48,6 +48,7 @@
     "@docusaurus/tsconfig": "3.2.0",
     "@docusaurus/types": "3.2.0",
     "@lisandra-dev/eslint-config": "^1.1.4",
+    "docusaurus-node-polyfills": "^1.0.0",
     "formik": "^2.4.5",
     "tailwindcss": "^3.4.3",
     "typescript": "~5.2.2"
