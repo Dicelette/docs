@@ -14,6 +14,7 @@ const Statistics : FC<StatisticsProps> = ({statistics}) => {
 	const [showDialog, setShowDialog] = useState(false);
 	const [editedValue, setEditedValue] = useState<Statistic>(defaultValue);
 	const [internalValue, setInternalValue] = useState<Statistic[]>(statistics ?? []);
+	
 
 	const handleAdd= () => {
 		setEditedValue({...defaultValue});
@@ -26,18 +27,28 @@ const Statistics : FC<StatisticsProps> = ({statistics}) => {
 	};
 
 	const handleSave = (value: Statistic) => {
-		setInternalValue([ ...statistics, value ]);
 		setShowDialog(false);
+		//push the new value in the old value
+		const newValues = [...internalValue];
+		const index = newValues.findIndex((v) => v.name === value.name);
+		if(index === -1){
+			newValues.push(value);
+		}
+		else{
+			newValues[index] = value;
+		}
+		setInternalValue(newValues);
 	};
 
 	return (
 		<>
 			<Section label="Statistiques" onAdd={handleAdd}>
 				<Grid 
-					headers={["Nom", "Valeur minimale", "Valeur maximale", "Ou Combinaison", ""]} 
-					data={internalValue} 
+					headers={["Nom", "Combinaison", "Min", "Max"]} 
+					data={internalValue.map((v) => [v.name, v.values.combinaison ?? "//", v.values.min > 0 ? v.values.min : "/", v.values.max > 0 ? v.values.max : "/"])}
 					onEdit={handleEdit}
 				/>
+				
 			</Section>
 			{showDialog && 
 			<StatisticModal 

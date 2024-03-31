@@ -30,16 +30,16 @@ const StatisticModal: FC<StatisticModalProps> = ({ onCancel, onSave, value }) =>
 
 		const hasCombinaison = internalValue.values.combinaison !== "";        
 
-		if(!hasCombinaison) {
+		if(hasCombinaison) {
+			setCombinaisonError(true);
+		}
+		else{
 			if(internalValue.values.min === 0) {
 				setMinError(true);
 			}
 			if(internalValue.values.max === 0) {
 				setMaxError(true);
 			}
-		}
-		else{
-			setCombinaisonError(true);
 		}
 
 		return !nameError && !minError && !maxError && !combinaisonError;
@@ -51,6 +51,7 @@ const StatisticModal: FC<StatisticModalProps> = ({ onCancel, onSave, value }) =>
 			onCancel={onCancel}
 			onOk={handleSave}>
 			<Box className="flex flex-col pt-2" component='form' noValidate>
+				
 				<Textfield
 					autofocus
 					error={nameError}
