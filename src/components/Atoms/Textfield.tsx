@@ -3,7 +3,7 @@ import { Field, FieldProps } from "formik";
 import { FC, HTMLInputTypeAttribute } from "react";
 
 type TextfieldProps = TextFieldProps & {
-	autofocus?: boolean
+	autoFocus?: boolean
 	className?: string
 	name: string
 	type?: HTMLInputTypeAttribute

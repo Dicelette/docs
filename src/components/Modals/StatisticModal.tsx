@@ -53,7 +53,7 @@ const StatisticModal: FC<StatisticModalProps> = ({ onCancel, onSave, value }) =>
 			<Box className="flex flex-col pt-2" component='form' noValidate>
 				
 				<Textfield
-					autofocus
+					autoFocus
 					error={nameError}
 					helperText={nameError && "Champ requis"}
 					label="Nom"
