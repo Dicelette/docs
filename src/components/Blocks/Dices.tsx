@@ -26,7 +26,6 @@ const Dices : FC<DicesProps> = ({dices}) => {
 
 	const handleSave = (value: Damage) => {
 		setShowDialog(false);
-		//push the new value in the old value
 		const newValues = [...internalValue];
 		const index = newValues.findIndex((v) => v.name === value.name);
 		if(index === -1){

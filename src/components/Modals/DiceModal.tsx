@@ -21,6 +21,8 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 		}
 	};
 
+
+
 	const validate = (): boolean => {
 		if(!internalValue.name || internalValue.name.trim() === "") {
 			setNameError(true);
@@ -49,7 +51,7 @@ const DiceModal: FC<DiceModalProps> = ({ onCancel, onSave, value }) => {
 				/>
 				
 				<Textfield
-					autoFocus
+					
 					error={nameError}
 					helperText={nameError && "Champ requis"}
 					label="Valeur"
