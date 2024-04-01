@@ -4,6 +4,10 @@
  * work well for content-centric websites.
  */
 
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #960ea5;
@@ -25,4 +29,88 @@
   --ifm-color-primary-light: #c686ec;
   --ifm-color-primary-lighter: #cd94ee;
   --ifm-color-primary-lightest: #e1c0f5;
+}
+
+.dice-skill table td,
+.dice-skill table th,
+.statistic table td,
+.statistic table th {
+  border: none;
+}
+
+button.submit {
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+button.submit:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root,
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: var(--ifm-color-content) !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  fill: var(--ifm-color-content) !important;
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  background-color: var(--ifm-background-color) !important;
+}
+
+[data-theme="light"] .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  background-color: var(--lt-color-background-light) !important;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: var(--ifm-color-primary-darkest) !important;
+}
+
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:not(.simple-button):hover,
+.css-sghohy-MuiButtonBase-root-MuiButton-root:not(.simple-button):hover {
+  background-color: var(--ifm-color-primary-darkest) !important;
+  color: var(--ifm-color-secondary-dark) !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  color: var(--ifm-color-primary-darkest) !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+  background-color: transparent !important;
+  color: var(--ifm-color-primary-darker) !important;
+}
+
+.simple-button {
+  border: none !important;
+}
+
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root:not(.simple-button) {
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  background-color: var(--lt-color-background) !important;
+}
+
+.error .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: red !important;
+  border-width: 2px !important;
+}
+
+.Mui-disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }

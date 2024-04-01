@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import type * as Preset from "@docusaurus/preset-classic";
 import type {Config} from "@docusaurus/types";
 import {themes as prismThemes} from "prism-react-renderer";
@@ -33,6 +34,21 @@ const config: Config = {
 				},
 			} satisfies Preset.Options,
 		],
+	],
+
+	plugins: [
+		"docusaurus-node-polyfills",
+		async function myPlugin() {
+			return {
+				name: "docusaurus-tailwindcss",
+				configurePostCss(postcssOptions) {
+					// Appends TailwindCSS and AutoPrefixer.
+					postcssOptions.plugins.push(require("tailwindcss"));
+					postcssOptions.plugins.push(require("autoprefixer"));
+					return postcssOptions;
+				},
+			};
+		},		
 	],
 
 	themeConfig: {
