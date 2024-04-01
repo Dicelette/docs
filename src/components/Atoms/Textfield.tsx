@@ -1,4 +1,4 @@
-import { TextField, TextFieldProps } from "@mui/material";
+import { InputBaseComponentProps, TextField, TextFieldProps } from "@mui/material";
 import { Field, FieldProps } from "formik";
 import { FC, HTMLInputTypeAttribute } from "react";
 
@@ -7,6 +7,7 @@ type TextfieldProps = TextFieldProps & {
 	className?: string
 	name: string
 	type?: HTMLInputTypeAttribute
+	inputProps?: InputBaseComponentProps
 }
 
 const Textfield: FC<TextfieldProps> = (props) => {
@@ -27,6 +28,8 @@ const Textfield: FC<TextfieldProps> = (props) => {
 						name={field.name}
 						type={props.type}
 						typeof={props.type}
+						inputProps={props.inputProps}
+						
 					/>
 				);
 			}}

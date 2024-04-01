@@ -1,16 +1,17 @@
-import { Tooltip as ReactTooltip } from "react-tooltip";
+
+import { FC } from "react";
 
 import { CheckBox, Section,Textfield } from "../Atoms";
 
-const General = ({total}) => 
+const General:FC = () => 
 	<Section label="Général">
 		<CheckBox 
-			className="self-start !ml-0 -mt-2" 
+			className="self-start !ml-0 -mt-2 mb-6" 
 			label="Rendre le nom du personnage obligatoire" 
-			name="isCharNameRequired" 
+			name="isCharNameRequired"
+			
 		/>
-		<Textfield label="Total (facultatif)" name="total" id="total" type="number" className={`${total < 0 ? "error" : ""}`} />
-		{(total <0 && <ReactTooltip id="total" anchorSelect="#total" content="La valeur ne peut pas être inférieure à 0" style={{background: "var(--rt-color-error)"}}/>)}
+		<Textfield label="Total (facultatif)" name="total" id="total" type="number" inputProps={{min: 0}} />
 		<Textfield label="Dé majeur (facultatif)" name="diceType" />
 	</Section>;
 

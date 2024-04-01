@@ -64,7 +64,30 @@ const TemplateForm: FC = () => {
 		}, 400);
 	};
 
-	
+	const detectAnyErrorClassInPage = () => {
+		const errorClasses = document.getElementsByClassName("error");
+		const duplicateErrorClass= document.getElementsByClassName("bg-rose-300");
+		if (errorClasses.length > 0 || duplicateErrorClass.length > 0) {
+			return true;
+		}
+		return false;
+	};
+
+	const buttonDisabled = (isSubmitting: boolean) => {
+		return detectAnyErrorClassInPage() ? (
+			<Button
+				type="submit"
+				disabled={true}
+				variant="outlined"
+				size="medium"
+				id="disabledButton"
+			>Télécharger le modèle</Button>) : (<Button
+			type="submit"
+			disabled={isSubmitting}
+			variant="outlined"
+			size="medium"
+		>Télécharger le modèle</Button>);
+	};
 
 	return (
 		<Formik
@@ -73,23 +96,18 @@ const TemplateForm: FC = () => {
 				statistics: [],
 				total: 0,
 				diceType: "",
-				critical: { success: 1, failure: 1 },
+				critical: { success: 20, failure: 1 },
 				damages: [],
 			}}
 			
 			onSubmit={handleSubmit}>
 			{({ isSubmitting, values }) => (
 				<Form>
-					<General total={values.total}/>
+					<General />
 					<CriticalValue critical={values.critical}/>
 					<Statistics values={values} />
 					<Dices values={values}	/>
-					<Button
-						type="submit"
-						disabled={isSubmitting}
-						variant="outlined"
-						size="medium"						
-					>Télécharger le modèle</Button>
+					{buttonDisabled(isSubmitting)}
 				</Form>
 			)}
 		</Formik>
