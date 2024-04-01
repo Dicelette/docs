@@ -6,6 +6,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Section, Tablefield } from "../Atoms";
 import CopyButton from "../Atoms/copyButton";
 import RemoveButton from "../Atoms/removeButton";
+import { translate } from "@docusaurus/Translate";
 
 
 const Statistics = ({values}) => {
@@ -31,21 +32,21 @@ const Statistics = ({values}) => {
 		if (values.statistics[index].min && values.statistics[index].max && values.statistics[index].min > values.statistics[index].max) {
 			return (
 				<ReactTooltip id={`Min-${index}`}
-					content="La valeur minimale ne peut pas être supérieure à la valeur maximale" 
+					content={translate({message: "La valeur minimale ne peut pas être supérieure à la valeur maximale"})}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Min-${index}`}/>
 			);
 		} else if (values.statistics[index].min < 0) {
 			return (
 				<ReactTooltip id={`Min-${index}`}
-					content="La valeur minimale ne peut pas être négative" 
+					content={translate({message: "La valeur minimale ne peut pas être négative"})}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Min-${index}`}/>
 			);
 		} else if (isNaN(parseInt(values.statistics[index].min, 10))) {
 			return (
 				<ReactTooltip id={`Min-${index}`}
-					content="La valeur minimale doit être un nombre" 
+					content={translate({message: "La valeur minimale doit être un nombre"})}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Min-${index}`}/>
 			);
@@ -58,21 +59,21 @@ const Statistics = ({values}) => {
 		if (values.statistics[index].min && values.statistics[index].max && values.statistics[index].min > values.statistics[index].max) {
 			return (
 				<ReactTooltip id={`Max-${index}`}
-					content="La valeur maximale ne peut pas être inférieure à la valeur minimale" 
+					content={translate({message: "La valeur maximale ne peut pas être inférieure à la valeur minimale" })}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Max-${index}`}/>
 			);
 		} else if (values.statistics[index].max < 0) {
 			return (
 				<ReactTooltip id={`Max-${index}`}
-					content="La valeur maximale ne peut pas être négative" 
+					content={translate({message: "La valeur maximale ne peut pas être négative" })}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Max-${index}`}/>
 			);
 		} else if (isNaN(parseInt(values.statistics[index].max, 10))) {
 			return (
 				<ReactTooltip id={`Max-${index}`}
-					content="La valeur maximale doit être un nombre" 
+					content={translate({message: "La valeur maximale doit être un nombre" })}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Max-${index}`}/>
 			);
@@ -109,14 +110,14 @@ const Statistics = ({values}) => {
 		if (values.statistics[index].name.length === 0) {
 			return (
 				<ReactTooltip id={`Nom-${index}`} 
-					content="Le nom ne peut pas être vide" 
+					content={translate({message: "Le nom ne peut pas être vide"})}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Nom-${index}`}/>
 			);
 		} else if (duplicateIndices.includes(index)) {
 			return (
 				<ReactTooltip id={`Nom-${index}`} 
-					content="Valeur dupliquée" 
+					content={translate({message: "Ce nom est déjà utilisé"})}
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Nom-${index}`}/>
 			);
@@ -134,14 +135,14 @@ const Statistics = ({values}) => {
 			<FieldArray name="statistics">
 				{({ push, remove }) => (
 					<div>
-						<Section label="Statistiques" onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
+						<Section label={translate({message: "Statistiques"})} onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
 						<table className="w-full">
 							<tbody className="divide-y block w-full">
 								{values.statistics.map((_, statIndex) => (
 									<tr key={statIndex}  className={`
 										flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(statIndex) ? "bg-rose-300" : ""}`}>
 										<td className="p-2 min-[0px]:max-xl:w-full">
-											<Tablefield label="Nom" name={`statistics[${statIndex}].name`} id={`Nom-${statIndex}`} 
+											<Tablefield label={translate({message: "Nom"})} name={`statistics[${statIndex}].name`} id={`Nom-${statIndex}`} 
 												className={`${nameErrorClass(statIndex)}`}
 												data-tooltip-variant="error" />
 											<ErrorMessage name={`statistics[${statIndex}].name`}/>
@@ -149,7 +150,7 @@ const Statistics = ({values}) => {
 										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
 											<Tablefield type="number" inputProps={{min: 0}} name={`statistics[${statIndex}].min`}
-												label="Min"
+												label={translate({message: "Min"})}
 												className={`xl:w-[100px] ${minimalErrorClass(statIndex)}`}
 												id={`Min-${statIndex}`}
 												data-tooltip-variant="error"
@@ -158,7 +159,7 @@ const Statistics = ({values}) => {
 										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
 											<Tablefield type="number" inputProps={{min: 0}} name={`statistics[${statIndex}].max`}
-												label="Max"
+												label={translate({message: "Max"})}
 												id={`Max-${statIndex}`}
 												className={`xl:w-[100px] ${maximalErrorClass(statIndex)}`}
 												disabled={!!values.statistics[statIndex].combinaison}
@@ -167,7 +168,7 @@ const Statistics = ({values}) => {
 										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
 											<Tablefield
-												label="Combinaison"
+												label={translate({message: "Combinaison"})}
 												name={`statistics[${statIndex}].combinaison`}
 												disabled={!!(values.statistics[statIndex].min || values.statistics[statIndex].max)}
 											/>

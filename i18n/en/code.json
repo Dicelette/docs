@@ -335,5 +335,74 @@
   },
   "Aucune statistique n'a été trouvée": {
     "message": "No statistic found"
+  },
+  "Les deux valeurs ne peuvent être identiques": {
+    "message": "The two values cannot be identical"
+  },
+  "La valeur ne peut pas être inférieure à 0": {
+    "message": "The value can't be less than 0"
+  },
+  "Succès": {
+    "message": "Success"
+  },
+  "Échec": {
+    "message": "Failure"
+  },
+  "Ce nom est déjà utilisé": {
+    "message": "This name is already in use"
+  },
+  "Le nom ne peut pas être vide": {
+    "message": "The name can't be empty"
+  },
+  "Dés": {
+    "message": "Dices"
+  },
+  "Nom": {
+    "message": "Name"
+  },
+  "Valeur": {
+    "message": "Value"
+  },
+  "La valeur ne peut pas être vide": {
+    "message": "The value can't be empty"
+  },
+  "Nom du personnage obligatoire": {
+    "message": "Character name required"
+  },
+  "Total": {
+    "message": "Total"
+  },
+  "Dé principal": {
+    "message": "Primary dice"
+  },
+  "La valeur minimale ne peut pas être supérieure à la valeur maximale": {
+    "message": "The minimum value can't be greater than the maximum value"
+  },
+  "La valeur minimale ne peut pas être négative": {
+    "message": "The minimum value can't be negative"
+  },
+  "La valeur minimale doit être un nombre": {
+    "message": "The minimum value must be a number"
+  },
+  "La valeur maximale ne peut pas être inférieure à la valeur minimale": {
+    "message": "The maximum value can't be less than the minimum value"
+  },
+  "La valeur maximale ne peut pas être négative": {
+    "message": "The maximum value can't be negative"
+  },
+  "La valeur maximale doit être un nombre": {
+    "message": "The maximum value must be a number"
+  },
+  "Statistiques": {
+    "message": "Statistics"
+  },
+  "Min": {
+    "message": "Min"
+  },
+  "Max": {
+    "message": "Max"
+  },
+  "Combinaison": {
+    "message": "Combinaison"
   }
 }
