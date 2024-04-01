@@ -1,7 +1,7 @@
 
-import { ErrorMessage, Field, FieldArray } from "formik";
+import { ErrorMessage, FieldArray } from "formik";
 
-import { Section } from "../Atoms";
+import { Section,Textfield  } from "../Atoms";
 import CopyButton from "../Atoms/copyButton";
 import RemoveButton from "../Atoms/removeButton";
 
@@ -15,19 +15,15 @@ const Dices = ({values}) => {
 					<div>
 						<Section label="Dés" onAdd={() => push({ name: "", value: "" })} children={""} />
 						<table>
-							<tr>
-								<th>Nom</th>
-								<th>Valeur</th>
-								<th colSpan={2}></th>
-							</tr>
-							{values.damages.map((_, index) => (
+							
+							{values.damages.map((_: unknown, index: number) => (
 								<tr key={index}>
 									<td>
-										<Field name={`damages[${index}].name`}/>
+										<Textfield name={`damages[${index}].name`} label="Nom" className="w-[200px] !mb-0"/>
 										<ErrorMessage name={`damages[${index}].name`}/>
 									</td>
 									<td>
-										<Field name={`damages[${index}].value`}/>
+										<Textfield name={`damages[${index}].value`} label="Valeur" className="w-[200px] !mb-0" />
 									</td>
 									
 									

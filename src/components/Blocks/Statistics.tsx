@@ -1,7 +1,7 @@
 
-import { ErrorMessage, Field, FieldArray } from "formik";
+import { ErrorMessage, FieldArray } from "formik";
 
-import { Section } from "../Atoms";
+import { Section, Textfield } from "../Atoms";
 import CopyButton from "../Atoms/copyButton";
 import RemoveButton from "../Atoms/removeButton";
 
@@ -15,40 +15,42 @@ const Statistics = ({values}) => {
 					<div>
 						<Section label="Statistiques" onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
 						<table>
-							<tr>
-								<th>Nom</th>
-								<th>Min</th>
-								<th>Max</th>
-								<th>Combinaison</th>
-								<th colSpan={2}>Actions</th>
-							</tr>
+							
 							{values.statistics.map((_, statIndex) => (
 								<tr key={statIndex}>
 									<td>
-										<Field name={`statistics[${statIndex}].name`}/>
+										<Textfield label="Nom" name={`statistics[${statIndex}].name`} className="w-[200px] !mb-0"/>
 										<ErrorMessage name={`statistics[${statIndex}].name`}/>
 									</td>
 									<td>
-										<Field type="number" name={`statistics[${statIndex}].min`}
+										<Textfield type="number" name={`statistics[${statIndex}].min`}
+											label="Min"
+											className="w-[100px] !mb-0"
 											disabled={values.statistics[statIndex].combinaison}/>
 									</td>
 									<td>
-										<Field type="number" name={`statistics[${statIndex}].max`}
+										<Textfield type="number" name={`statistics[${statIndex}].max`}
+											label="Max"
+											className="w-[100px] !mb-0"
 											disabled={values.statistics[statIndex].combinaison}
 										/>
 									</td>
 									<td>
-										<Field
+										<Textfield
+											className="w-[200px] !mb-0"
+											label="Combinaison"
 											name={`statistics[${statIndex}].combinaison`}
 											disabled={values.statistics[statIndex].min || values.statistics[statIndex].max}
 											aria-invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
 											aria-label={`Combinaison de ${values.statistics[statIndex].name}`}
-											invalid={values.statistics[statIndex].min || values.statistics[statIndex].max}
 										/>
 									</td>
 									<td colSpan={2}>
 										<RemoveButton onClick={() => remove(statIndex)}/>
-										<CopyButton onClick={() => {push(values.statistics[statIndex]);}}/>
+										<CopyButton onClick={() => {push({
+											name: "",
+											values: values.statistics[statIndex].values
+										});}}/>
 									</td>
 								</tr>
 							))}
