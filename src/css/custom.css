@@ -62,7 +62,6 @@ button.submit:hover {
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
 .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input {
   color: var(--ifm-color-content) !important;
-  border-color: var(--ifm-scrollbar-thumb-background-colort) !important;
 }
 
 .css-i4bv87-MuiSvgIcon-root {
@@ -104,4 +103,14 @@ button.submit:hover {
   color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
   background-color: var(--lt-color-background) !important;
+}
+
+.error .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: red !important;
+  border-width: 2px !important;
+}
+
+.Mui-disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
 }

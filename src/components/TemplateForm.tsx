@@ -80,8 +80,8 @@ const TemplateForm: FC = () => {
 			onSubmit={handleSubmit}>
 			{({ isSubmitting, values }) => (
 				<Form>
-					<General />
-					<CriticalValue />
+					<General total={values.total}/>
+					<CriticalValue critical={values.critical}/>
 					<Statistics values={values} />
 					<Dices values={values}	/>
 					<Button
