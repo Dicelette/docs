@@ -10,6 +10,7 @@ import Dices from "./Blocks/Dices";
 import General from "./Blocks/General";
 import Statistics from "./Blocks/Statistics";
 import { errorCode } from "./errorsTranslation";
+import { translate } from "@docusaurus/Translate";
 
 const TemplateForm: FC = () => {
 	const downloadJSON = (data: any) => {
@@ -81,12 +82,12 @@ const TemplateForm: FC = () => {
 				variant="outlined"
 				size="medium"
 				id="disabledButton"
-			>Télécharger le modèle</Button>) : (<Button
+			>{translate({message: "Télécharger le modèle"})}</Button>) : (<Button
 			type="submit"
 			disabled={isSubmitting}
 			variant="outlined"
 			size="medium"
-		>Télécharger le modèle</Button>);
+		>{translate({message: "Télécharger le modèle"})}</Button>);
 	};
 
 	return (

@@ -8,7 +8,7 @@ const General:FC = () =>
 	<Section label="Général">
 		<CheckBox 
 			className="self-start !ml-0 -mt-2 mb-6" 
-			label={translate({message: "Nom du personnage obligatoire"})} 
+			label={translate({message: "Rendre obligatoire le nom du personnage"})} 
 			name="isCharNameRequired"
 			
 		/>

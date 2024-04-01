@@ -366,8 +366,8 @@
   "La valeur ne peut pas être vide": {
     "message": "The value can't be empty"
   },
-  "Nom du personnage obligatoire": {
-    "message": "Character name required"
+  "Rendre obligatoire le nom du personnage": {
+    "message": "Make the character name required"
   },
   "Total": {
     "message": "Total"
@@ -404,5 +404,8 @@
   },
   "Combinaison": {
     "message": "Combinaison"
+  },
+  "Télécharger le modèle": {
+    "message": "Download the template"
   }
 }
