@@ -310,5 +310,9 @@
   },
   "Inviter le bot": {
     "message": "Invite the bot"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   }
 }
