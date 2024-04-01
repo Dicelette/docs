@@ -314,5 +314,26 @@
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "L'objet est vide": {
+    "message": "L'objet est vide"
+  },
+  " : ": {
+    "message": ": "
+  },
+  "Le dé est invalide": {
+    "message": "Invalid dice"
+  },
+  "La formule est invalide": {
+    "message": "Invalid formula"
+  },
+  "Le maximum est supérieur au minimum": {
+    "message": "The maximum is greater than the minimum"
+  },
+  "Trop de dés (max : 25)": {
+    "message": "Too many dice (max: 25)"
+  },
+  "Aucune statistique n'a été trouvée": {
+    "message": "No statistic found"
   }
 }

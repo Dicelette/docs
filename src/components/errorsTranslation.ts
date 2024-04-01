@@ -1,14 +1,16 @@
+import {translate} from "@docusaurus/Translate";
+
 export function translateError(code: string) {
 	console.error(code);
 	switch(code) {
-	case "error.emptyObject" : return "L'objet est vide";
-	case "common.space" : return " : ";
-	case "error.invalidDice.withoutDice" : return "Le dé est invalide";
-	case "error.invalidFormula" : return "La formule est invalide";
-	case "error.invalidDice" : return "Le dé est invalide";
-	case "error.maxGreater" : return "Le maximum doit être supérieur au minimum";
-	case "error.tooManyDice" : return "Trop de dés (supérieur à 25)";
-	case "error.noStat" : return "Aucune statistique";
+	case "error.emptyObject" : return translate({message: "L'objet est vide"});
+	case "common.space" : return translate({message: " : "});
+	case "error.invalidDice.withoutDice" : return translate({message: "Le dé est invalide"});
+	case "error.invalidFormula" : return translate({message: "La formule est invalide"});
+	case "error.invalidDice" : return translate({message: "Le dé est invalide"});
+	case "error.maxGreater" : return translate({message: "Le maximum est supérieur au minimum"});
+	case "error.tooManyDice" : return translate({message: "Trop de dés (max : 25)"});
+	case "error.noStat" : return translate({message: "Aucune statistique n'a été trouvée"});
 	
 	}
 }
