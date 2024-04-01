@@ -140,7 +140,7 @@ const Statistics = ({values}) => {
 							<tbody className="divide-y block w-full">
 								{values.statistics.map((_, statIndex) => (
 									<tr key={statIndex}  className={`
-										flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(statIndex) ? "bg-rose-300" : ""}`}>
+										flex flex-col xl:flex-row items-start xl:w-full ${statIndex === 0 ? "border-t-0" : ""}  ${duplicateIndices.includes(statIndex) ? "bg-rose-300" : ""} xl:h-18`} >
 										<td className="p-2 min-[0px]:max-xl:w-full">
 											<Tablefield label={translate({message: "Nom"})} name={`statistics[${statIndex}].name`} id={`Nom-${statIndex}`} 
 												className={`${nameErrorClass(statIndex)}`}
