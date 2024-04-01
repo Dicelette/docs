@@ -105,6 +105,10 @@ button.submit:hover {
   background-color: var(--lt-color-background) !important;
 }
 
+[data-theme="dark"] .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: rgba(245, 245, 245, 0.273);
+}
+
 .error .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
   border-color: red !important;
   border-width: 2px !important;
