@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: "Fetch submodule"
+        run: git submodule update --init --recursive
       - uses: pnpm/action-setup@v3
         with:
           version: 8
