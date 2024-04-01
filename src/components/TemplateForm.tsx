@@ -11,6 +11,7 @@ import General from "./Blocks/General";
 import Statistics from "./Blocks/Statistics";
 import { errorCode } from "./errorsTranslation";
 import { translate } from "@docusaurus/Translate";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 
 const TemplateForm: FC = () => {
 	const downloadJSON = (data: any) => {
@@ -66,6 +67,8 @@ const TemplateForm: FC = () => {
 	};
 
 	const detectAnyErrorClassInPage = () => {
+		const isBrowser = useIsBrowser();
+		if (!isBrowser) return false;
 		const errorClasses = document.getElementsByClassName("error");
 		const duplicateErrorClass= document.getElementsByClassName("bg-rose-300");
 		if (errorClasses.length > 0 || duplicateErrorClass.length > 0) {
