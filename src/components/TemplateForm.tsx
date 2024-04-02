@@ -3,8 +3,8 @@ import { Button } from "@mui/material";
 import { Form, Formik } from "formik";
 import { FC } from "react";
 
-import { Statistic, StatisticalTemplate } from "../@core/core/interface";
-import { verifyTemplateValue } from "../@core/core/verify_template";
+import { Statistic, StatisticalTemplate } from "@dicelette/core";
+import { verifyTemplateValue } from "@dicelette/core";
 import CriticalValue from "./Blocks/CriticalValue";
 import Dices from "./Blocks/Dices";
 import General from "./Blocks/General";
