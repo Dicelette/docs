@@ -96,7 +96,7 @@ button.submit:hover {
 [data-theme="light"]
   .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root:hover,
 [data-theme="light"] .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root:hover {
-  background-color: rgba(0, 0, 0, 0.249) !important;
+  background-color: rgba(0, 0, 0, 0.098) !important;
 }
 
 .MuiButtonBase-root {
