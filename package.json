@@ -44,9 +44,7 @@
     "react-dom": "^18.2.0",
     "react-tooltip": "^5.26.3",
     "remove-accents": "^0.5.0",
-    "ts-dedent": "^2.2.0"
-  },
-  "devDependencies": {
+    "ts-dedent": "^2.2.0",
     "@docusaurus/module-type-aliases": "3.2.0",
     "@docusaurus/tsconfig": "3.2.0",
     "@docusaurus/types": "3.2.0",
@@ -56,6 +54,7 @@
     "tailwindcss": "^3.4.3",
     "typescript": "~5.2.2"
   },
+  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.5%",

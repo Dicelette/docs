@@ -85,11 +85,13 @@ const TemplateForm: FC = () => {
 				variant="outlined"
 				size="medium"
 				id="disabledButton"
+				className="download-button"
 			>{translate({message: "Télécharger le modèle"})}</Button>) : (<Button
 			type="submit"
 			disabled={isSubmitting}
 			variant="outlined"
 			size="medium"
+			className="download-button"
 		>{translate({message: "Télécharger le modèle"})}</Button>);
 	};
 
