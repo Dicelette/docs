@@ -20,6 +20,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --copy-button-bg: rgba(170, 227, 246, 0.44);
   --delete-button-bg: rgba(213, 48, 53, 0.44);
+  --error-bg: rgba(232, 54, 54, 0.3);
+  --error-bg-n2: rgba(231, 67, 67, 0.424);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -33,6 +35,8 @@
   --ifm-color-primary-lightest: #e1c0f5;
   --copy-button-bg: rgba(170, 227, 246, 0.3);
   --delete-button-bg: rgba(213, 48, 53, 0.3);
+  --error-bg: rgba(233, 43, 43, 0.111);
+  --error-bg-n2: rgba(222, 138, 138, 0.173);
 }
 
 .dice-skill table td,
@@ -208,4 +212,13 @@ label[data-shrink="false"].MuiFormLabel-root.MuiInputLabel-root {
 
 svg.text-button {
   margin-right: 5px;
+}
+
+.error-bg {
+  background-color: var(--error-bg);
+  border-radius: 5px;
+}
+
+table tr:nth-child(2n).error-bg {
+  background-color: var(--error-bg-n2);
 }

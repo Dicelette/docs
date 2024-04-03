@@ -70,7 +70,7 @@ const TemplateForm: FC = () => {
 		const isBrowser = useIsBrowser();
 		if (!isBrowser) return false;
 		const errorClasses = document.getElementsByClassName("error");
-		const duplicateErrorClass= document.getElementsByClassName("bg-rose-300");
+		const duplicateErrorClass= document.getElementsByClassName("error-bg");
 		if (errorClasses.length > 0 || duplicateErrorClass.length > 0) {
 			return true;
 		}

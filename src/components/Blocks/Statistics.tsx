@@ -109,17 +109,17 @@ const Statistics = ({values}) => {
 	const nameErrorToolTip = (index: number) => {
 		if (values.statistics[index].name.length === 0) {
 			return (
-				<ReactTooltip id={`Nom-${index}`} 
+				<ReactTooltip id={`Stats-Nom-${index}`} 
 					content={translate({message: "Le nom ne peut pas être vide"})}
 					style={{background: "var(--rt-color-error)"}}
-					anchorSelect={`#Nom-${index}`}/>
+					anchorSelect={`#Stats-Nom-${index}`}/>
 			);
 		} else if (duplicateIndices.includes(index)) {
 			return (
-				<ReactTooltip id={`Nom-${index}`} 
+				<ReactTooltip id={`Stats-Nom-${index}`} 
 					content={translate({message: "Ce nom est déjà utilisé"})}
 					style={{background: "var(--rt-color-error)"}}
-					anchorSelect={`#Nom-${index}`}/>
+					anchorSelect={`#Stats-Nom-${index}`}/>
 			);
 		} else return null;
 	};
@@ -140,7 +140,7 @@ const Statistics = ({values}) => {
 							<tbody className="divide-y block w-full">
 								{values.statistics.map((_, statIndex) => (
 									<tr key={statIndex}  className={`
-										flex flex-col 2xl:flex-row items-start 2xl:w-full ${statIndex === 0 ? "border-t-0" : ""}  ${duplicateIndices.includes(statIndex) ? "bg-rose-300" : ""} 2xl:h-18`} >
+										flex flex-col 2xl:flex-row items-start 2xl:w-full ${statIndex === 0 ? "border-t-0" : ""}  ${duplicateIndices.includes(statIndex) ? "error-bg" : ""} 2xl:h-18`} >
 										<td className="p-px min-[0px]:max-2xl:p-2 table-cell min-[0px]:max-2xl:w-full">
 											<CopyButton size={1536} onClick={() => {push({
 												name: "",
@@ -148,7 +148,7 @@ const Statistics = ({values}) => {
 											});}}/>
 										</td>
 										<td className="p-2 min-[0px]:max-2xl:w-full">
-											<Tablefield label={translate({message: "Nom"})} name={`statistics[${statIndex}].name`} id={`Nom-${statIndex}`} 
+											<Tablefield label={translate({message: "Nom"})} name={`statistics[${statIndex}].name`} id={`Stats-Nom-${statIndex}`} 
 												className={`${nameErrorClass(statIndex)}`}
 												data-tooltip-variant="error" />
 											<ErrorMessage name={`statistics[${statIndex}].name`}/>

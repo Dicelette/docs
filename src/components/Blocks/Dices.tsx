@@ -31,18 +31,18 @@ const Dices = ({values}) => {
 	const errorTooltip = (index: number) => {
 		if (duplicateIndices.includes(index)) {
 			return (
-				<ReactTooltip id={`Nom-${index}`} 
+				<ReactTooltip id={`Dice-Nom-${index}`} 
 					content={translate({message: "Ce nom est déjà utilisé"})} 
 					style={{background: "var(--rt-color-error)"}}
-					anchorSelect={`#Nom-${index}`}/>
+					anchorSelect={`#Dice-Nom-${index}`}/>
 			);
 		}
 		else if (values.damages[index].name.length === 0) {
 			return (
-				<ReactTooltip id={`Nom-${index}`} 
+				<ReactTooltip id={`Dice-Nom-${index}`} 
 					content={translate({message: "Le nom ne peut pas être vide"})}
 					style={{background: "var(--rt-color-error)"}}
-					anchorSelect={`#Nom-${index}`}/>
+					anchorSelect={`#Dice-Nom-${index}`}/>
 			);
 		} else return null;
 	};
@@ -56,7 +56,7 @@ const Dices = ({values}) => {
 						<table className="w-full">
 							<tbody className="divide-y block w-full">
 								{values.damages.map((_: unknown, index: number) => (
-									<tr key={index} className={`flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(index) ? "bg-rose-300" : ""} ${index === 0 ? "border-t-0" : ""}`}>
+									<tr key={index} className={`flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(index) ? "error-bg" : ""} ${index === 0 ? "border-t-0" : ""}`}>
 										<td className="p-px min-[0px]:max-2xl:p-2 table-cell min-[0px]:max-xl:w-full">
 											<CopyButton size={1280} onClick={() => {push({
 												name: "",
@@ -64,7 +64,7 @@ const Dices = ({values}) => {
 											});}}/>
 										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
-											<Tablefield name={`damages[${index}].name`} label={translate({message:"Nom"})} className={`${values.damages[index].name.length === 0 ? "error" : ""}`} id={`Nom-${index}`}/>
+											<Tablefield name={`damages[${index}].name`} label={translate({message:"Nom"})} className={`${values.damages[index].name.length === 0 ? "error" : ""}`} id={`Dice-Nom-${index}`}/>
 											<ErrorMessage name={`damages[${index}].name`}/>
 										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
