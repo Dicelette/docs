@@ -18,6 +18,8 @@
   --ifm-color-primary-lighter: #ad10be;
   --ifm-color-primary-lightest: #c312d7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --copy-button-bg: rgba(170, 227, 246, 0.44);
+  --delete-button-bg: rgba(213, 48, 53, 0.44);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -29,6 +31,8 @@
   --ifm-color-primary-light: #c686ec;
   --ifm-color-primary-lighter: #cd94ee;
   --ifm-color-primary-lightest: #e1c0f5;
+  --copy-button-bg: rgba(170, 227, 246, 0.3);
+  --delete-button-bg: rgba(213, 48, 53, 0.3);
 }
 
 .dice-skill table td,
@@ -121,6 +125,28 @@ button.submit:hover {
   background-color: var(--lt-color-background) !important;
 }
 
+.MuiButton-outlined.copy-button {
+  color: var(--ifm-color-info-darkest) !important;
+  border-color: var(--ifm-color-info-darkest) !important;
+}
+
+.MuiButton-outlined.copy-button:hover {
+  color: var(--ifm-color-info-darker) !important;
+  border-color: var(--copy-button-bg) !important;
+  background-color: var(--copy-button-bg) !important;
+}
+
+.MuiButton-outlined.delete-button {
+  color: var(--ifm-color-danger-darkest) !important;
+  border-color: var(--ifm-color-danger-darkest) !important;
+}
+
+.MuiButton-outlined.delete-button:hover {
+  color: var(--ifm-color-danger-darkest) !important;
+  border-color: var(--delete-button-bg) !important;
+  background-color: var(--delete-button-bg) !important;
+}
+
 .MuiButtonBase-root.manage-button {
   color: var(--ifm-color-content) !important;
 }
@@ -133,6 +159,11 @@ button.submit:hover {
   .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root:hover
   .MuiOutlinedInput-notchedOutline {
   border-color: rgb(245, 245, 245) !important;
+}
+
+.MuiButtonBase-root.copy-button {
+  color: var(--ifm-color-info-darkest) !important;
+  border-color: var(--ifm-color-info-darkest) !important;
 }
 
 .error .MuiOutlinedInput-notchedOutline {
@@ -163,4 +194,18 @@ button.submit:hover {
 .Mui-disabled {
   cursor: not-allowed;
   opacity: 0.2;
+}
+
+label[data-shrink="false"]
+  + .MuiInputBase-formControl
+  .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input {
+  opacity: 0;
+}
+
+label[data-shrink="false"].MuiFormLabel-root.MuiInputLabel-root {
+  opacity: 0.5;
+}
+
+svg.text-button {
+  margin-right: 5px;
 }

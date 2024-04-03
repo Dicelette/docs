@@ -20,7 +20,7 @@ const Tablefield: FC<TablefieldProps> = (props) => {
 						onChange={props.onChange ?? field.onChange}
 						onBlur={field.onBlur}
 						autoFocus={props.autoFocus}
-						className={`xl:w-[200px] !mb-0 min-[0px]:max-xl:w-full ${props.className}`}
+						className={`2xl:w-[200px] !mb-0 min-[0px]:max-2xl:w-full ${props.className}`}
 						error={errors[field.name] !== undefined}
 						label={props.label}
 						size="small"
