@@ -1,7 +1,7 @@
 import {translate} from "@docusaurus/Translate";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
-import { Critical } from "../../@core/core/interface";
+import { Critical } from "@dicelette/core";
 import { Section, Textfield } from "../Atoms";
 
 
