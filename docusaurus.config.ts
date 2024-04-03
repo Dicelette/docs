@@ -2,8 +2,6 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type {Config} from "@docusaurus/types";
 import {themes as prismThemes} from "prism-react-renderer";
-import * as path from "path";
-import webpackConfig from "./webpack.config";
 
 const config: Config = {
 	title: "Dicelette",
