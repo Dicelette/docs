@@ -141,7 +141,7 @@ const Statistics = ({values}) => {
 								{values.statistics.map((_, statIndex) => (
 									<tr key={statIndex}  className={`
 										flex flex-col xl:flex-row items-start xl:w-full ${statIndex === 0 ? "border-t-0" : ""}  ${duplicateIndices.includes(statIndex) ? "bg-rose-300" : ""} xl:h-18`} >
-										<td className="p-px table-cell">
+										<td className="p-px table-cell min-[0px]:max-xl:w-full">
 											<CopyButton onClick={() => {push({
 												name: "",
 												values: values.statistics[statIndex].values
@@ -172,13 +172,13 @@ const Statistics = ({values}) => {
 											/>
 											{maximalErrorTollTip(statIndex)}
 										</td>
-										<td className="p-2 min-[0px]:max-xl:w-full">
+										<td className="p-2 min-[0px]:max-xl:w-full ">
 											<Tablefield
 												label={translate({message: "Combinaison"})}
 												name={`statistics[${statIndex}].combinaison`}
 												disabled={!!(values.statistics[statIndex].min || values.statistics[statIndex].max)}
 											/>
-										</td><td className="p-px table-cell">
+										</td><td className="p-px table-cell min-[0px]:max-xl:w-full">
 											<RemoveButton onClick={() => remove(statIndex)}/>
 										</td>
 									</tr>

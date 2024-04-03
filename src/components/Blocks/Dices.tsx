@@ -57,7 +57,7 @@ const Dices = ({values}) => {
 							<tbody className="divide-y block w-full">
 								{values.damages.map((_: unknown, index: number) => (
 									<tr key={index} className={`flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(index) ? "bg-rose-300" : ""}`}>
-										<td className="p-px table-cell">
+										<td className="p-px table-cell min-[0px]:max-xl:w-full">
 											<CopyButton onClick={() => {push({
 												name: "",
 												value: values.damages[index].value
@@ -76,7 +76,7 @@ const Dices = ({values}) => {
 											style={{background: "var(--rt-color-error)"}}
 											anchorSelect={`#Value-${index}`}/>)}
 										
-										<td className="p-px table-cell">
+										<td className="p-px table-cell min-[0px]:max-xl:w-full">
 											<RemoveButton onClick={() => remove(index)}/>
 										</td>
 									</tr>
