@@ -1,4 +1,5 @@
-import Delete from "@mui/icons-material/Delete";
+import { translate } from "@docusaurus/Translate";
+import { Icon } from "@iconify/react";
 import { IconButton } from "@mui/material";
 import { FC } from "react";
 
@@ -6,6 +7,6 @@ type RemoveButtonProps = {
     onClick: () => void;
 }
 
-const RemoveButton: FC<RemoveButtonProps> = ({onClick}) => <IconButton onClick={onClick} size="small"><Delete/></IconButton>;
+const RemoveButton: FC<RemoveButtonProps> = ({onClick}) => <IconButton onClick={onClick} className="manage-button !p-px xl:relative xl:top-2.5" title={translate({message: "Supprimer ce champ"})} aria-label={translate({message: "Supprimer ce champ"})}><Icon icon="lucide:delete" height="24" className="delete-button"/></IconButton>;
 
 export default RemoveButton;

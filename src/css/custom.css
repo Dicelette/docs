@@ -94,8 +94,11 @@ button.submit:hover {
 }
 
 [data-theme="light"]
-  .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root:hover,
-[data-theme="light"] .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root:hover {
+  .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root:has:not(
+    .copy-button
+  ):hover,
+[data-theme="light"]
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root:has:not(.copy-button):hover {
   background-color: rgba(0, 0, 0, 0.098) !important;
 }
 
@@ -118,6 +121,10 @@ button.submit:hover {
   background-color: var(--lt-color-background) !important;
 }
 
+.MuiButtonBase-root.manage-button {
+  color: var(--ifm-color-content) !important;
+}
+
 [data-theme="dark"] .MuiOutlinedInput-notchedOutline {
   border-color: rgba(245, 245, 245, 0.273);
 }
@@ -129,8 +136,28 @@ button.submit:hover {
 }
 
 .error .MuiOutlinedInput-notchedOutline {
-  border-color: red !important;
+  border-color: var(--ifm-color-danger-darkest) !important;
   border-width: 2px !important;
+}
+
+.delete-button {
+  color: var(--ifm-color-danger-darkest);
+}
+.delete-button:hover {
+  color: var(--ifm-color-danger-light);
+}
+
+.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root:hover:has(.copy-button) {
+  background-color: transparent;
+}
+
+.copy-button {
+  color: var(--ifm-color-info-darkest);
+}
+
+.copy-button:hover {
+  color: var(--ifm-color-info-light);
+  background-color: transparent !important;
 }
 
 .Mui-disabled {

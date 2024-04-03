@@ -57,6 +57,12 @@ const Dices = ({values}) => {
 							<tbody className="divide-y block w-full">
 								{values.damages.map((_: unknown, index: number) => (
 									<tr key={index} className={`flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(index) ? "bg-rose-300" : ""}`}>
+										<td className="p-px table-cell">
+											<CopyButton onClick={() => {push({
+												name: "",
+												value: values.damages[index].value
+											});}}/>
+										</td>
 										<td className="p-2 min-[0px]:max-xl:w-full">
 											<Tablefield name={`damages[${index}].name`} label={translate({message:"Nom"})} className={`${values.damages[index].name.length === 0 ? "error" : ""}`} id={`Nom-${index}`}/>
 											<ErrorMessage name={`damages[${index}].name`}/>
@@ -69,13 +75,9 @@ const Dices = ({values}) => {
 											content={translate({message: "La valeur ne peut pas être vide"})}
 											style={{background: "var(--rt-color-error)"}}
 											anchorSelect={`#Value-${index}`}/>)}
-										<td colSpan={2}>
+										
+										<td className="p-px table-cell">
 											<RemoveButton onClick={() => remove(index)}/>
-											<CopyButton onClick={() => {push({
-												name: "",
-												value: values.damages[index].value
-											
-											});}}/>
 										</td>
 									</tr>
 								))}
