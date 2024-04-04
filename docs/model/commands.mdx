@@ -2,13 +2,26 @@
 title: Commandes
 sidebar_position: 4
 ---
+<details id="danger">
+  <summary><Iconify icon="solar:danger-bold" height="26" class="danger-summary"/>Attention</summary>
+  {}
+   Par défaut, toutes les commandes sont désactivées et doivent être activées dans le panneau de configuration du serveur.
+   ![](/assets/tuto/allow_commands_1.png)![](/assets/tuto/allow_commands_2.png)
+   ![](/assets/tuto/allow_commands_3.png)![](/assets/tuto/allow_commands_4.png)
+   ![](/assets/tuto/allow_commands_5.png)
+</details> 
+
 ## Lancer de dés
 
 Les deux commandes bénéficieront d'une fonction d'auto-complétion pour les statistiques (ou le nom du dé pour la commande `dbd`) ainsi que pour le nom du personnage.
 
 ### DBRoll (`/dbroll`)
 
-La commande DBRoll aura les mêmes effets que la commande `/roll`, mais elle vous demandera :
+:::info
+La commande `dbroll` sert à lancer des dés sur des statistiques qui ont été enregistrées précédemment, permettant d'éviter de retenir les caractéristiques de base d'un personnage.
+:::
+
+La commande demande :
 - La statistique (obligatoire, avec auto-complétion)
 - Le nom du personnage (avec auto-complétion)
 - Le modificateur à ajouter au jet (tel que l'avantage, le désavantage, etc.)
@@ -20,8 +33,12 @@ La commande DBRoll aura les mêmes effets que la commande `/roll`, mais elle vou
 
 ### DBD (`/dbd`)
 
-La commande DBD aura les mêmes effets que la commande `/roll`, mais elle vous demandera :
-- La compétence (obligatoire, avec auto-complétion)
+:::info
+La commande `dbd` permet de lancer un dé enregistré.
+:::
+
+Elle requiert :
+- Le nom de la compétence / dé (obligatoire, avec auto-complétion)
 - Le nom du personnage (avec auto-complétion)
 - Le modificateur à ajouter au jet (tel que l'avantage, le désavantage, etc.)
 - Tout commentaire sur votre action.
@@ -31,30 +48,30 @@ La commande DBD aura les mêmes effets que la commande `/roll`, mais elle vous d
 ## Logs
 
 La commande "logs" permet de choisir un canal dans lequel :
-- Toute erreur sera rapportée
-- Toute modification apportée à un personnage sera enregistrée.
+- Rapporter toute erreur.
+- Enregistrer toute modification apportée à un personnage.
 
 ## Afficher
 
-La commande "afficher" permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données. Elle vous demandera :
+La commande `afficher` permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données. Elle vous demandera :
 - Le joueur (accepte un utilisateur par mention)
 - Et/ou le nom du personnage (avec auto-complétion).
 
-Utiliser les deux ensemble permet de choisir le personnage d'un joueur spécifique (utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
+Combiner les deux permet de sélectionner le personnage d'un joueur spécifique (ce qui peut être utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
 
 ![afficher](/assets/rolls/db/display_ex.png)
 
-## Graph
+## Graphique (`/graph`)
 
 La commande `/graph` est une fonctionnalité "gimmick" qui permet de générer un graphique à partir des statistiques d'un personnage. Elle requiert :
 - Le joueur (accepte une mention utilisateur)
 - Et/ou le nom du personnage (avec auto-complétion).
 
-L'utilisation des deux ensemble permet de sélectionner le personnage d'un joueur spécifique (ce qui peut être utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
+Comme précédemment, vous pouvez combiner les deux options pour sélectionner un personnage spécifique d'un joueur.
 
 En option, vous pouvez également spécifier des couleurs avec :
-- `ligne` : pour la couleur des lignes (par défaut, `#0e47b2`).
-- `fond` : pour la couleur du fond (par défaut, `#0e47b2`).
+- `ligne` : Pour les lignes (par défaut, `#0e47b2`).
+- `fond` : Pour le fond (par défaut, `#0e47b2`).
 
 Les couleurs peuvent être en hexadécimal ou en RGB. Par exemple, `#FF0000` ou `255,0,0`.
 

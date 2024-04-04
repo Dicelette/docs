@@ -27,6 +27,8 @@
   --error-n2: rgb(231, 67, 67);
   --error-bg-n2: rgba(var(--error-n2), 0.424);
   --copy-tooltip: rgb(63, 160, 192);
+  --danger-summary: rgba(255, 166, 0, 0.173);
+  --danger-summary-color: rgb(194, 139, 36);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -47,6 +49,8 @@
   --error-n2: rgb(222, 138, 138);
   --error-bg-n2: rgba(var(--error-n2), 0.173);
   --copy-tooltip: rgb(63, 160, 192);
+  --danger-summary: rgba(255, 166, 0, 0.458);
+  --danger-summary-color: rgb(246, 228, 196);
 }
 
 .dice-skill table td,
@@ -265,4 +269,21 @@ input[type="number"] {
 .remove .MuiTooltip-tooltip {
   background-color: var(--delete-button);
   opacity: 1;
+}
+
+#danger {
+  --docusaurus-details-decoration-color: var(--danger-summary-color);
+  background-color: var(--danger-summary);
+  color: var(--danger-summary-color);
+  border: var(--danger-summary);
+}
+
+#danger summary {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-variant: small-caps;
+}
+
+#danger svg {
+  vertical-align: text-top;
 }

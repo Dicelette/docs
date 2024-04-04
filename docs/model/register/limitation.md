@@ -2,6 +2,10 @@
 title: Limitation
 ---
 
+# Limitations
+
+Voici les limitations à prendre en compte lors de l'enregistrement et de l'édition de modèles et de fiches :
+
 - Un maximum de 20 statistiques est pris en charge.
 - Seuls 25 dés "enregistrés" (y compris les modèles et les dés personnels) sont pris en charge.
 - Il n'est pas possible de modifier des statistiques si elles n'existent pas dans le modèle original.
