@@ -29,7 +29,7 @@
     "@iconify/react": "^4.1.1",
     "@lisandra-dev/eslint-config": "^1.1.4",
     "@mdx-js/react": "^3.0.1",
-    "@mui/material": "^5.15.14",
+    "@mui/material": "^5.15.15",
     "@mui/styled-engine-sc": "6.0.0-alpha.18",
     "@types/jest": "^29.5.12",
     "autoprefixer": "^10.4.19",
