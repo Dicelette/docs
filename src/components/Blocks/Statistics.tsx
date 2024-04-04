@@ -149,7 +149,7 @@ const Statistics = ({values}) => {
 									<tr key={statIndex}  className={`
 										flex flex-col 2xl:flex-row items-start 2xl:w-full ${statIndex === 0 ? "border-t-0" : ""}  ${duplicateIndices.includes(statIndex) ? "error-bg" : ""} 2xl:h-18`} >
 										<td className="p-px min-[0px]:max-2xl:p-2 table-cell min-[0px]:max-2xl:w-full">
-											<CopyButton size={1536} onClick={() => {push({
+											<CopyButton size={1536} length={values.statistics.length} maxLen={20} onClick={() => {push({
 												name: "",
 												values: values.statistics[statIndex].values
 											});}}/>

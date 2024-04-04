@@ -18,10 +18,15 @@
   --ifm-color-primary-lighter: #ad10be;
   --ifm-color-primary-lightest: #c312d7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --copy-button-bg: rgba(170, 227, 246, 0.44);
-  --delete-button-bg: rgba(213, 48, 53, 0.44);
-  --error-bg: rgba(232, 54, 54, 0.3);
-  --error-bg-n2: rgba(231, 67, 67, 0.424);
+  --copy-button: rgb(170, 227, 246);
+  --copy-button-bg: rgba(var(--copy-button), 0.44);
+  --delete-button: rgb(213, 48, 53);
+  --delete-button-bg: rgba(var(--delete-button), 0.44);
+  --error: rgb(232, 54, 54);
+  --error-bg: rgba(var(--error), 0.3);
+  --error-n2: rgb(231, 67, 67);
+  --error-bg-n2: rgba(var(--error-n2), 0.424);
+  --copy-tooltip: rgb(63, 160, 192);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -33,10 +38,15 @@
   --ifm-color-primary-light: #c686ec;
   --ifm-color-primary-lighter: #cd94ee;
   --ifm-color-primary-lightest: #e1c0f5;
-  --copy-button-bg: rgba(170, 227, 246, 0.3);
-  --delete-button-bg: rgba(213, 48, 53, 0.3);
-  --error-bg: rgba(233, 43, 43, 0.111);
-  --error-bg-n2: rgba(222, 138, 138, 0.173);
+  --copy-button: rgb(170, 227, 246);
+  --copy-button-bg: rgba(var(--copy-button), 0.3);
+  --delete-button: rgb(213, 48, 53);
+  --delete-button-bg: rgba(var(--delete-button), 0.3);
+  --error: rgb(233, 43, 43);
+  --error-bg: rgba(var(--error), 0.111);
+  --error-n2: rgb(222, 138, 138);
+  --error-bg-n2: rgba(var(--error-n2), 0.173);
+  --copy-tooltip: rgb(63, 160, 192);
 }
 
 .dice-skill table td,
@@ -232,4 +242,27 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.error .MuiTooltip-arrow::before,
+.error .MuiTooltip-tooltip {
+  background: var(--rt-color-error);
+}
+
+.error-copy .MuiTooltip-arrow::before,
+.error-copy .MuiTooltip-tooltip {
+  background-color: var(--copy-tooltip);
+  opacity: 0.5;
+}
+
+.copy-tooltip .MuiTooltip-arrow::before,
+.copy-tooltip .MuiTooltip-tooltip {
+  background-color: var(--copy-tooltip);
+  opacity: 1;
+}
+
+.remove .MuiTooltip-arrow::before,
+.remove .MuiTooltip-tooltip {
+  background-color: var(--delete-button);
+  opacity: 1;
 }

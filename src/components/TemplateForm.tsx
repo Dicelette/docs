@@ -79,7 +79,7 @@ const TemplateForm: FC = () => {
 
 	const buttonDisabled = (isSubmitting: boolean) => {
 		return detectAnyErrorClassInPage() ? (
-			<Tooltip title={translate({message: "Veuillez corriger les erreurs"})} arrow>
+			<Tooltip title={translate({message: "Veuillez corriger les erreurs"})} classes={{popper: "error"}} arrow>
 				<span>
 					<Button
 						type="submit"

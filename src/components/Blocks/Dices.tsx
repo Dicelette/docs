@@ -58,7 +58,7 @@ const Dices = ({values}) => {
 								{values.damages.map((_: unknown, index: number) => (
 									<tr key={index} className={`flex flex-col xl:flex-row items-start xl:w-full ${duplicateIndices.includes(index) ? "error-bg" : ""} ${index === 0 ? "border-t-0" : ""}`}>
 										<td className="p-px min-[0px]:max-2xl:p-2 table-cell min-[0px]:max-xl:w-full">
-											<CopyButton size={1280} onClick={() => {push({
+											<CopyButton maxLen={25} length={values.damages.length} size={1280} onClick={() => {push({
 												name: "",
 												value: values.damages[index].value
 											});}}/>

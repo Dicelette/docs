@@ -1,6 +1,6 @@
 import { translate } from "@docusaurus/Translate";
 import { Icon } from "@iconify/react";
-import { Button, IconButton, useMediaQuery, useTheme } from "@mui/material";
+import { Button, IconButton, Tooltip, useMediaQuery, useTheme } from "@mui/material";
 import { FC } from "react";
 
 type RemoveButtonProps = {
@@ -10,11 +10,12 @@ type RemoveButtonProps = {
 
 const RemoveIconButton = ({onClick, size}) => {
     const sizeClass= size === 1280 ? "xl" : "2xl";
-    return (    
+    return (
+        <Tooltip title={translate({message: "Supprimer ce champ"})} classes={{popper: "remove"}} arrow>   
         <IconButton onClick={onClick} size="small" className={`manage-button !p-px relative top-2.5 min-[0px]:max-${sizeClass}:w-full`} 
             aria-label={translate({message: "Supprimer ce champ"})} title={translate({message: "Supprimer ce champ"})} >
             <Icon icon="lucide:delete" height="24" className="delete-button"/>
-        </IconButton>);
+        </IconButton></Tooltip> );
 }
 
 const RemoveTextButton = ({onClick, size}) =>{
