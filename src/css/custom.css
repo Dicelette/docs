@@ -222,3 +222,14 @@ svg.text-button {
 table tr:nth-child(2n).error-bg {
   background-color: var(--error-bg-n2);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

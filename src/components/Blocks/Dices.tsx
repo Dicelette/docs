@@ -52,7 +52,7 @@ const Dices = ({values}) => {
 			<FieldArray name="damages">
 				{({ push, remove }) => (
 					<div>
-						<Section label={translate({message:"Dés"})} onAdd={() => push({ name: "", value: "" })} children={""} />
+						<Section length={values.damages.length} type="dice" label={translate({message:"Dés"})} onAdd={() => push({ name: "", value: "" })} children={""} />
 						<table className="w-full">
 							<tbody className="divide-y block w-full">
 								{values.damages.map((_: unknown, index: number) => (

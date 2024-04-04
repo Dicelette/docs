@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import { Form, Formik } from "formik";
 import { FC } from "react";
 
@@ -79,14 +79,19 @@ const TemplateForm: FC = () => {
 
 	const buttonDisabled = (isSubmitting: boolean) => {
 		return detectAnyErrorClassInPage() ? (
-			<Button
-				type="submit"
-				disabled={true}
-				variant="outlined"
-				size="medium"
-				id="disabledButton"
-				className="download-button"
-			>{translate({message: "Télécharger le modèle"})}</Button>) : (<Button
+			<Tooltip title={translate({message: "Veuillez corriger les erreurs"})} arrow>
+				<span>
+					<Button
+						type="submit"
+						disabled={true}
+						variant="outlined"
+						size="medium"
+						id="disabledButton"
+						className="download-button"
+					>{translate({message: "Télécharger le modèle"})}
+					</Button>
+				</span>
+			</Tooltip>) : (<Button
 			type="submit"
 			disabled={isSubmitting}
 			variant="outlined"

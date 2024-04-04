@@ -121,6 +121,13 @@ const Statistics = ({values}) => {
 					style={{background: "var(--rt-color-error)"}}
 					anchorSelect={`#Stats-Nom-${index}`}/>
 			);
+		} else if (index +1 > 20) {
+			return (
+				<ReactTooltip id={`Stats-Nom-${index}`} 
+					content={translate({message: "Vous avez atteint le nombre maximum de statistiques"})}
+					style={{background: "var(--rt-color-error)"}}
+					anchorSelect={`#Stats-Nom-${index}`}/>
+			);
 		} else return null;
 	};
 
@@ -135,7 +142,7 @@ const Statistics = ({values}) => {
 			<FieldArray name="statistics">
 				{({ push, remove }) => (
 					<div>
-						<Section label={translate({message: "Statistiques"})} onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
+						<Section type="stats" length={values.statistics.length} label={translate({message: "Statistiques"})} onAdd={() => push({ name: "", values: { min: 0, max: 0, combinaison: "" } })} children={""} />
 						<table className="w-full">
 							<tbody className="divide-y block w-full">
 								{values.statistics.map((_, statIndex) => (
