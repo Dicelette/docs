@@ -12,7 +12,8 @@ type AddButtonProps = {
 const AddButton: FC<AddButtonProps> = ({len, type, onClick}) => {
     const maxLen = type === "dice" ? 25 : 20;
     const addLabel = type === "dice" ? translate({message: "Ajouter un dé"}) : translate({message: "Ajouter une statistique"});
-    const maxLabel = translate({message: "Vous avez atteint le nombre maximum"})
+    const msg = type === "dice" ? translate({message: "dés (max 25)"}) : translate({message: "statistiques (max 20)"})
+    const maxLabel = `${translate({message: "Vous avez atteint le nombre maximum de"})} ${msg}`;
     return (
         <Tooltip title={len > maxLen ? maxLabel : addLabel} arrow>
             <span><IconButton onClick={onClick} size="small" className="manage-button" disabled={len > maxLen}>

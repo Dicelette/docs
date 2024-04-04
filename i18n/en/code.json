@@ -407,5 +407,35 @@
   },
   "Télécharger le modèle": {
     "message": "Download the template"
+  },
+  "Veuillez corriger les erreurs": {
+    "message": "Please correct errors"
+  },
+  "Ajouter un dé": {
+    "message": "Add a dice"
+  },
+  "Ajouter une statistique": {
+    "message": "Add a statistic"
+  },
+  "Dupliquer ce champ": {
+    "message": "Duplicate this field"
+  },
+  "Dupliquer": {
+    "message": "Duplicate"
+  },
+  "Supprimer ce champ": {
+    "message": "Delete this field"
+  },
+  "Supprimer": {
+    "message": "Delete"
+  },
+  "dés (max 25)": {
+    "message": "dice (max 25)"
+  },
+  "statistiques (max 20)": {
+    "message": "statistics (max 20)"
+  },
+  "Vous avez atteint le nombre maximum de": {
+    "message": "You have reached the maximum number of"
   }
 }
