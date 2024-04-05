@@ -24,3 +24,9 @@ Utilisez `/help` pour afficher le message d'aide.
 Cette commande permet de configurer un canal pour recevoir tous les logs d'erreur du bot.
 
 Utilisez `/logs <channel>` pour configurer le canal de logs.
+
+## Changer le channel `/result_channel`
+
+La commande `/result_channel` permet de fixer un channel pour y recevoir le résultat des lancer de dés, plutôt que d'utiliser un fil à chaque fois. L'ID du channel sera alors enregistré dans la base de donnée d'une manière similaire à la commande `logs`.
+
+Usage : `/result_channel <channel>`
