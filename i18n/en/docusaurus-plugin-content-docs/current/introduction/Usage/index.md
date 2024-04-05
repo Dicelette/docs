@@ -1,35 +1,37 @@
 ---
 title: Comportement
----
-
-The bot operates based on the usage of threads. Upon its initial launch, it will search for a thread prefixed with `🎲`:
+---The functioning of this bot relies on the use of threads. Upon its initial launch, it will search for a thread prefixed with `🎲`:
 
 - If no thread is found, the bot will create a new one and direct all future logs there.
-- However, if a thread already exists, the bot will select the most recent one and send logs there.
+- However, if a thread already exists, the bot will select the most recent one and send the logs there.
 
-:::note
-In the event of multiple threads being discovered, the bot will use the most recent one and archive the others.
+:::note Note
+In case of multiple threads being found, the bot will use the most recent one and archive the others.
 :::
 
-Commands can also be executed within an existing thread. In this case, the bot will simply send the result there, accessible afterwards in channels whose names begin with `🎲`.
+Commands can also be executed within an existing thread. In this case, the bot will simply send the result there, which can then be accessed in channels whose names start with `🎲`.
 
-It's also possible to create a new thread using the command [Create a new scene](#create-a-new-scene).
+You can also create a new thread using the command [create a new scene](./slashcommands.md#create-a-new-scene).
 
-:::tip
-The bot also operates in forums, albeit with some differences:
-- Multiple logs can exist simultaneously (unless they have exactly the same name).
-- Logs will automatically be named `🎲 [topic name]`, with the automatic addition of the `🪡 Dice Roll` tag (created if it doesn't exist).
+:::tip Tip
+The bot also functions in forums, but with a few differences:
+- Multiple logs can coexist simultaneously (unless they have exactly the same name).
+- Logs will be automatically named `🎲 [topic name]`, with the `🪡 Dice Roll` tag added automatically (created if it doesn't exist).
 - In this case, it's a message that will be created instead of a thread.
 :::
 
+Additionally, via the command `/result_channel`, you can set a channel where all logs will be sent, rather than using a thread or forum topic.
+
 ## Channels
 
-The bot will **also** send the result to the channel where the command was initially sent. This message:
+The bot will also send the result to the channel where the command was initially sent. This message:
+
 - Will be deleted after 3 minutes.
 - Will contain a link to the message in the log.
 
-# Usage
+## Usage
 
 The bot can be:
-- Used with slash commands (see [Slashcommands](Usage/slashcommands)).
+
+- Used with slash commands (see [Slashcommands](./slashcommands)).
 - But also directly on the message.

@@ -1,6 +1,6 @@
 # Envoi de Message
 
-Ce bot détecte la notation des dés et envoie le résultat selon deux méthodes :
+Ce bot détecte la notation des dés et envoie le résultat selon trois méthodes :
 
 1. **Notation Directe** :
    - Exemple : `1d20`

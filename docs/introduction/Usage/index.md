@@ -1,7 +1,6 @@
 ---
 title: Comportement
 ---
-# Utilisation du Bot
 
 Le fonctionnement de ce bot repose sur l'utilisation de fils de discussion. Lors de son premier lancement, il recherchera un fil préfixé par `🎲` :
 
@@ -22,6 +21,8 @@ Le bot fonctionne également dans les forums, mais avec quelques différences :
 - Les logs seront automatiquement nommés `🎲 [nom du sujet]`, avec l'ajout automatique du tag `🪡 Dice Roll` (créé s'il n'existe pas).
 - Dans ce cas, il s'agit donc d'un message qui sera créé à la place d'un fil.
 :::
+
+Il est aussi possible, via la commande `/result_channel` de fixer un channel dans lequel sera envoyé tous les logs, plutôt que de passer par un thread ou un sujet de forum. 
 
 ## Canaux
 
