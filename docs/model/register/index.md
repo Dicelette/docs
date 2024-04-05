@@ -37,7 +37,7 @@ To target a statistic, it's different depending on the type of die:
 - For a die type, use `$`. This symbol will be replaced by the value of the statistic used by `/dbroll`.
 - For saved dice, simply use the names of the statistics.
 
-::tip[Example]
+:::tip[Example]
 - For a die type: `1d6>$` or `1d6+$`
 - For saved dice: `1d6 > Force` or `1d6 + Force`
 
