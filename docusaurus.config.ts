@@ -54,6 +54,12 @@ const config: Config = {
 
 	themeConfig: {
 		image: "img/dice.png",
+		algolia: {
+			appId: "FJJXF4SEGY",
+			apiKey: "e3ec9ed76aeec871f7a6726169ec20f5",
+			indexName: "diceletteio",
+
+		},
 		navbar: {
 			title: "Dicelette",
 			logo: {
@@ -106,6 +112,11 @@ const config: Config = {
 						{
 							label: "Invitation",
 							href: "https://discord.com/oauth2/authorize?client_id=839830334315141120&permissions=8&scope=bot",
+						},
+						{
+							label: "Discord",
+							href: "https://discord.gg/5w2guxa2kS",
+							
 						}
 					],
 				},
