@@ -170,7 +170,7 @@ button.submit:hover {
 }
 
 [data-theme="dark"] .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(245, 245, 245, 0.273);
+  border-color: rgba(245, 245, 245, 0.273) !important;
 }
 
 [data-theme="dark"]
@@ -246,6 +246,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .error .MuiTooltip-arrow::before,

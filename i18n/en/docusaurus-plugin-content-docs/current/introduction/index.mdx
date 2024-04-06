@@ -2,26 +2,36 @@
 title: Introduction
 sidebar_position: 1
 ---
+Welcome! 🎲 Here's a companion for your Discord adventures: a versatile bot designed to make your role-playing game sessions smoother and more enjoyable.
 
-<Iconify icon="lucide:arrow-right" /> [Invite the bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
+## Key Features
 
-This bot allows rolling dice and sending the result in a thread. Additionally, it offers the ability to save a statistic template to perform rolls directly, thus avoiding repeating the same actions every time.
+### Dice Rolling
 
-<Iconify icon="lucide:arrow-right"/> It uses the [@diceRoller API](https://dice-roller.github.io/documentation/) to perform dice rolls. It also supports the rollem notation `4#(dice)` for "bulk rolls".
+With this bot, you can roll dice effortlessly: whether to determine the outcome of a crucial action or to spice up your conversations, the process is streamlined. Simply use the appropriate command and the result will be displayed in a thread rather than cluttering the channel you're in.
 
-For statistics, instead of saving the entire sheet, the bot saves the message and its identifier. Thus, you retain full control over your data, as the bot does not have knowledge of the message content.
+### Character Sheet Management
 
-The bot uses a database to store the message ID, channel ID, statistic name, and user character names. This database is a simple JSON file and will be cleaned in the following cases:
-- Deletion of the reference statistic message.
-- Deletion of the registered channel for the template (user reference IDs are not affected).
-- Deletion of the message saved for the template.
-- Deletion of the thread containing user data.
-- Bot expulsion from the server.
+No more juggling complex character sheets! This bot allows you to set up a statistics template to record the essential information of your characters. Thus, you can roll dice directly using this data, without worrying about memorizing them.
 
-The database is only used if you configure a server template with `/register` or error logs with `/logs`.
+## Operational Mechanics
 
-:::note
-If necessary, you can contact me to request the deletion of your data. Just provide me with your Discord ID (the long number) or your server ID. To contact me privately:
-- Discord: `@mara__li`
-- Email: `lisandra_dev@yahoo.com`
+### Dice Rolling
+
+To perform dice rolls, this bot utilizes the [@diceRoller](https://dice-roller.github.io/documentation/) API. It also supports the notation `4#(dice)` for bulk rolls, allowing you to save time during your gaming sessions.
+
+### Statistics Management
+
+Instead of saving the entire character sheet, this bot only records the message and its ID. Thus, you retain full control over your data, as the message content is not saved outside the server.
+
+## Data
+
+This bot uses a database to store essential information, such as the message ID, channel ID, statistic name, and user character names. This database is a simple JSON file and will be cleaned in various cases, including when messages or registered channels are deleted, when the bot is kicked from the server, or when using the `/register` or `/logs` features.
+
+:::note Note
+User data is not deleted when they leave a server. If you wish for your data to be removed, feel free to contact me.
+
+Simply provide your Discord ID or server ID (with proof of ownership) via Discord (`@mara__li`) or email (`lisandra_dev@yahoo.com`).
 :::
+
+🚀 [Invite the bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)

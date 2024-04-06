@@ -1,26 +1,30 @@
 ---
 title: Commande slash
 ---
-# Commandes Slash
+## Rolling Dice
 
-## Lancer les Dés
-
-Utilisez `/roll 1d20` pour effectuer un lancer de dé. Vous pouvez également utiliser la notation "semi-directe" en ajoutant un commentaire : `/roll 1d20 Mon commentaire`. Veuillez noter que la notation "indirecte" n'est pas disponible dans ce mode.
+Use `/roll 1d20` to roll a die. You can also use the "semi-direct" notation by adding a comment: `/roll 1d20 My comment`. Please note that the "indirect" notation is not available in this mode.
 
 ![Roll](/assets/rolls/slash-commands.gif)
 
-## Créer une Nouvelle Scène
+## Creating a New Scene
 
-Utilisez `/scene <nom>` pour créer une nouvelle scène. Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra les logs des dés. Ce fil prendra le nom de la `scène`, et tous les autres fils préfixés par `🎲` seront archivés.
+Use `/scene <name>` to create a new scene. The bot will then create a new thread, prefixed with `🎲`, where it will send the dice logs. This thread will take on the name of the `scene`, and all other threads prefixed with `🎲` will be archived.
 
 ![Scene](/assets/rolls/scene.gif)
 
-## Aide
+## Help
 
-Utilisez `/help` pour afficher le message d'aide.
+Use `/help` to display the help message.
 
 ## Logs
 
-Cette commande permet de configurer un canal pour recevoir tous les logs d'erreur du bot.
+This command allows you to configure a channel to receive all error logs from the bot.
 
-Utilisez `/logs <channel>` pour configurer le canal de logs.
+Use `/logs <channel>` to configure the log channel.
+
+## Changing the Result Channel `/result_channel`
+
+The `/result_channel` command allows you to set a channel to receive the results of dice rolls, rather than using a thread each time. The channel ID will then be saved in the database similarly to the `logs` command.
+
+Usage: `/result_channel <channel>`
