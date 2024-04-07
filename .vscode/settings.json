@@ -1,5 +1,6 @@
 {
 	"i18n-ally.localesPaths": [
 		"E:/Documents/Github/dicelette-docs/i18n"
-	]
+	],
+	"jest.enable": false
 }
