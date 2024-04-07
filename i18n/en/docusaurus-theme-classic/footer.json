@@ -14,5 +14,9 @@
   "copyright": {
     "message": "GPLv3 License © 2024 Dicelette",
     "description": "The footer copyright"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/5w2guxa2kS"
   }
 }
