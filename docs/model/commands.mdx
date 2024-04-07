@@ -6,10 +6,36 @@ sidebar_position: 4
   <summary><Iconify icon="solar:danger-bold" height="26" class="danger-summary"/>Attention</summary>
   {}
    Par défaut, toutes les commandes sont désactivées et doivent être activées dans le panneau de configuration du serveur.
-   ![](/assets/tuto/allow_commands_1.png)![](/assets/tuto/allow_commands_2.png)
-   ![](/assets/tuto/allow_commands_3.png)![](/assets/tuto/allow_commands_4.png)
+   ![](/assets/tuto/allow_commands_1.png)
+   ![](/assets/tuto/allow_commands_2.png)
+   ![](/assets/tuto/allow_commands_3.png)
+   ![](/assets/tuto/allow_commands_4.png)
    ![](/assets/tuto/allow_commands_5.png)
 </details> 
+
+## Administration
+Toutes les commandes suivantes sont restreinte par défaut aux membres ayant la permission `Gérer les rôles`.
+
+### Logs
+La commande `logs` offre la possibilité de d'enregister un channel afin de : 
+- Rapporter toutes les erreurs,
+- Enregistrer toute modification apportée à un personnage.
+
+## Supprimer un personnage/joueur (`/supprimer_char`)
+La commande `supprimer_char` permet de supprimer un personnage ou un joueur de la base de données. Elle demande :
+- Le nom du joueur
+- Et/ou le nom du personnage
+
+En l'absence de nom de personnage, cela supprimera toutes les données du joueur. Si vous voulez supprimer uniquement le "personnage sans nom" d'un joueur, vous pouvez le faire en choisissant "défaut" dans la liste du nom du personnage.
+
+## Auto-Role (`/auto_role`)
+Ces commandes permettent d'ajouter automatiquement des rôles lorsque :
+- Un dé est ajouté (`/auto_role dé`)
+- Des statistiques sont validées (`/auto_role stats`)
+
+Cela permet, notamment, d'autoriser l'usage de `/dbd` et `/dbroll` aux utilisateurs qui ont, effectivement, la possibilité d'utiliser ses deux commandes.
+
+Les deux commandes acceptent la même option : un role (`@role`). En l'absence de l'option, cela désactivera simplement l'auto-rôle. 
 
 ## Lancer de dés
 
@@ -45,13 +71,8 @@ Cette commande requiert :
 
 ![dbd](/assets/rolls/db/dbd_example.png)
 
-## Logs
-
-La commande `logs` offre la possibilité de d'enregister un channel afin de : 
-- Rapporter toutes les erreurs,
-- Enregistrer toute modification apportée à un personnage.
-
-## Afficher
+## Autres
+### Afficher
 
 La commande `afficher` permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données. Elle vous demandera :
 - Le joueur
@@ -61,7 +82,7 @@ Combiner les deux permet de sélectionner le personnage d'un joueur spécifique 
 
 ![afficher](/assets/rolls/db/display_ex.png)
 
-## Graphique (`/graph`)
+### Graphique (`/graph`)
 
 La commande `/graph` est une fonctionnalité "gimmick" qui permet de générer un graphique à partir des statistiques d'un personnage. Elle nécessite :
 - Le nom du joueur
@@ -84,15 +105,4 @@ Par défaut :
    - Sinon, il sera basé sur la valeur du succès critique.
    - Si aucune des deux options précédentes n'est disponible, il sera basé sur la valeur du dé (par exemple, si `1d20`, la valeur sera 20).
    - En dernier recours, il sera automatiquement calculé en fonction des statistiques de l'utilisateur.
-
-
 ![graph](/assets/graph.jpg)
-
-## Supprimer un personnage/joueur (`/supprimer_char`)
-
-La commande `supprimer_char` permet de supprimer un personnage ou un joueur de la base de données. Elle demande :
-- Le nom du joueur
-- Et/ou le nom du personnage
-
-En l'absence de nom de personnage, cela supprimera toutes les données du joueur. Si vous voulez supprimer uniquement le "personnage sans nom" d'un joueur, vous pouvez le faire en choisissant "défaut" dans la liste du nom du personnage.
-
