@@ -27,7 +27,7 @@ Plutôt que de sauvegarder l'intégralité de la feuille de personnage, ce bot e
 
 ## Données
 
-Ce bot utilise une base de données pour stocker les informations essentielles, telles que l'identifiant du message, l'identifiant du canal, le nom de la statistique et les noms des personnages des utilisateurs. Cette base de données est un simple fichier JSON et sera nettoyée dans divers cas, notamment lors de la suppression des messages ou des canaux enregistrés, de l'expulsion du bot du serveur, ou encore lors de l'utilisation des fonctionnalités `/register` ou `/logs`.
+Ce bot utilise une base de données[^1] pour stocker les informations essentielles, telles que l'identifiant du message, l'identifiant du canal, le nom de la statistique et les noms des personnages des utilisateurs. Cette base de données sera nettoyée dans divers cas, notamment lors de la suppression des messages ou des canaux enregistrés, de l'expulsion du bot du serveur, ou encore lors de l'utilisation des fonctionnalités `/register` ou `/logs`.
 
 :::note Remarque
 Les données d'un utilisateur ne sont pas supprimées lorsqu'il quitte un serveur. Dans le cas où vous souhaitez que vos données le soient, n'hésitez pas à me contacter. 
@@ -35,4 +35,11 @@ Les données d'un utilisateur ne sont pas supprimées lorsqu'il quitte un serveu
 Il vous suffit de fournir votre identifiant Discord ou l'ID de votre serveur (accompagné d'une preuve de propriété) via Discord (`@mara__li`) ou par e-mail (`lisandra_dev@yahoo.com`).
 ::: 
 
+:::warning
+Dans de très rares cas, il est possible que les données ne soient pas supprimées (notamment lors de la suppression d'une très ancienne fiche). Dans ce cas, vous pouvez utiliser la commande `/supprimer_char` pour supprimer un personnage ou les données entières d'un joueur.
+Cette commande supprimera le message de la fiche s'il existe toujours.
+:::
+
 🚀 [Invitez le bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
+
+[^1]: C'est une base SQLITE3, utilisant [Enmap](https://enmap.evie.dev/).

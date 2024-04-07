@@ -26,7 +26,7 @@ Instead of saving the entire character sheet, this bot only records the message 
 
 ## Data
 
-This bot uses a database to store essential information, such as the message ID, channel ID, statistic name, and user character names. This database is a simple JSON file and will be cleaned in various cases, including when messages or registered channels are deleted, when the bot is kicked from the server, or when using the `/register` or `/logs` features.
+This bot uses a database[^1] to store essential information, such as the message ID, channel ID, statistic name, and user character names. This database will be cleaned in various cases, including when messages or registered channels are deleted, when the bot is kicked from the server, or when using the `/register` or `/logs` features.
 
 :::note Note
 User data is not deleted when they leave a server. If you wish for your data to be removed, feel free to contact me.
@@ -34,4 +34,11 @@ User data is not deleted when they leave a server. If you wish for your data to 
 Simply provide your Discord ID or server ID (with proof of ownership) via Discord (`@mara__li`) or email (`lisandra_dev@yahoo.com`).
 :::
 
+:::warning
+In some rare cases, the bot maybe not be able to delete the data when the message is deleted (it happens when the deleted message is very old). In theses case, you can use the command `/delete_char` to delete the character data or entire data from an user.
+More over, this command will also delete the message if it still exists (useful if you don't want to search in the character sheet channel).
+:::
+
 🚀 [Invite the bot](https://discord.com/api/oauth2/authorize?client_id=1182819335878754385&permissions=395137215504&scope=bot+applications.commands)
+
+[^1]: It's a SQLITE3 database, using [Enmap](https://enmap.evie.dev/)
