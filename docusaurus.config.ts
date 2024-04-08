@@ -80,6 +80,12 @@ const config: Config = {
 					label: "Fiches",
 				},
 				{
+					type: "docSidebar",
+					position: "left",
+					sidebarId: "commands",
+					label: "Commandes"
+				},
+				{
 					href: "https://github.com/dicelette/docs",
 					label: "GitHub",
 					position: "right",

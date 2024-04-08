@@ -22,5 +22,9 @@
   "item.label.Dés et notation": {
     "message": "Dice and notation",
     "description": "Navbar item with label Dés et notation"
+  },
+  "item.label.Commandes": {
+    "message": "Commands",
+    "description": "Navbar item with label Commandes"
   }
 }
