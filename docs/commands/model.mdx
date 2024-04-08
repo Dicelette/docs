@@ -1,7 +1,7 @@
 ---
-title: Commandes
-sidebar_position: 4
+title: Fiches de personnages
 ---
+
 <details id="danger">
   <summary><Iconify icon="solar:danger-bold" height="26" class="danger-summary"/>Attention</summary>
   {}
@@ -13,33 +13,7 @@ sidebar_position: 4
    ![](/assets/tuto/allow_commands_5.png)
 </details> 
 
-## Administration
-Toutes les commandes suivantes sont restreinte par défaut aux membres ayant la permission `Gérer les rôles`.
-
-### Logs
-La commande `logs` offre la possibilité de d'enregister un channel afin de : 
-- Rapporter toutes les erreurs,
-- Enregistrer toute modification apportée à un personnage.
-
-### Supprimer un personnage/joueur (`/supprimer_char`)
-La commande `supprimer_char` permet de supprimer un personnage ou un joueur de la base de données. Elle demande :
-- Le nom du joueur
-- Et/ou le nom du personnage
-
-En l'absence de nom de personnage, cela supprimera toutes les données du joueur. Si vous voulez supprimer uniquement le "personnage sans nom" d'un joueur, vous pouvez le faire en choisissant "défaut" dans la liste du nom du personnage.
-
-### Auto-Role (`/auto_role`)
-Ces commandes permettent d'ajouter automatiquement des rôles lorsque :
-- Un dé est ajouté (`/auto_role dé`)
-- Des statistiques sont validées (`/auto_role stats`)
-
-Cela permet, notamment, d'autoriser l'usage de `/dbd` et `/dbroll` aux utilisateurs qui ont, effectivement, la possibilité d'utiliser ses deux commandes.
-
-Les deux commandes acceptent la même option : un role (`@role`). En l'absence de l'option, cela désactivera simplement l'auto-rôle. 
-
 ## Lancer de dés
-
-Deux commandes sont disponibles pour lancer des dés, avec une fonction d'auto-complétion pour simplifier la saisie des statistiques, des noms de personnages ainsi que le nom des dés.
 
 ### DBRoll (`/dbroll`)
 
@@ -70,6 +44,7 @@ Cette commande requiert :
 - Tout commentaire sur votre action
 
 ![dbd](/assets/rolls/db/dbd_example.png)
+
 
 ## Autres
 ### Afficher

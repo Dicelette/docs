@@ -1,0 +1,84 @@
+---
+title: Character sheet
+---
+
+<details id="danger">
+  <summary><Iconify icon="solar:danger-bold" height="26" class="danger-summary"/>Attention</summary>
+  {}
+   By default, all commands are disabled and must be enabled in the server's configuration panel.
+   ![](/assets/tuto/allow_commands_1.png)
+   ![](/assets/tuto/allow_commands_2.png)
+   ![](/assets/tuto/allow_commands_3.png)
+   ![](/assets/tuto/allow_commands_4.png)
+   ![](/assets/tuto/allow_commands_5.png)
+</details> 
+
+## Dice Rolling
+
+### DBRoll (`/dbroll`)
+
+:::info
+The `dbroll` command is used to roll dice for statistics that have been previously recorded, allowing you to avoid remembering the basic characteristics of a character.
+:::
+
+The command requires specifying:
+- The statistic
+- The character's name
+- Any modifiers (such as advantage or disadvantage)
+- Replacement of the success value (e.g., for a difficult roll), with indication of comparison (e.g., >= 10)
+- Any comments on your action
+
+![dbroll_1](/assets/rolls/db/dbroll_autocomplete.png)
+![example](/assets/rolls/db/example.png)
+
+### DBD (`/dbd`)
+
+:::info
+The `dbd` command allows rolling a registered die.
+:::
+
+This command requires:
+- The skill
+- The character's name
+- Any modifiers
+- Any comments on your action
+
+![dbd](/assets/rolls/db/dbd_example.png)
+
+
+## Others
+### Display
+
+The `display` command allows you to view the statistics and dice of a character recorded in the database. It will ask for:
+- The player
+- And/or the character's name
+
+Combining both allows you to select a specific character of a specific player (which can be useful in case of duplicate character names, although this is unlikely).
+
+![display](/assets/rolls/db/display_ex.png)
+
+### Graph (`/graph`)
+
+The `/graph` command is a "gimmick" feature that generates a graph from a character's statistics. It requires:
+- The player's name
+- And/or the character's name.
+
+As before, you can combine both options to select a specific character of a player.
+
+Optionally, you can also specify colors with:
+- `line`: For lines (default, `#0e47b2`).
+- `background`: For background (default, `#0e47b2`).
+
+Colors can be in hexadecimal or RGB. For example, `#FF0000` or `255,0,0`.
+
+Finally, you can set a minimum and maximum for the axes with `min` and `max`.
+
+By default:
+- The minimum is calculated according to the server template (if existing).
+- The maximum is determined in different ways:
+   - If a maximum is defined by the template, it will be used.
+   - Otherwise, it will be based on the critical success value.
+   - If neither of the two previous options is available, it will be based on the die value (for example, if `1d20`, the value will be 20).
+   - As a last resort, it will be automatically calculated based on the user's statistics.
+![graph](/assets/graph.jpg)
+
