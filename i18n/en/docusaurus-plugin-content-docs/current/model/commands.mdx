@@ -12,6 +12,34 @@ sidebar_position: 4
    ![](/assets/tuto/allow_commands_5.png)
 </details> 
 
+## Administration
+
+All the following commands are restricted by default to members with `Manage Roles` permission.
+
+### Logs
+
+The `logs` command allows configuring a channel to:
+- Report all errors,
+- Record any modifications made to a character.
+
+### Delete a character or user (`/delete_char`)
+
+The `/delete_char` command allows deleting a character or user from the database. It requires:
+- The player's name
+- And/or the character's name.
+
+Without the character name, all characters from the selected player will be deleted. If you only want to delete the "no character name" (i.e default character if exists), you can use the `default` keyword in the list of characters.
+
+### Auto-Role (`/auto_role`)
+
+These commands allows to automatically add a role when :
+- A dice is added to a user (`/auto_role dice <@role>`)
+- statistics are valided (`/auto_role stats <@role>`)
+
+In particular, this allows `/dbd` and `/dbroll` to be used by users who are actually able to use these two commands.
+
+Both commands accept the same option: a role (`@role`). If the option is not present, this will simply disable the auto-role. 
+
 ## Dice Rolling
 
 Two commands are available for rolling dice, with auto-completion functionality to simplify input for statistics, character names, and dice names.
@@ -46,13 +74,8 @@ This command requires:
 
 ![dbd](/assets/rolls/db/dbd_example.png)
 
-## Logs
-
-The `logs` command allows configuring a channel to:
-- Report all errors,
-- Record any modifications made to a character.
-
-## Display
+## Others
+### Display
 
 The `display` command allows viewing the statistics and dice of a character saved in the database. It will ask for:
 - The player
@@ -62,7 +85,7 @@ Combining both allows selecting a specific player's character (which can be usef
 
 ![display](/assets/rolls/db/display_ex.png)
 
-## Graph (`/graph`)
+### Graph (`/graph`)
 
 The `/graph` command is a "gimmick" feature that generates a graph from a character's statistics. It requires:
 - The player's name
@@ -88,10 +111,3 @@ By default:
 
 ![graph](/assets/graph.jpg)
 
-## Delete a character or user (`/delete_char`)
-
-The `/delete_char` command allows deleting a character or user from the database. It requires:
-- The player's name
-- And/or the character's name.
-
-Without the character name, all characters from the selected player will be deleted. If you only want to delete the "no character name" (i.e default character if exists), you can use the `default` keyword in the list of characters.
