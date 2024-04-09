@@ -1,3 +1,7 @@
+---
+title: Administration
+---
+
 The following commands are restricted by default to members with the `Manage Roles` permission.
 
 ## General

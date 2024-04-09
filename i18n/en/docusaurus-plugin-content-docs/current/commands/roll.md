@@ -1,5 +1,5 @@
 ---
-title: Lancer de dés et scènes
+title: Roll dice & scenes
 ---
 
 ## Dice Rolling

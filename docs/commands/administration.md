@@ -1,5 +1,6 @@
 ---
 title: Commandes administratives
+sidebar_position: 1
 ---
 
 Toutes les commandes suivantes sont restreintes par défaut aux membres ayant la permission `Gérer les rôles`.

@@ -1,5 +1,6 @@
 ---
 title: Comportement
+sidebar_position: 2
 ---
 
 Le fonctionnement de ce bot repose sur l'utilisation de fils de discussion. Lors de son premier lancement, il recherchera un fil préfixé par `🎲` :
