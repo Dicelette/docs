@@ -23,7 +23,7 @@ La commande `/result_channel` permet de définir un canal pour recevoir les rés
 
 Renvoyer la commande sans l'argument "channel" permet de supprimer le canal de résultats à l'instar de la commande `logs`.
 
-### Modèle et fiche de personnages
+## Modèle et fiche de personnages
 
 ### Supprimer un personnage/joueur (`/supprimer_char`)
 La commande `supprimer_char` permet de supprimer un personnage ou un joueur de la base de données. Elle demande :

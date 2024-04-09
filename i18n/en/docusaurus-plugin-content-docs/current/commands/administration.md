@@ -19,7 +19,7 @@ The `/result_channel` command sets a channel to receive dice roll results instea
 
 Sending the command without the "channel" argument will remove the results channel, similar to the `logs` command.
 
-### Character Sheet and Template
+## Character Sheet and Template
 
 ### Delete a Character/Player (`/delete_char`)
 The `delete_char` command removes a character or player from the database. It requires:
