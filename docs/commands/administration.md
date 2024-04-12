@@ -16,9 +16,9 @@ La commande `logs` offre la possibilité de d'enregister un channel afin de :
 - Rapporter toutes les erreurs,
 - Enregistrer toute modification apportée à un personnage.
 
-Renvoyer la commande sans l'argument "channel" permet de supprimer l'envoi des logs.
+Renvoyer la commande sans l'argument `#channel` permet de supprimer l'envoi des logs.
 
-### Changer le canal de résultats (`/result_channel`)
+### Changer le canal de résultats
 
 :::usage
 **`/result_channel (#channel)`**
@@ -27,6 +27,20 @@ Renvoyer la commande sans l'argument "channel" permet de supprimer l'envoi des l
 La commande `/result_channel` permet de définir un canal pour recevoir les résultats des jets de dés, plutôt que d'utiliser un fil de discussion à chaque fois. L'ID du canal sera alors enregistré dans la base de données de la même manière que la commande `logs`.
 
 Renvoyer la commande sans l'argument "channel" permet de supprimer le canal de résultats à l'instar de la commande `logs`.
+
+### Supprimer l'auto-création des threads
+
+:::usage
+**`/désactiver_threads [vrai/faux]`**
+:::
+
+Si l'option est sur **vrai**, désactive la création, par défaut, des threads pour les jets de dés. Tout sera donc envoyé (sans suppression) dans le channel où la commande a été effectuée.
+
+Les channels et fils préfixés par `🎲` ne recevront plus les logs non plus.
+
+Elle désactive aussi l'envoie dans le channel éventuellement configuré par la commande `/result_channel`.
+
+L'option sur **faux** réactive le comportement normal du bot.
 
 ## Modèle et fiche de personnages
 
@@ -67,7 +81,7 @@ Les deux commandes suivantes permettent aux maîtres de jeu de lancer des dés p
 
 :::usage
 - **`/mj dbroll [@Joueur] [statistique] (*personnage)`**
-- **`/mj dbd [@Joueur] [*compétence] (*personnage)`**
+- **`/mj dbd [@Joueur] [*nom du dé] (*personnage)`**
 :::
 
 Les deux commandes sont similaires à [dbroll](./model#dbroll-dbroll) et [dbd](./model#dbd-dbd), mais nécessite en plus de spécifier le joueur pour lequel le jet est effectué. Comme les autres commandes, il est possible de choisir un personnage appartenant à ce joueur ou de laisser le choix par défaut.

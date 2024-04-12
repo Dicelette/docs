@@ -1,10 +1,15 @@
 ---
 title: Roll dice & scenes
+sidebar_position: 3
 ---
 
 ## Dice Rolling
 
-Use `/roll <argument>` to roll a die. You can also use the "semi-direct" notation by adding a comment: `/roll <argument> My comment`.
+:::usage
+**`/roll (argument)`**
+:::
+
+You can also use the "semi-direct" notation by adding a comment: `/roll (dice comments)`.
 
 Please note that the "indirect" notation is not available in this mode.
 
@@ -12,7 +17,11 @@ Please note that the "indirect" notation is not available in this mode.
 
 ## Creating a New Scene
 
-Use `/scene <name>` to create a new scene. The bot will then create a new thread, prefixed with `🎲`, where it will send dice logs. This thread will be named after the `scene`, and all other threads prefixed with `🎲` will be archived.
+:::usage
+**`/scene [name] (tempo)`**
+:::
+
+The bot will then create a new thread, prefixed with `🎲`, where it will send dice logs. This thread will be named after the `scene`, and all other threads prefixed with `🎲` will be archived.
 
 ![Scene](/assets/rolls/scene.gif)
 
@@ -20,4 +29,8 @@ The `tempo` argument allows you to create a "temporal bubble," which will create
 
 ## Help
 
-Use `/help` to display the help message.
+:::usage
+**`/help`**
+:::
+
+Displays the bot's commands and general information, including help on dice notations.
