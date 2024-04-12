@@ -11,7 +11,7 @@ function Usage(props) {
           <span className='admonitionIcon_rXq6'>
             <Icon icon="fluent:data-usage-edit-24-filled"/>
           </span>
-        {props.title?.length > 0 ? props.title : translate({message: "Usage"})}
+        {props.title?.length > 0 ? props.title : translate({message: "Utilisation"})}
       </div>
       <div className='admonitionContent_Knsx'>{props.children}</div>
     </div>
