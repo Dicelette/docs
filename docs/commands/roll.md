@@ -1,11 +1,15 @@
 ---
 title: Lancer de dés et scènes
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 ## Lancer de dés
 
-Utiliser `/roll <argument>` pour lancer un dé. Vous pouvez également utiliser la notation "semi-directe" en ajoutant un commentaire : `/roll <argument> Mon commentaire`. 
+:::usage
+**`/roll (argument)`**
+:::
+
+Vous pouvez également utiliser la notation "semi-directe" en ajoutant un commentaire dans l'argument : `/roll (dés commentaire)`. 
 
 Veuillez noter que la notation "indirecte" n'est pas disponible dans ce mode.
 
@@ -13,7 +17,11 @@ Veuillez noter que la notation "indirecte" n'est pas disponible dans ce mode.
 
 ## Créer une nouvelle scène
 
-Utiliser `/scene <nom>` pour créer une nouvelle scène. Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra les logs des dés. Ce fil de discussion prendra le nom de la `scène`, et tous les autres fils de discussion préfixés par `🎲` seront archivés.
+:::usage
+**`/scene [nom] (tempo)`**
+:::
+
+Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il enverra les logs des dés. Ce fil de discussion prendra le nom de la `scène`, et tous les autres fils de discussion préfixés par `🎲` seront archivés.
 
 ![Scene](/assets/rolls/scene.gif)
 
@@ -21,4 +29,8 @@ L'argument `tempo` permet de créer une "bulle temporelle", qui créera un threa
 
 ## Aide
 
-Utiliser `/help` pour afficher le message d'aide.
+:::usage
+**`/help`**
+:::
+
+Permet d'afficher les commandes et informations générale du bot, notamment l'aide sur les notations de dés. 

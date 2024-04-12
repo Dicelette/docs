@@ -1,6 +1,6 @@
 ---
 title: Fiches de personnages
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 <details id="danger">
@@ -22,6 +22,10 @@ sidebar_position: 3
 La commande `dbroll` sert à lancer des dés sur des statistiques qui ont été enregistrées précédemment, permettant d'éviter de retenir les caractéristiques de base d'un personnage.
 :::
 
+:::usage
+**`/dbroll [statistique] (*personnage) (commentaire) (remplacer) (modificateurs)`**
+:::
+
 La commande demande de spécifier :
 - La statistique
 - Le nom du personnage
@@ -38,35 +42,37 @@ La commande demande de spécifier :
 La commande `dbd` permet de lancer un dé enregistré.
 :::
 
-Cette commande requiert :
-- La compétence
-- Le nom du personnage
-- Les éventuels modificateurs
-- Tout commentaire sur votre action
+:::usage
+**`/dbd [*compétence] (*personnage) (modificateurs) (commentaire)`**
+:::
 
 ![dbd](/assets/rolls/db/dbd_example.png)
 
 
 ## Autres
+
+Les deux commandes suivantes acceptent :
+- `(@joueur)` : Le nom du joueur
+- `(*personnage)` : Et/ou le nom du personnage
+
 ### Afficher
 
-La commande `afficher` permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données. Elle vous demandera :
-- Le joueur
-- Et/ou le nom du personnage
+:::usage
+**`/afficher (@joueur) (*personnage)`**
+:::
 
-Combiner les deux permet de sélectionner le personnage d'un joueur spécifique (ce qui peut être utile en cas de doublons de noms de personnages, bien que cela soit peu probable).
+La commande `afficher` permet de consulter les statistiques et les dés d'un personnage enregistré dans la base de données.
 
 ![afficher](/assets/rolls/db/display_ex.png)
 
 ### Graphique (`/graph`)
 
-La commande `/graph` est une fonctionnalité "gimmick" qui permet de générer un graphique à partir des statistiques d'un personnage. Elle nécessite :
-- Le nom du joueur
-- Et/ou le nom du personnage.
+:::usage
+**`/graph (@joueur) (*personnage) (ligne) (fond) (min) (max)`**
+:::
 
-Comme précédemment, vous pouvez combiner les deux options pour sélectionner un personnage spécifique d'un joueur.
-
-En option, vous pouvez également spécifier des couleurs avec :
+La commande `/graph` est une fonctionnalité "gimmick" qui permet de générer un graphique à partir des statistiques d'un personnage. 
+En option, vous pouvez spécifier des couleurs avec :
 - `ligne` : Pour les lignes (par défaut, `#0e47b2`).
 - `fond` : Pour le fond (par défaut, `#0e47b2`).
 
