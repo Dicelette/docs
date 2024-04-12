@@ -288,3 +288,59 @@ input[type="number"] {
 #danger svg {
   vertical-align: text-top;
 }
+
+.admonitionHeading_FzoX {
+  font: var(--ifm-heading-font-weight) var(--ifm-h5-font-size) /
+    var(--ifm-heading-line-height) var(--ifm-heading-font-family);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.admonitionIcon_rXq6 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.4em;
+}
+
+.admonitionIcon_rXq6 svg {
+  display: inline-block;
+  height: 1.6em;
+  width: 1.6em;
+  fill: var(--ifm-alert-foreground-color);
+}
+
+.theme-admonition {
+  margin-bottom: 1em;
+}
+
+.usage {
+  --ifm-code-background: var(--ifm-alert-background-color-highlight);
+  --ifm-link-color: var(--ifm-alert-foreground-color);
+  --ifm-link-hover-color: var(--ifm-alert-foreground-color);
+  --ifm-link-decoration: underline;
+  --ifm-tabs-color: var(--ifm-alert-foreground-color);
+  --ifm-tabs-color-active: var(--ifm-alert-foreground-color);
+  --ifm-tabs-color-active-border: var(--ifm-alert-border-color);
+
+  background-color: var(--ifm-alert-background-color);
+  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
+  border-left-width: var(--ifm-alert-border-left-width);
+  border-radius: var(--ifm-alert-border-radius);
+  box-shadow: var(--ifm-alert-shadow);
+  color: var(--ifm-alert-foreground-color);
+  padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+}
+
+[data-theme="dark"] .alert--usage {
+  --ifm-alert-background-color: rgba(152, 225, 184, 0.197);
+  --ifm-alert-background-color-highlight: rgba(0, 25, 51, 0.115);
+  --ifm-alert-foreground-color: rgb(220, 220, 220);
+  --ifm-alert-border-color: rgb(255, 240, 230);
+}
+
+.alert--usage {
+  --ifm-alert-background-color: rgba(127, 135, 130, 0.2);
+  --ifm-alert-background-color-highlight: rgba(6, 27, 48, 0.054);
+  --ifm-alert-foreground-color: rgb(120, 119, 119); /* Gris clair */
+  --ifm-alert-border-color: rgb(93, 82, 75);
+}
