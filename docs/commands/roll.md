@@ -27,10 +27,3 @@ Le bot créera alors un nouveau fil de discussion, préfixé par `🎲`, où il 
 
 L'argument `tempo` permet de créer une "bulle temporelle", qui créera un thread préfixé par une horloge et, par défaut, le nom du channel sera la date du jour.
 
-## Aide
-
-:::usage
-**`/help`**
-:::
-
-Permet d'afficher les commandes et informations générale du bot, notamment l'aide sur les notations de dés. 
