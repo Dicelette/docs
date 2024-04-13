@@ -26,11 +26,3 @@ The bot will then create a new thread, prefixed with `🎲`, where it will send 
 ![Scene](/assets/rolls/scene.gif)
 
 The `tempo` argument allows you to create a "temporal bubble," which will create a thread prefixed with a clock icon, and by default, the channel name will be today's date.
-
-## Help
-
-:::usage
-**`/help`**
-:::
-
-Displays the bot's commands and general information, including help on dice notations.
