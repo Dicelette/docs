@@ -5,6 +5,8 @@ sidebar_position: 2
 
 Toutes les commandes suivantes sont restreintes par défaut aux membres ayant la permission `Gérer les rôles`.
 
+Vous pouvez voir la configuration actuelle du serveur avec la commande `/config`.
+
 ## Générale
 ### Logs
 
