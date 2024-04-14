@@ -42,6 +42,22 @@ Elle désactive aussi l'envoie dans le channel éventuellement configuré par la
 
 L'option sur **faux** réactive le comportement normal du bot.
 
+### Délai avant suppression des messages
+
+:::usage
+**`/supprimer_après [temps]`**
+:::
+
+Par défaut, les messages de résultats des jets de dés sont supprimés après **3** minutes. Cette commande permet de changer le délais (jusqu'à 60 minutes) avant suppression des messages.
+
+Si la valeur est mise à **0**, les messages ne seront plus supprimés.
+
+Cette option est désactivée si `/désactiver_threads` est activée.
+
+:::tip
+Cette commande permet d'avoir à la fois les logs dans un channels dédiés, tout en gardant le résultat indéfiniment dans le channel où le jet a été effectué.
+:::
+
 ## Modèle et fiche de personnages
 
 ### Supprimer un personnage/joueur (`/supprimer_char`)

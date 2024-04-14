@@ -28,7 +28,7 @@ The `/result_channel` command sets a channel to receive dice roll results instea
 
 Sending the command without the "channel" argument will remove the results channel, similar to the `logs` command.
 
-### Disable Thread Auto-Creation
+### Disable thread auto-Creation
 
 :::usage
 **`/disable_threads [true/false]`**
@@ -41,6 +41,18 @@ It also disables sending to the channel configured by the `/result_channel` comm
 Channels and threads prefixed with `🎲` will no longer receive logs either.
 
 Setting the option to **false** reactivates the bot's normal behavior.
+
+### Time before message deletion
+
+:::usage
+**`/delete_after [time]`**
+:::
+
+By default, dice roll result messages are deleted after **3** minutes. This command allows you to change the delay (up to 60 minutes) before messages are deleted.
+
+If the value is set to **0**, messages will no longer be deleted.
+
+This option is disabled if `/disable_threads` is enabled.
 
 ## Character Sheet and Template
 
