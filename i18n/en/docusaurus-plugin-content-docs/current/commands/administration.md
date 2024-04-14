@@ -7,11 +7,14 @@ The following commands are restricted by default to members with the `Manage Rol
 
 You can view the current server configuration with the `/config` command.
 
-## General
+## Configuration
+
+The following commands are grouped in the `/config` command and allow you to configure the bot for your server.
+
 ### Logs
 
 :::usage
-**`/logs (#channel)`**
+**`/config logs (#channel)`**
 :::
 
 The `logs` command allows you to set up a channel to:
@@ -20,25 +23,25 @@ The `logs` command allows you to set up a channel to:
 
 Sending the command without the `#channel` argument will remove logging.
 
-### Changing the Results Channel (`/result_channel`)
+### Changing the result log channel
 
 :::usage
-**`/result_channel (#channel)`**
+**`/config result_channel (#channel)`**
 :::
 
-The `/result_channel` command sets a channel to receive dice roll results instead of using a thread each time. The channel ID will then be stored in the database similarly to the `logs` command.
+The `/config result_channel` command sets a channel to receive dice roll results instead of using a thread each time. The channel ID will then be stored in the database similarly to the `logs` command.
 
 Sending the command without the "channel" argument will remove the results channel, similar to the `logs` command.
 
 ### Disable thread auto-Creation
 
 :::usage
-**`/disable_threads [true/false]`**
+**`/config disable_threads [true/false]`**
 :::
 
 If the option is set to **true**, it disables the default creation of threads for dice rolls. Everything will be sent (without deletion) to the channel where the command was executed.
 
-It also disables sending to the channel configured by the `/result_channel` command, if any.
+It also disables sending to the channel configured by the `/config result_channel` command, if any.
 
 Channels and threads prefixed with `🎲` will no longer receive logs either.
 
@@ -47,18 +50,21 @@ Setting the option to **false** reactivates the bot's normal behavior.
 ### Time before message deletion
 
 :::usage
-**`/delete_after [time]`**
+**`/config delete_after [time]`**
 :::
 
 By default, dice roll result messages are deleted after **3** minutes. This command allows you to change the delay (up to 60 minutes) before messages are deleted.
 
 If the value is set to **0**, messages will no longer be deleted.
 
-This option is disabled if `/disable_threads` is enabled.
+This option is disabled if `/config disable_threads` is enabled.
 
-## Character Sheet and Template
+:::tip
+This command allow to have both the result log in a dedicated channel (or in threads) while keeping the result in the main channel for the players to see.
+:::
 
-### Delete a Character/Player (`/delete_char`)
+## Character sheet and template management
+### Delete a character/player
 
 :::usage
 **`/delete_char [@player] (*character)`**
@@ -75,13 +81,13 @@ If no character name is provided, it will delete all data for the player. If you
 ### Auto-Role (`/auto_role`)
 
 :::usage
-- **`/auto_role dé (@role)`**
-- **`/auto_role stats (@role)`**
+- **`/config auto_role dé (@role)`**
+- **`/config auto_role stats (@role)`**
 :::
 
 These commands allow automatically adding roles when:
-- A die is rolled (`/auto_role die`)
-- Statistics are validated (`/auto_role stats`)
+- A die is rolled (`/config auto_role die`)
+- Statistics are validated (`/config auto_role stats`)
 
 This notably enables the use of `/dbd` and `/dbroll` for users who actually have permission to use these two commands.
 

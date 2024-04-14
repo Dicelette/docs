@@ -7,11 +7,14 @@ Toutes les commandes suivantes sont restreintes par défaut aux membres ayant la
 
 Vous pouvez voir la configuration actuelle du serveur avec la commande `/config`.
 
-## Générale
+## Configuration
+
+Les commandes suivantes sont réunies dans la commandes `/config` et permettent de configurer le bot pour votre serveur.
+
 ### Logs
 
 :::usage
-**`/logs (#channel)`**
+**`/config logs (#channel)`**
 :::
 
 La commande `logs` offre la possibilité de d'enregister un channel afin de : 
@@ -23,46 +26,45 @@ Renvoyer la commande sans l'argument `#channel` permet de supprimer l'envoi des 
 ### Changer le canal de résultats
 
 :::usage
-**`/result_channel (#channel)`**
+**`/config result_channel (#channel)`**
 :::
 
-La commande `/result_channel` permet de définir un canal pour recevoir les résultats des jets de dés, plutôt que d'utiliser un fil de discussion à chaque fois. L'ID du canal sera alors enregistré dans la base de données de la même manière que la commande `logs`.
+La commande `/config result_channel` permet de définir un canal pour recevoir les résultats des jets de dés, plutôt que d'utiliser un fil de discussion à chaque fois. L'ID du canal sera alors enregistré dans la base de données de la même manière que la commande `logs`.
 
 Renvoyer la commande sans l'argument "channel" permet de supprimer le canal de résultats à l'instar de la commande `logs`.
 
 ### Supprimer l'auto-création des threads
 
 :::usage
-**`/désactiver_threads [vrai/faux]`**
+**`/config désactiver_threads [true/false]`**
 :::
 
-Si l'option est sur **vrai**, désactive la création, par défaut, des threads pour les jets de dés. Tout sera donc envoyé (sans suppression) dans le channel où la commande a été effectuée.
+Si l'option est sur **true**, désactive la création, par défaut, des threads pour les jets de dés. Tout sera donc envoyé (sans suppression) dans le channel où la commande a été effectuée.
 
 Les channels et fils préfixés par `🎲` ne recevront plus les logs non plus.
 
-Elle désactive aussi l'envoie dans le channel éventuellement configuré par la commande `/result_channel`.
+Elle désactive aussi l'envoie dans le channel éventuellement configuré par la commande `/config result_channel`.
 
 L'option sur **faux** réactive le comportement normal du bot.
 
 ### Délai avant suppression des messages
 
 :::usage
-**`/supprimer_après [temps]`**
+**`/config supprimer_après [temps]`**
 :::
 
 Par défaut, les messages de résultats des jets de dés sont supprimés après **3** minutes. Cette commande permet de changer le délais (jusqu'à 60 minutes) avant suppression des messages.
 
 Si la valeur est mise à **0**, les messages ne seront plus supprimés.
 
-Cette option est désactivée si `/désactiver_threads` est activée.
+Cette option est désactivée si `/config désactiver_threads` est activée.
 
 :::tip
 Cette commande permet d'avoir à la fois les logs dans un channels dédiés, tout en gardant le résultat indéfiniment dans le channel où le jet a été effectué.
 :::
 
 ## Modèle et fiche de personnages
-
-### Supprimer un personnage/joueur (`/supprimer_char`)
+### Supprimer un personnage/joueur 
 
 :::usage
 **`/supprimer_char [@joueur] (*personnage)`**
@@ -76,16 +78,16 @@ Elle demande :
 
 En l'absence de nom de personnage, cela supprimera toutes les données du joueur. Si vous voulez supprimer uniquement le "personnage sans nom" d'un joueur, vous pouvez le faire en choisissant "défaut" dans la liste du nom du personnage.
 
-### Auto-Role (`/auto_role`)
+### Auto-Role
 
 :::usage
-- **`/auto_role dé (@role)`**
-- **`/auto_role stats (@role)`**
+- **`/config auto_role dé (@role)`**
+- **`/config auto_role stats (@role)`**
 :::
 
 Ces commandes permettent d'ajouter automatiquement des rôles lorsque :
-- Un dé est ajouté (`/auto_role dé`)
-- Des statistiques sont validées (`/auto_role stats`)
+- Un dé est ajouté (`/config auto_role dé`)
+- Des statistiques sont validées (`/config auto_role stats`)
 
 Cela permet, notamment, d'autoriser l'usage de `/dbd` et `/dbroll` aux utilisateurs qui ont, effectivement, la possibilité d'utiliser ses deux commandes.
 
