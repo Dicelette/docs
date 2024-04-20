@@ -37,7 +37,7 @@ Pour viser une statistique, cela est différent selon le type de dé :
 - Pour un dé type, il faut utiliser `$`. Ce symbole sera utilisé par la valeur de la statistique utilisée par `/dbroll`.
 - Pour les dés enregistrés, il suffit d'utiliser les noms des statistiques. 
 
-::tip[Exemple]
+:::tip[Exemple]
 - Pour un dé type : `1d6>$` ou `1d6+$`
 - Pour un dé enregistré : `1d6 > Force` ou `1d6 + Force`
 

@@ -344,3 +344,14 @@ input[type="number"] {
   --ifm-alert-foreground-color: rgb(120, 119, 119); /* Gris clair */
   --ifm-alert-border-color: rgb(93, 82, 75);
 }
+
+.swal2-popup.error {
+  background-color: var(--ifm-color-danger-darkest);
+  color: whitesmoke;
+}
+
+.swal2-confirm.error {
+  background-color: var(--ifm-color-danger-dark);
+  border-color: var(--ifm-color-danger-darker);
+  color: whitesmoke;
+}
