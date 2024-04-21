@@ -346,12 +346,26 @@ input[type="number"] {
 }
 
 .swal2-popup.error {
-  background-color: var(--ifm-color-danger-darkest);
+  background-color: var(--ifm-color-danger-darkest) !important;
   color: whitesmoke;
+  padding-bottom: 0;
+}
+
+div:where(.swal2-container)
+  button:where(.swal2-styled).swal2-confirm.error:focus {
+  box-shadow: 0 0 0 3px rgba(128, 20, 24, 0.405);
+}
+
+div:where(.swal2-container) button:where(.swal2-close.error):focus {
+  box-shadow: none !important;
 }
 
 .swal2-confirm.error {
   background-color: var(--ifm-color-danger-dark);
   border-color: var(--ifm-color-danger-darker);
   color: whitesmoke;
+}
+
+.swal2-confirm.hide {
+  display: none !important;
 }

@@ -65,9 +65,15 @@ const TemplateForm: FC = () => {
       MySwal.fire({
         html: msg,
         icon: "error",
+        showCloseButton: true,
+        //toast: true,
+        backdrop: true,
+        showConfirmButton: false,
         customClass: {
-          confirmButton: "error",
-          popup: "error",
+          confirmButton: "hide",
+          popup: ["error", "swal2-toast"],
+          htmlContainer: ["error", "swal2-toast"],
+          closeButton: "error",
         },
       });
     }
