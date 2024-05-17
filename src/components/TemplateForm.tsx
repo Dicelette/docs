@@ -17,6 +17,7 @@ import { translate } from "@docusaurus/Translate";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { cp } from "fs";
 
 const TemplateForm: FC = () => {
   const downloadJSON = (data: any) => {
@@ -47,17 +48,26 @@ const TemplateForm: FC = () => {
     try {
       const template = verifyTemplateValue(templateDataValues);
       console.log(template);
-      const blob = new Blob([JSON.stringify(template, null, 2)], {
+      const Jsonblob = new Blob([JSON.stringify(template, null, 2)], {
         type: "application/json",
       });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "statisticalTemplate.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      const CSVHeader =
+        "\ufeff" +
+        ["user", "charName", ...Object.keys(template.statistics)].join(",");
+      const CSVblob = new Blob([CSVHeader], { type: "text/csv" });
+      const urls = [
+        URL.createObjectURL(Jsonblob),
+        URL.createObjectURL(CSVblob),
+      ];
+      for (const url of urls) {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "statisticalTemplate.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
     } catch (error) {
       console.log(error);
       const msg = errorCode(error);

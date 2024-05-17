@@ -106,3 +106,16 @@ Les deux commandes suivantes permettent aux maîtres de jeu de lancer des dés p
 
 Les deux commandes sont similaires à [dbroll](./model#dbroll-dbroll) et [dbd](./model#dbd-dbd), mais nécessite en plus de spécifier le joueur pour lequel le jet est effectué. Comme les autres commandes, il est possible de choisir un personnage appartenant à ce joueur ou de laisser le choix par défaut.
 
+## Importer des données
+
+:::usage
+**`/import [csv]`**
+:::
+
+La commande `/import` permet d'importer des données depuis un fichier CSV. Vous pouvez télécharger le modèle en utilisant la commande `/csv` et le remplir avec les personnages et statistiques que vous souhaitez importer.
+
+:::important
+- Vous ne pouvez pas importer de dés spécifiques par joueurs et vous devez les remplir lorsque les personnages sont importés et enregistrés dans le channel choisi pour les fiches.
+- Les données importées écraseront les données existantes.
+- Le minimum, maximum ainsi que le total de points n'est pas vérifiés (afin de permettre l'import de personnages ayant acquis de l'expérience ou qui sont différents des autres, comme des monstres).
+:::
