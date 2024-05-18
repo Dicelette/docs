@@ -152,7 +152,7 @@ The following columns are necessary for the import:
 - The following columns should be the statistics of your template.
 - `dice`: The specific dice for the `/dbd` command. If you do not use this command, you can leave this column empty or even delete it: it is not mandatory.
 
-## Export Data
+### Export Data
 
 :::usage
 **`/export [csv] (private_sheet_only)`**

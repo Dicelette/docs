@@ -150,7 +150,7 @@ Les colonnes suivantes sont nécessaires pour l'import :
 - Les colonnes suivantes doivent être les statistiques de votre modèle.
 - `dice` : Les dés spécifiques pour la commande `/dbd`. Si vous n'utilisez pas cette commande, vous pouvez laisser cette colonne vide, voire la supprimée : elle n'est pas obligatoire. 
 
-## Exporter des données
+### Exporter des données
 
 :::usage
 **`/export [csv] (fiche_privée_uniquement)`**
