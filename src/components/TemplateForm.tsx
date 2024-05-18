@@ -52,6 +52,7 @@ const TemplateForm: FC = () => {
       const CSVHeader = ["user", "charName"];
       if (data.isPrivate) CSVHeader.push("isPrivate");
       CSVHeader.push(...Object.keys(template.statistics));
+      CSVHeader.push("dice");
       const csv = `\ufeff${CSVHeader.join(";")}\n`;
       const CSVblob = new Blob([csv], { type: "text/csv" });
       const urls = [
