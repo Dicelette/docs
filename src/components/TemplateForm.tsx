@@ -17,7 +17,6 @@ import { translate } from "@docusaurus/Translate";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { cp } from "fs";
 
 const TemplateForm: FC = () => {
   const downloadJSON = (data: any) => {
@@ -47,26 +46,29 @@ const TemplateForm: FC = () => {
 
     try {
       const template = verifyTemplateValue(templateDataValues);
-      console.log(template);
       const Jsonblob = new Blob([JSON.stringify(template, null, 2)], {
         type: "application/json",
       });
-      const CSVHeader =
-        "\ufeff" +
-        ["user", "charName", ...Object.keys(template.statistics)].join(",");
-      const CSVblob = new Blob([CSVHeader], { type: "text/csv" });
+      const CSVHeader = ["user", "charName"];
+      if (data.isPrivate) CSVHeader.push("isPrivate");
+      CSVHeader.push(...Object.keys(template.statistics));
+      const csv = `\ufeff${CSVHeader.join(";")}\n`;
+      const CSVblob = new Blob([csv], { type: "text/csv" });
       const urls = [
-        URL.createObjectURL(Jsonblob),
-        URL.createObjectURL(CSVblob),
+        {
+          name: "statisticalTemplate.json",
+          url: URL.createObjectURL(Jsonblob),
+        },
+        { name: "import.csv", url: URL.createObjectURL(CSVblob) },
       ];
       for (const url of urls) {
         const a = document.createElement("a");
-        a.href = url;
-        a.download = "statisticalTemplate.json";
+        a.href = url.url;
+        a.download = url.name;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url.url);
       }
     } catch (error) {
       console.log(error);
@@ -144,6 +146,7 @@ const TemplateForm: FC = () => {
     <Formik
       initialValues={{
         isCharNameRequired: false,
+        isPrivate: false,
         statistics: [],
         total: 0,
         diceType: "",
