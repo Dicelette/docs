@@ -10,6 +10,7 @@ Une fois que le bouton est activé, vous aurez une série de modaux à remplir.
 Le premier modal sera toujours identique quel que soit le modèle :
 - Il vous demandera le nom du personnage (obligatoire ou facultatif, selon les paramètres du modèle)
 - Le nom de l'utilisateur, qui doit être soit son ID, soit son nom d'utilisateur. Cette donnée est obligatoire et sera pré-remplie par le bot avec le nom d'utilisateur de la personne qui a cliqué.
+- Si vous avez activé l'utilisation des fiches privées (voir [ici](/model/register/index.md#prochaine-étape)), vous aurez un troisième champ pour choisir si la fiche doit être privée ou non. Si la fiche est privée, mettez simplement `x` dans le champ. Laissez vide sinon !
 
 :::info
 Le nom d'utilisateur est le nom d'utilisateur, pas le nom d'affichage. Celui que vous avez peut-être été contraint de changer lorsque Discord a supprimé les numéros après les pseudonymes...

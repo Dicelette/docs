@@ -567,5 +567,38 @@
   },
   "Utilisation": {
     "message": "Usage"
+  },
+  "L'objet {{x}} est vide": {
+    "message": "The object {{x}} is empty"
+  },
+  " ": {
+    "message": ""
+  },
+  "Le dé \"{{x}}\" est invalide.": {
+    "message": "The dice \"{{x}}\" is invalid."
+  },
+  "La formule \"{{x}}\" est invalide.": {
+    "message": "The formula \"{{x}}\" is invalid."
+  },
+  "Erreur dans le dé : ": {
+    "message": "Error in the dice: "
+  },
+  "Attendant": {
+    "message": "Wait"
+  },
+  "mais": {
+    "message": "but"
+  },
+  "ou": {
+    "message": "or"
+  },
+  "trouvé": {
+    "message": "found"
+  },
+  "Fiches privées": {
+    "message": "Privates sheets"
+  },
+  "Utilisée uniquement dans le CSV d'importation de fiche": {
+    "message": "Used only in the CSV for sheet import"
   }
 }

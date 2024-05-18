@@ -46,18 +46,31 @@ const TemplateForm: FC = () => {
 
     try {
       const template = verifyTemplateValue(templateDataValues);
-      console.log(template);
-      const blob = new Blob([JSON.stringify(template, null, 2)], {
+      const Jsonblob = new Blob([JSON.stringify(template, null, 2)], {
         type: "application/json",
       });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "statisticalTemplate.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      const CSVHeader = ["user", "charName"];
+      if (data.isPrivate) CSVHeader.push("isPrivate");
+      CSVHeader.push(...Object.keys(template.statistics));
+      CSVHeader.push("dice");
+      const csv = `\ufeff${CSVHeader.join(";")}\n`;
+      const CSVblob = new Blob([csv], { type: "text/csv" });
+      const urls = [
+        {
+          name: "statisticalTemplate.json",
+          url: URL.createObjectURL(Jsonblob),
+        },
+        { name: "import.csv", url: URL.createObjectURL(CSVblob) },
+      ];
+      for (const url of urls) {
+        const a = document.createElement("a");
+        a.href = url.url;
+        a.download = url.name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url.url);
+      }
     } catch (error) {
       console.log(error);
       const msg = errorCode(error);
@@ -134,6 +147,7 @@ const TemplateForm: FC = () => {
     <Formik
       initialValues={{
         isCharNameRequired: false,
+        isPrivate: false,
         statistics: [],
         total: 0,
         diceType: "",

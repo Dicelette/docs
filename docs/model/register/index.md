@@ -84,19 +84,18 @@ Chaque statistique a un nom, une valeur minimale (`min`), une valeur maximale (`
 ```
 </details> 
 
-## Prochaine Étape
+## Prochaine étape
 
-Une fois que le modèle est prêt, utilisez `/register <channel> <fichier>`. Choisissez :
-
-- Le canal pour le bouton de création de fiches.
-- Le fichier modifié.
-- (Optionnel) Le canal dans lequel seront postées les fiches. En cas d'omission, les fiches seront postées dans un fil nommé `📝 • [STATS]` (créé à partir du canal où se trouve le bouton de création des fiches).
-
+Une fois que le modèle est prêt, utilisez `/register [#channel] [fichier] (#user_chan) (#personnage_privé)`. 
+- `#channel` est le canal où le modèle sera envoyée. Il sera ensuite utilisée pour la création de fiche.
+- `fichier` est le fichier `JSON` créé précédemment.
+- `#user_chan` est le canal où les fiches seront publiées.
+- `#personnage_privé` est, de manière similaire à `#user_chan`, mais les fiches qui seront publiées dans ce channel seront uniquement visibles par l'utilisateur qui a enregistré la fiche, ou par ceux qui ont accès à ce channel (ainsi que les personnes ayant la permission `GÉRER LES RÔLES`). Si ce channel n'est pas défini, la fonction de fiche privée sera désactivée.
 L'embed sera épinglé pour faciliter l'accès.
 
 
 ![embed](/assets/register/embed_template.png)
 
 :::warning Attention
-Vous ne pourrez pas modifier le canal de publication des fiches sans perdre les anciennes fiches car le canal est enregistré globalement, et non pas spécifiquement pour chaque fiche.
+Les channels `#user_chan` et `#personnage_privé` ne peuvent pas être modifiés après l'enregistrement, car ils sont sauvegardés de manière globale dans la base de données.
 :::
