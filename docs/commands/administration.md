@@ -119,3 +119,22 @@ La commande `/import` permet d'importer des données depuis un fichier CSV. Vous
 - Les données importées écraseront les données existantes.
 - Le minimum, maximum ainsi que le total de points n'est pas vérifiés (afin de permettre l'import de personnages ayant acquis de l'expérience ou qui sont différents des autres, comme des monstres).
 :::
+
+## Exporter des données
+
+:::usage
+**`/export [csv] (fiche_privée_uniquement)`**
+:::
+
+Cette commande permet d'exporter la liste des personnages et des statistiques dans un fichier CSV. 
+En fonction de l'option 'private', la liste fournie sera différente : 
+- Si `false`, elle incluera **uniquement** les personnages dont la fiche est **publique**.
+- Si `true`, elle incluera **uniquement** les personnages dont la fiche est **privée**.
+- Si elle est omise, elle inclura **tous** les personnages, quelque soit le statut de la fiche.
+
+:::important
+Les dés spécifiques par joueurs ne sont pas exportés. Seule la valeur des statistiques le sont, ainsi que l'ID du joueur et le nom de leur personnage.
+:::
+
+Le fichier CSV exporté utilise le point virgule comme séparateur.
+
