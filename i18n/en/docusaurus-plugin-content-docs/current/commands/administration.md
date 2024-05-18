@@ -106,7 +106,32 @@ The two following commands allow game masters to roll dice for any registered pl
 
 Both commands are similar to [dbroll](./model#dbroll-dbroll) and [dbd](./model#dbd-dbd), but additionally require specification of the player for whom the roll is being made. As with the other commands, you can choose a character belonging to this player or leave the default choice.
 
-## Import Data
+## Import and Export Data
+
+The following commands allow you to import and export data from and to a CSV file.
+
+:::tip About Dice
+It is entirely possible to import specific dice for the command [`/dbd`](./model.mdx#dbd), but you need to fill in the `dice` column as follows:
+```md
+- [dice]: [value]
+```
+For example:
+```md
+'- Athletics: 1d20+Strength
+- Stealth: 1d20+Dexterity
+```
+:::
+
+:::important About Excel
+- Excel does not handle cells starting with `-` well and may interpret them as formulas. If this happens, you need to add `'` before the `-`.
+- Excel may have issues reading and exporting text with accents. It is recommended to save the file in UTF-8-BOM format, using tools like Notepad++ or VSCode.
+- Player `id`s may be recognized as numbers and altered. It is advised to save them as text by adding `'` before the `id`, like `'123456789012345678`.
+:::
+
+![Example](/assets/csv/example.png)
+
+
+### Import
 
 :::usage
 **`/import [csv]`**
@@ -115,10 +140,17 @@ Both commands are similar to [dbroll](./model#dbroll-dbroll) and [dbd](./model#d
 The `/import` command allows you to import data from a CSV file. You can download the template using the `/csv` command and fill it with the characters and statistics you wish to import.
 
 :::important
-- You cannot import specific dice for players; you must fill these in when the characters are imported and saved in the designated channel for sheets.
 - Imported data will overwrite existing data.
 - The minimum, maximum, and total points are not verified (to allow the import of characters who have gained experience or differ from others, such as monsters).
+- Combinations should not be entered as is but should be directly calculated. For example, if the HP column is a combination of `Constitution` and `Endurance`, you must enter the result of these columns directly. There is no issue using formulas in a CSV, as the file export will only include the result!
 :::
+
+The following columns are necessary for the import:
+- `user`: The Discord ID of the player or their username (without the `@`).
+- `charName`: Depending on your template, this might be required. It is the character's name.
+- `isPrivate`: `true` or `false` to specify if the sheet is private or not. If your template does not use private sheets, you can leave this column empty.
+- The following columns should be the statistics of your template.
+- `dice`: The specific dice for the `/dbd` command. If you do not use this command, you can leave this column empty or even delete it: it is not mandatory.
 
 ## Export Data
 
@@ -130,9 +162,5 @@ This command allows you to export the list of characters and statistics into a C
 - If `false`, it will include **only** characters whose sheets are **public**.
 - If `true`, it will include **only** characters whose sheets are **private**.
 - If omitted, it will include **all** characters, regardless of the sheet status.
-
-:::important
-Specific dice for players are not exported. Only the value of the statistics, as well as the player ID and their character's name, are included.
-:::
 
 The exported CSV file uses a semicolon as the separator.
