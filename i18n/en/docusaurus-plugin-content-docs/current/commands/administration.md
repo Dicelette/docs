@@ -106,3 +106,33 @@ The two following commands allow game masters to roll dice for any registered pl
 
 Both commands are similar to [dbroll](./model#dbroll-dbroll) and [dbd](./model#dbd-dbd), but additionally require specification of the player for whom the roll is being made. As with the other commands, you can choose a character belonging to this player or leave the default choice.
 
+## Import Data
+
+:::usage
+**`/import [csv]`**
+:::
+
+The `/import` command allows you to import data from a CSV file. You can download the template using the `/csv` command and fill it with the characters and statistics you wish to import.
+
+:::important
+- You cannot import specific dice for players; you must fill these in when the characters are imported and saved in the designated channel for sheets.
+- Imported data will overwrite existing data.
+- The minimum, maximum, and total points are not verified (to allow the import of characters who have gained experience or differ from others, such as monsters).
+:::
+
+## Export Data
+
+:::usage
+**`/export [csv] (private_sheet_only)`**
+:::
+
+This command allows you to export the list of characters and statistics into a CSV file. Depending on the 'private' option, the provided list will be different:
+- If `false`, it will include **only** characters whose sheets are **public**.
+- If `true`, it will include **only** characters whose sheets are **private**.
+- If omitted, it will include **all** characters, regardless of the sheet status.
+
+:::important
+Specific dice for players are not exported. Only the value of the statistics, as well as the player ID and their character's name, are included.
+:::
+
+The exported CSV file uses a semicolon as the separator.

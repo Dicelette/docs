@@ -83,19 +83,15 @@ Statistics are based on a name, but you will notice that after generating the fi
 
 ## What's Next?
 
-Once the template has been created and you are satisfied with it, you can use the command `/register <channel> <file>`. You must choose:
-- The channel where the embed will be pinned (and where the button will be available).
-- The file to be used as a template.
-- (Optional) The channel where the character sheet will be posted. If this parameter is omitted, the character sheet will be posted in a thread created from the channel where the button was posted, named `📝 - [STATS]`. 
-
-:::tip
-If you want to allow your players to edit their own sheet, you can choose a channel they have access to. Otherwise, simply choose a private channel.
-:::
-
-For practical reasons, the embed will be pinned.
+Once the template is ready, use `/register [#channel] [file] (#user_chan) (#private_character)`.
+- `#channel` is the channel where the template will be sent. It will then be used for sheet creation.
+- `file` is the previously created `JSON` file.
+- `#user_chan` is the channel where the sheets will be published.
+- `#private_character` works similarly to `#user_chan`, but the sheets published in this channel will only be visible to the user who registered the sheet or to those who have access to this channel (as well as people with the `MANAGE ROLES` permission). If this channel is not defined, the private sheet function will be disabled.
+The embed will be pinned for easy access.
 
 ![embed](/assets/register/embed_template.png)
 
-:::warning
-It is not possible to change the channel of publication for cards in the future while retaining the old cards. The old cards will not be found during searches because the channel is saved globally, rather than specific to each card.
+:::warning Caution
+The `#user_chan` and `#private_character` channels cannot be changed after registration, as they are saved globally in the database.
 :::
