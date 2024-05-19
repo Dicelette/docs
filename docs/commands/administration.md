@@ -125,6 +125,10 @@ Par exemple :
 - Excel n'aime pas les cases dont le contenu comme par `-` et peut les interpréter comme des formules. Si tel est le cas, vous devez ajouter `'` devant le `-`.
 - Excel peut avoir des problèmes en lisant et exportant les textes contenant des accents. Il est recommandées d'enregistrer le fichier en UTF-8-BOM, en utilisant par exemple Notepad++ ou VSCode.
 - Tout comme la liste des dés, si vous utiliser l'ID du joueur, il faudra ajouter `'` devant (comme `'123456789012345678`) pour éviter que Excel ne le transforme en nombre.
+
+Il est vivement conseiller de désactiver les conversions automatiques d'Excel: 
+![Excel](/assets/csv/EXCEL_FR_disable.png)
+
 :::
 
 ![Example](/assets/csv/example.png)

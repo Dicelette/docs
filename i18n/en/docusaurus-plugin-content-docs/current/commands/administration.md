@@ -126,6 +126,8 @@ For example:
 - Excel does not handle cells starting with `-` well and may interpret them as formulas. If this happens, you need to add `'` before the `-`.
 - Excel may have issues reading and exporting text with accents. It is recommended to save the file in UTF-8-BOM format, using tools like Notepad++ or VSCode.
 - Player `id`s may be recognized as numbers and altered. It is advised to save them as text by adding `'` before the `id`, like `'123456789012345678`.
+
+![Excel](/assets/csv/EXCEL_EN_disable.png)
 :::
 
 ![Example](/assets/csv/example.png)
