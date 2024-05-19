@@ -129,6 +129,9 @@ Par exemple :
 Il est vivement conseiller de désactiver les conversions automatiques d'Excel: 
 ![Excel](/assets/csv/EXCEL_FR_disable.png)
 
+Et de désactiver la règle de vérification des erreurs "Nombres mis en forme en tant que texte ou précédés d'une apostrophe" dans les options de vérification des erreurs (Formules > Règle de vérification des erreurs) :
+![](/assets/csv/FR_DISABLE_nb.png)
+
 :::
 
 ![Example](/assets/csv/example.png)

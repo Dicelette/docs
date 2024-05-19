@@ -129,6 +129,10 @@ For example:
 
 It is highly recommended to disable Excel's automatic conversions:
 ![Excel](/assets/csv/EXCEL_EN_disable.png)
+
+And to disable the error checking rule "Numbers formatted as text or preceded by an apostrophe" in the error checking options (Formulas > Error Checking Rules):
+![](/assets/csv/EN_DISABLE_nb.png)
+
 :::
 
 ![Example](/assets/csv/example.png)
