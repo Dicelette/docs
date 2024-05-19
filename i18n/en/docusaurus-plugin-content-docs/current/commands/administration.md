@@ -127,6 +127,7 @@ For example:
 - Excel may have issues reading and exporting text with accents. It is recommended to save the file in UTF-8-BOM format, using tools like Notepad++ or VSCode.
 - Player `id`s may be recognized as numbers and altered. It is advised to save them as text by adding `'` before the `id`, like `'123456789012345678`.
 
+It is highly recommended to disable Excel's automatic conversions:
 ![Excel](/assets/csv/EXCEL_EN_disable.png)
 :::
 
