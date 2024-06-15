@@ -37,7 +37,8 @@ const Dices = ({ values }) => {
           anchorSelect={`#Dice-Nom-${index}`}
         />
       );
-    } else if (values.damages[index].name.length === 0) {
+    }
+    if (values.damages[index].name.length === 0) {
       return (
         <ReactTooltip
           id={`Dice-Nom-${index}`}
@@ -46,7 +47,8 @@ const Dices = ({ values }) => {
           anchorSelect={`#Dice-Nom-${index}`}
         />
       );
-    } else return null;
+    }
+    return null;
   };
 
   return (
@@ -72,12 +74,12 @@ const Dices = ({ values }) => {
                   >
                     <td className="p-px min-[0px]:max-2xl:p-2 table-cell min-[0px]:max-xl:w-full">
                       <CopyButton
-                        maxLen={9999}
+                        maxLen={25}
                         length={values.damages.length}
                         size={1280}
                         onClick={() => {
                           push({
-                            name: "",
+                            name: values.damages[index].name,
                             value: values.damages[index].value,
                           });
                         }}
