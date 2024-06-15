@@ -49,7 +49,7 @@ const TemplateForm: FC = () => {
       const Jsonblob = new Blob([JSON.stringify(template, null, 2)], {
         type: "application/json",
       });
-      const CSVHeader = ["user", "charName", "avatar"];
+      const CSVHeader = ["user", "charName", "avatar", "channel"];
       if (data.isPrivate) CSVHeader.push("isPrivate");
       CSVHeader.push(...Object.keys(template.statistics));
       CSVHeader.push("dice");
