@@ -145,7 +145,7 @@ Et de désactiver la règle de vérification des erreurs "Nombres mis en forme e
 La commande `/import` permet d'importer des données depuis un fichier CSV. Vous pouvez télécharger le modèle en utilisant la commande `/csv` et le remplir avec les personnages et statistiques que vous souhaitez importer.
 
 :::important
-- Les données importées écraseront les données existantes.
+- Les données importées écraseront les données existantes, mais ne supprimerons pas les personnages non présents dans le fichier. De plus, si le personnage du joueur existe déjà, ses données seront écrasées dans la base de donnée mais le message du personnage ne sera pas supprimé : vous devrez le faire manuellement.
 - Le minimum, maximum ainsi que le total de points n'est pas vérifiés (afin de permettre l'import de personnages ayant acquis de l'expérience ou qui sont différents des autres, comme des monstres).
 - Les combinaisons ne doivent pas être rentrée telles quelles mais doivent être directement calculées. Par exemple, si la colonne PV est une combainaison de `Constitution` et `Endurance` vous devez rentrer le résultat des colonnes directement. Il n'y a pas de problème à utiliser des formules dans un CSV, car l'exportation du fichier incluera seulement le résultat !
 :::
@@ -153,10 +153,14 @@ La commande `/import` permet d'importer des données depuis un fichier CSV. Vous
 Les colonnes suivantes sont nécessaires pour l'import :
 - `user` : L'ID Discord du joueur ou son nom d'utilisateur (sans le `@`).
 - `charName` : En fonction de votre modèle, peut être obligatoire. C'est le nom du personnage.
-- `avatar` : Le lien vers l'avatar du personnage. Si vous n'utilisez pas d'avatar, vous pouvez laisser cette colonne vide. L'avatar utilisé dans l'affichage sera celui du joueur.
 - `isPrivate` : `true` ou `false` pour définir si la fiche est privée ou non. Si votre modèle n'utilise pas de fiche privée, vous pouvez laisser cette colonne vide.
 - Les colonnes suivantes doivent être les statistiques de votre modèle.
-- `dice` : Les dés spécifiques pour la commande `/dbd`. Si vous n'utilisez pas cette commande, vous pouvez laisser cette colonne vide, voire la supprimée : elle n'est pas obligatoire. 
+
+Les colonnes suivantes sont facultatives :
+- `avatar` : Le lien vers l'avatar du personnage. Si vous n'utilisez pas d'avatar, vous pouvez laisser cette colonne vide. L'avatar utilisé dans l'affichage sera celui du joueur.
+- `channel` : Permet de définir un channel où envoyé la fiche, plutôt que d'utiliser les channels par défaut définis lors de l'enregistrement du modèle.
+- `dice` : Les dés spécifiques pour la commande `/dbd`. Si vous n'utilisez pas cette commande, vous pouvez laisser cette colonne vide, voire la supprimer. 
+
 
 ### Exporter des données
 

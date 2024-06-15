@@ -147,7 +147,7 @@ And to disable the error checking rule "Numbers formatted as text or preceded by
 The `/import` command allows you to import data from a CSV file. You can download the template using the `/csv` command and fill it with the characters and statistics you wish to import.
 
 :::important
-- Imported data will overwrite existing data.
+- Imported data will overwrite existing data, but won't delete characters that are not in the CSV file. Moreover, if the character already exists, it will be updated with the new data in the base, but the old messages will not be deleted : it is up to you to delete them.
 - The minimum, maximum, and total points are not verified (to allow the import of characters who have gained experience or differ from others, such as monsters).
 - Combinations should not be entered as is but should be directly calculated. For example, if the HP column is a combination of `Constitution` and `Endurance`, you must enter the result of these columns directly. There is no issue using formulas in a CSV, as the file export will only include the result!
 :::
@@ -156,9 +156,13 @@ The following columns are necessary for the import:
 - `user`: The Discord ID of the player or their username (without the `@`).
 - `charName`: Depending on your template, this might be required. It is the character's name.
 - `isPrivate`: `true` or `false` to specify if the sheet is private or not. If your template does not use private sheets, you can leave this column empty.
-- `avatar`: The link to the character's avatar. If you do not use an avatar, you can leave this column empty. The avatar displayed will be the player's.
-- The following columns should be the statistics of your template.
-- `dice`: The specific dice for the `/dbd` command. If you do not use this command, you can leave this column empty or even delete it: it is not mandatory.
+- The following columns must be the statistics of your template.
+
+Theses columns are optional:
+- `avatar` : The link to the character's avatar. If you don't use an avatar, you can leave this column empty. The avatar used in the display will be the player's.
+- `channel` : Allows you to set a channel to send the sheet to, rather than using the default channels set when registering the template.
+- `dice` : Specific dice for the `/dbd` command. If you don't use this command, you can leave this column empty (or delete it).
+
 
 ### Export Data
 
