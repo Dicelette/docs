@@ -156,6 +156,7 @@ The following columns are necessary for the import:
 - `user`: The Discord ID of the player or their username (without the `@`).
 - `charName`: Depending on your template, this might be required. It is the character's name.
 - `isPrivate`: `true` or `false` to specify if the sheet is private or not. If your template does not use private sheets, you can leave this column empty.
+- `avatar`: The link to the character's avatar. If you do not use an avatar, you can leave this column empty. The avatar displayed will be the player's.
 - The following columns should be the statistics of your template.
 - `dice`: The specific dice for the `/dbd` command. If you do not use this command, you can leave this column empty or even delete it: it is not mandatory.
 

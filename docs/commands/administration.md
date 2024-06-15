@@ -153,6 +153,7 @@ La commande `/import` permet d'importer des données depuis un fichier CSV. Vous
 Les colonnes suivantes sont nécessaires pour l'import :
 - `user` : L'ID Discord du joueur ou son nom d'utilisateur (sans le `@`).
 - `charName` : En fonction de votre modèle, peut être obligatoire. C'est le nom du personnage.
+- `avatar` : Le lien vers l'avatar du personnage. Si vous n'utilisez pas d'avatar, vous pouvez laisser cette colonne vide. L'avatar utilisé dans l'affichage sera celui du joueur.
 - `isPrivate` : `true` ou `false` pour définir si la fiche est privée ou non. Si votre modèle n'utilise pas de fiche privée, vous pouvez laisser cette colonne vide.
 - Les colonnes suivantes doivent être les statistiques de votre modèle.
 - `dice` : Les dés spécifiques pour la commande `/dbd`. Si vous n'utilisez pas cette commande, vous pouvez laisser cette colonne vide, voire la supprimée : elle n'est pas obligatoire. 
@@ -164,7 +165,7 @@ Les colonnes suivantes sont nécessaires pour l'import :
 :::
 
 Cette commande permet d'exporter la liste des personnages et des statistiques dans un fichier CSV. 
-En fonction de l'option 'private', la liste fournie sera différente : 
+En fonction de l'option `private`, la liste fournie sera différente : 
 - Si `false`, elle incluera **uniquement** les personnages dont la fiche est **publique**.
 - Si `true`, elle incluera **uniquement** les personnages dont la fiche est **privée**.
 - Si elle est omise, elle inclura **tous** les personnages, quelque soit le statut de la fiche.
