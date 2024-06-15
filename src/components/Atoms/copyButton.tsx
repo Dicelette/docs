@@ -16,7 +16,7 @@ const CopyIconButton = ({ onClick, size, maxLen, length }) => {
     return (
         <Tooltip title={translate({ message: "Dupliquer ce champ" })} classes={{ popper: length > maxLen ? "error-copy" : "copy-tooltip" }} arrow>
             <IconButton onClick={onClick} size="small" className={`manage-button !p-px relative top-2.5 min-[0px]:max-${sizeClass}:w-full`}
-                aria-label={translate({ message: "Dupliquer ce champ" })} title={translate({ message: "Dupliquer ce champ" })} disabled={length > maxLen} >
+                aria-label={translate({ message: "Dupliquer ce champ" })} disabled={length > maxLen} >
                 <Icon icon="system-uicons:duplicate" height="24" className="copy-button" />
             </IconButton>
         </Tooltip>

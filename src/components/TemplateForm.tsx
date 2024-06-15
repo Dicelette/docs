@@ -156,12 +156,12 @@ const TemplateForm: FC = () => {
       }}
       onSubmit={handleSubmit}
     >
-      {({ isSubmitting, values }) => (
+      {({ isSubmitting, values, setFieldValue }) => (
         <Form>
           <General />
           <CriticalValue critical={values.critical} />
-          <Statistics values={values} />
-          <Dices values={values} />
+          <Statistics values={values} setFieldValue={setFieldValue} />
+          <Dices values={values} setFieldValue={setFieldValue} />
           {buttonDisabled(isSubmitting)}
         </Form>
       )}
