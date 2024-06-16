@@ -89,6 +89,12 @@ const config: Config = {
 					label: "Commandes"
 				},
 				{
+					type: "docSidebar",
+					position: "left",
+					sidebarId: "TOS",
+					label: "CGU"
+				},
+				{
 					href: "https://github.com/dicelette/docs",
 					label: "GitHub",
 					position: "right",
