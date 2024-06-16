@@ -90,6 +90,11 @@ Once the template is ready, use `/register [#channel] [file] (#user_chan) (#priv
 - `#private_character` works similarly to `#user_chan`, but the sheets published in this channel will only be visible to the user who registered the sheet or to those who have access to this channel (as well as people with the `MANAGE ROLES` permission). If this channel is not defined, the private sheet function will be disabled.
 The embed will be pinned for easy access.
 
+:::Warning About private sheet
+If the sheet is not marked as private but is published in a channel that users do not normally have access to, they will still be able to see the sheet with the `/display` and `/graph` commands.
+:::
+
+
 ![embed](/assets/register/embed_template.png)
 
 :::warning Caution
