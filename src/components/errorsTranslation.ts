@@ -1,37 +1,34 @@
 import {translate} from "@docusaurus/Translate";
-
-export function translateError(code: string) {
-	switch(code) {
-	case "error.emptyObject" : return translate({message: "L'objet {{x}} est vide"});
-	case "common.space" : return translate({message: " "});
-	case "error.invalidDice.withoutDice" : return translate({message: "Le dé \"{{x}}\" est invalide."});
-	case "error.invalidFormula" : return translate({message: "La formule \"{{x}}\" est invalide."});
-	case "error.invalidDice" : return translate({message: "Le dé \"{{x}}\" est invalide."});
-	case "error.maxGreater" : return translate({message: "Le maximum est supérieur au minimum"});
-	case "error.tooManyDice" : return translate({message: "Trop de dés (max : 25)"});
-	case "error.noStat" : return translate({message: "Aucune statistique n'a été trouvée"});
-	
-	}
-}
+import {
+	DiceTypeError,
+	FormulaError,
+	MaxGreater,
+	EmptyObjectError,
+	TooManyDice,
+	NoStatisticsError,
+} from "@dicelette/core";
 
 /** Convert [error, errorcode] {errorMessageValue} to something readable */
 export function errorCode(error: Error) {
-	const code = error.message;
-	const toTranslate = code.match(/\[(.*)\]/gi);
-	let msg = "";
-	if (code.startsWith("Expected")) {
-		return translate({message: "Erreur dans le dé : "}) + 
-			code.replace("Expected", translate({message: "Attendant"}))
-			.replace("but", translate({message: "mais"}))
-			.replaceAll(/\bor/gm, translate({message: "ou"}))
-			.replace("found", translate({message: "trouvé"}))
-	} else if (toTranslate) {
-		const group = toTranslate[0].replace("[", "").replace("]", "").split(",");
-		for (const code of group) {
-			msg += translateError(code.trim());
-		}
-		const restOfError = code.replace(/\[(.*)\]/gi, "");
-		return msg.length > 0 ? msg.replaceAll("{{x}}", restOfError.replace(":", "").trim()) : restOfError;
+	console.error(error);
+	if (error instanceof DiceTypeError) {
+		return translate({message: "Le dé \"{{x}}\" est invalide."}).replace("{{x}}", error.dice);
 	}
-	return code;
+	if (error instanceof FormulaError) {
+		return translate({message: "La formule \"{{x}}\" est invalide."}).replace("{{x}}", error.formula);
+	}
+	if (error instanceof MaxGreater) {
+		return translate({message: "Le maximum est supérieur au minimum"});
+	}
+	if (error instanceof EmptyObjectError) {
+		return translate({message: "Les dégâts de dégâts ont été mal renseignés."});
+	}
+	if (error instanceof TooManyDice) {
+		return translate({message: "Trop de dés (max : 25)"});
+	}
+	if (error instanceof NoStatisticsError) {
+		return translate({message: "Aucune statistique n'a été trouvée"});
+	}
+	return translate({message: "Une erreur est survenue : {{x}}"}).replace("{{x}}", error.message);
+	
 }

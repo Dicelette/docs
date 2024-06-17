@@ -311,18 +311,7 @@
     "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
-  "L'objet est vide": {
-    "message": "L'objet est vide"
-  },
-  " : ": {
-    "message": ": "
-  },
-  "Le dé est invalide": {
-    "message": "Invalid dice"
-  },
-  "La formule est invalide": {
-    "message": "Invalid formula"
-  },
+
   "Le maximum est supérieur au minimum": {
     "message": "The maximum is greater than the minimum"
   },
@@ -425,12 +414,7 @@
   "Supprimer": {
     "message": "Delete"
   },
-  "dés (max 25)": {
-    "message": "dice (max 25)"
-  },
-  "statistiques (max 20)": {
-    "message": "statistics (max 20)"
-  },
+
   "Vous avez atteint le nombre maximum de": {
     "message": "You have reached the maximum number of"
   },
@@ -568,37 +552,28 @@
   "Utilisation": {
     "message": "Usage"
   },
-  "L'objet {{x}} est vide": {
-    "message": "The object {{x}} is empty"
-  },
-  " ": {
-    "message": ""
-  },
   "Le dé \"{{x}}\" est invalide.": {
     "message": "The dice \"{{x}}\" is invalid."
   },
   "La formule \"{{x}}\" est invalide.": {
     "message": "The formula \"{{x}}\" is invalid."
   },
-  "Erreur dans le dé : ": {
-    "message": "Error in the dice: "
-  },
-  "Attendant": {
-    "message": "Wait"
-  },
-  "mais": {
-    "message": "but"
-  },
-  "ou": {
-    "message": "or"
-  },
-  "trouvé": {
-    "message": "found"
-  },
   "Fiches privées": {
     "message": "Privates sheets"
   },
   "Utilisée uniquement dans le CSV d'importation de fiche": {
     "message": "Used only in the CSV for sheet import"
+  },
+  "Les dégâts de dégâts ont été mal renseignés.": {
+    "message": "Les dégâts de dégâts ont été mal renseignés."
+  },
+  "Une erreur est survenue : {{x}}": {
+    "message": "An error occured: {{x}}"
+  },
+  "dés": {
+    "message": "dices"
+  },
+  "statistiques (max 25)": {
+    "message": "statistics (max: 25)"
   }
 }

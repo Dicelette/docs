@@ -26,5 +26,9 @@
   "item.label.Commandes": {
     "message": "Commands",
     "description": "Navbar item with label Commandes"
+  },
+  "item.label.CGU": {
+    "message": "TOS",
+    "description": "Navbar item with label CGU"
   }
 }

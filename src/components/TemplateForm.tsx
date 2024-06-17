@@ -72,7 +72,6 @@ const TemplateForm: FC = () => {
         URL.revokeObjectURL(url.url);
       }
     } catch (error) {
-      console.log(error);
       const msg = errorCode(error);
       const MySwal = withReactContent(Swal);
       MySwal.fire({
