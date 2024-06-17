@@ -6,6 +6,7 @@ import {
 	EmptyObjectError,
 	TooManyDice,
 	NoStatisticsError,
+	TooManyStats,
 } from "@dicelette/core";
 
 /** Convert [error, errorcode] {errorMessageValue} to something readable */
@@ -21,13 +22,16 @@ export function errorCode(error: Error) {
 		return translate({message: "Le maximum est supérieur au minimum"});
 	}
 	if (error instanceof EmptyObjectError) {
-		return translate({message: "Les dégâts de dégâts ont été mal renseignés."});
+		return translate({message: "Les dés de capacités ont été mal renseignés."});
 	}
 	if (error instanceof TooManyDice) {
 		return translate({message: "Trop de dés (max : 25)"});
 	}
 	if (error instanceof NoStatisticsError) {
 		return translate({message: "Aucune statistique n'a été trouvée"});
+	}
+	if (error instanceof TooManyStats) {
+		return translate({message: "Trop de statistiques (max : 25)"});
 	}
 	return translate({message: "Une erreur est survenue : {{x}}"}).replace("{{x}}", error.message);
 	

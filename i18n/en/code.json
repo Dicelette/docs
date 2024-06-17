@@ -311,7 +311,6 @@
     "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
-
   "Le maximum est supérieur au minimum": {
     "message": "The maximum is greater than the minimum"
   },
@@ -414,7 +413,6 @@
   "Supprimer": {
     "message": "Delete"
   },
-
   "Vous avez atteint le nombre maximum de": {
     "message": "You have reached the maximum number of"
   },
@@ -564,9 +562,6 @@
   "Utilisée uniquement dans le CSV d'importation de fiche": {
     "message": "Used only in the CSV for sheet import"
   },
-  "Les dégâts de dégâts ont été mal renseignés.": {
-    "message": "Les dégâts de dégâts ont été mal renseignés."
-  },
   "Une erreur est survenue : {{x}}": {
     "message": "An error occured: {{x}}"
   },
@@ -575,5 +570,11 @@
   },
   "statistiques (max 25)": {
     "message": "statistics (max: 25)"
+  },
+  "Les dés de capacités ont été mal renseignés.": {
+    "message": "The skill dices were incorrectly filled in."
+  },
+  "Trop de statistiques (max : 25)": {
+    "message": "Trop de statistiques (max : 25)"
   }
 }

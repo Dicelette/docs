@@ -12,8 +12,8 @@ importers:
         specifier: ^5.5.0
         version: 5.5.0
       '@dicelette/core':
-        specifier: ^1.2.0
-        version: 1.2.0(@types/node@20.12.5)(jsdom@24.1.0)(terser@5.31.1)(typescript@5.4.4)(vite@5.3.1(@types/node@20.12.5)(terser@5.31.1))
+        specifier: ^1.2.1
+        version: 1.2.1(@types/node@20.12.5)(jsdom@24.1.0)(terser@5.31.1)(typescript@5.4.4)(vite@5.3.1(@types/node@20.12.5)(terser@5.31.1))
       '@docusaurus/core':
         specifier: ^3.4.0
         version: 3.4.0(@docusaurus/types@3.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(eslint@8.57.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.4.4)
@@ -881,8 +881,8 @@ packages:
     resolution: {integrity: sha512-ip318MKhfRvqzpXNQaMyqJkOWbeOlaiIopfyluantEVF706fRP4Jy0WsTZrnKhRvhJTZTJa5dTTWqcoPmt1Xww==}
     engines: {node: '>=18.0'}
 
-  '@dicelette/core@1.2.0':
-    resolution: {integrity: sha512-WgOvcZaKXRbiR1el8KujPuBhSCWmzmffCobs4M86cCxHOxjJTbhOQ2TCXnB7QOI4pY4VYBUJ4Ml2suo4ajeJ7Q==}
+  '@dicelette/core@1.2.1':
+    resolution: {integrity: sha512-fUPR1XZjb0XJ5JU2WACKcjSQ73ij73Z6ll4pUUpS2ck9KT0zmiUEDVhHuVIXbe/V8T0YkGtM0mI9W4YlRBJweQ==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -7891,7 +7891,7 @@ snapshots:
       mathjs: 11.12.0
       random-js: 2.1.0
 
-  '@dicelette/core@1.2.0(@types/node@20.12.5)(jsdom@24.1.0)(terser@5.31.1)(typescript@5.4.4)(vite@5.3.1(@types/node@20.12.5)(terser@5.31.1))':
+  '@dicelette/core@1.2.1(@types/node@20.12.5)(jsdom@24.1.0)(terser@5.31.1)(typescript@5.4.4)(vite@5.3.1(@types/node@20.12.5)(terser@5.31.1))':
     dependencies:
       '@dice-roller/rpg-dice-roller': 5.5.0
       commit-and-tag-version: 12.4.1
