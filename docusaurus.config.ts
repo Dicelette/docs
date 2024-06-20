@@ -80,13 +80,13 @@ const config: Config = {
 					type: "docSidebar",
 					position: "left",
 					sidebarId: "model",
-					label: "Fiches",
+					label: "Administration",
 				},
 				{
 					type: "docSidebar",
 					position: "left",
 					sidebarId: "commands",
-					label: "Commandes"
+					label: "Usage"
 				},
 				{
 					type: "docSidebar",
