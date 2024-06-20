@@ -1,0 +1,6 @@
+[submodule "docs"]
+	path = docs
+	url = git@github.com:Dicelette/fr-docs.git
+[submodule "i18n"]
+	path = i18n
+	url = git@github.com:Dicelette/i18n.git
